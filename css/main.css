@@ -1,0 +1,199 @@
+/* Reset all css elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body, colors and font-family */
+
+body {
+    --color1: #FFFFFF;
+    --color2: #F7F7FF;
+    --color3: #070707;
+    --color4: #0353A4;
+    background-color: var(--color1);
+    font-family: "Inter", sans-serif;
+}
+
+/* Headers */
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+p, h1, h2, hr {
+    color: var(--color3);
+}
+
+/* Top navigator and it's elements */
+
+#logo {
+    width: 65px;
+}
+
+.site-name {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color3);
+}
+
+.nav-bar {
+    background-color: var(--color1);
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    padding: 12px 20px;
+}
+
+.nav-image {
+    width: 30px;
+}
+
+.nav-label {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color3);
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 4px;
+    background-color: var(--color4);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .2s ease-in-out;
+}
+
+.nav-button:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.menu {
+    display: flex;
+    margin-left: 50%;
+    li {
+        padding-left: 30px;
+    }
+    a {
+        font-size: 1.5rem;
+    }
+    li, a {
+        display: inline-block;
+        color: var(--color3);
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        letter-spacing: 2px;
+    }
+}
+
+.mobile-login {
+    display: none;
+}
+
+.open-menu, .close-menu {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* Top banner and it's elements */
+
+#top-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0 0 5%;
+}
+
+.banner-text-container {
+    align-items: start;
+    justify-content: start;
+    max-width: 50%;
+    h1 {
+        font-weight: 700;
+        padding: 1% 0% 1% 0%;
+    }
+    p {
+        font-weight: 200;
+    }
+}
+
+.banner-image-container {
+    img {
+        width: 800px;
+        height: 800px;
+    }
+}
+
+/* Advertising section and it's elements */
+
+#advertising {
+    background-color: var(--color2);
+}
+
+.advertising-header {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2%;
+    padding: 5%;
+}
+
+.courses-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-bottom: 5%;
+}
+
+.card {
+    width: 350px;
+    height: 400px;
+    background-color: var(--color3);
+    color: var(--color1);
+    text-align: center;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover {
+    background-color: var(--color3);
+    opacity: 80%;
+    transition: ease-in-out .3s all;
+}
+
+/* Marker */
+
+.blue {
+    color: var(--color4);
+    font-weight: bold;
+    font-style: italic;
+}
+
