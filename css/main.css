@@ -336,39 +336,55 @@ p, h1, h2, hr {
 
 /* E-books section and it's elements */
 
-#ebooks {
-    background-color: var(--color3);
-}
-
-.ebooks-container {
+.ebook-container {
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 5% 0 10% 0;
     h1 {
         color: var(--color1);
+        margin-bottom: 5%;
     }
 }
 
-.ebooks-wrapper {
-    display: flex;
-    flex-direction: row;
+.card-wrapper {
     align-items: center;
     justify-content: center;
-    gap: 5%;
+    background-color: var(--color3);
+    width: 80%;
+    border-radius: 20px;
+    padding: 5% 0 5% 0;
 }
 
-.ebook {
-    margin-top: 5%;
-    background-color: var(--color2);
-    border-radius: 20px;
+.ebook-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    gap: 5%;
     img {
-        width: 500px;
-        height: 400px;
+        background-color: var(--color2);
         border-radius: 20px;
-        border: var(--color2) 5px solid;
-        box-shadow: var(--color2) 10px 10px;
+        width: 500px;
+        height: 500px;
     }
+    p {
+        max-width: 650px;
+        color: var(--color1);
+    }
+}
+
+.buy-button {
+    width: 250px;
+    height: 70px;
+    background-color: var(--color4);
+    color: var(--color1);
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 12%;
 }
 
 /* Marker */
