@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icon/favicon.ico" type="image/x-icon">
+    <link rel="favicon" href="assets/icon/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -21,10 +23,12 @@
                         <span class="menu">
                             <label for="check" class="close-menu"><img src="assets/svg/close-menu.svg" alt="close menu button" width="32px"></label>
                             <ul>
-                                <li><a class="nav-button" href="pages/products.html"><h1 class="nav-label">Produtos</h1></a></li>
+                                <li><a class="nav-button" href="#home"><h1 class="nav-label">Início</h1></a></li>
+                                <li><a class="nav-button" href="#courses"><h1 class="nav-label">Cursos</h1></a></li>
+                                <li><a class="nav-button" href="#ebooks"><h1 class="nav-label">E-books</h1></a></li>
                                 <li><a class="nav-button" href="#cart"><h1 class="nav-label">Carrinho</h1></a></li>
-                                <li><a class="nav-button" href="#account"><h1 class="nav-label">Conta</h1></a></li>
                                 <li><a class="nav-button" href="#affiliate"><h1 class="nav-label">Trabalhe Conosco</h1></a></li>
+                                <li><a class="nav-account" href="#account"><h1 class="nav-label">Cadastre-se</h1></a></li>
                             </ul>
                         </span>
                         <label for="check" class="mobile-login"><a href="pages/login.html"><img class="user-logo" src="assets/svg/user.svg" alt="login" width="32px"></a></label>
@@ -33,30 +37,78 @@
                 </nav>
             </head>
         </section>
-        <!-- Top banner -->
-        <section>
+        <!-- Top banner section -->
+        <section id="home">
             <div id="top-banner">
                 <div class="banner-text-container">
                     <h1>Aprenda, Pratique e <marker class="blue">Monetize</marker>.</h1>
                     <h1>Tudo sobre <marker class="blue">Marketing Digital</marker> e <marker class="blue">Design</marker> em um só lugar!</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, cupiditate. Culpa accusantium sit natus, esse, iste impedit odio perspiciatis architecto maiores fuga, ullam exercitationem? Excepturi delectus in expedita cum illo.</p>
+                    <button class="create-account-button">Cadastre-se agora</button>
                 </div>
                 <div class="banner-image-container">
                     <img src="assets/svg/animated/banner-animation.gif" alt="banner-animation">
                 </div>
             </div>
         </section>
-        <!-- Advertising and account tutorial area -->
-        <section>
-            <div id="advertising">
+        <!-- Courses section -->
+        <section id="courses">
+            <div>
                 <div class="header">
-                    <h1>O sucesso começa pela <marker class="blue">educação</marker><br>Profissionalize-se em uma área com nossos cursos</h1>
+                    <h1>O sucesso começa pela <marker class="blue">educação</marker><br>Profissionalize-se com nossos cursos</h1>
                 </div>
-
                 <div class="courses-cards">
                     <div class="card">Curso 1</div>
                     <div class="card">Curso 2</div>
                     <div class="card">Curso 3</div>
+                </div>
+            </div>
+        </section>
+        <!-- E-books section -->
+        <section>
+            <div id="ebooks">
+                <div class="ebooks-header">
+                    <h1>Plataforma com pontuação <marker class="blue">máxima</marker> <br> em opiniões dos nossos usuários</h1>
+                </div>
+                <div class="user-comment">
+                    <div class="vertical-bar"></div>
+                    <div class="comment-content">
+                        <h1 class="user-name">Alexandre Ferreira</h1>
+                        <p class="comment">Ótimos e-books para evoluir profissionalmente!</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="vertical-bar"></div>
+                    <div class="comment-content">
+                        <h1 class="user-name">Vanessa Galdino</h1>
+                        <p class="comment">A melhor compra que já fiz! Valeu cada  centavo.</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="vertical-bar"></div>
+                    <div class="comment-content">
+                        <h1 class="user-name">Amanda Nascimento</h1>
+                        <p class="comment">Plataforma muito intuitiva, cursos bem completos e com um preço bem acessível.</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="vertical-bar"></div>
+                    <div class="comment-content">
+                        <h1 class="user-name">Larissa Nóbrega</h1>
+                        <p class="comment">Gostei muito dos cursos e ebooks, recomendo para que todos deêmm uma chance.</p>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progresss-item">
+                        <div role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="--value: 100"></div>
+                        <h2 class="progress-label">Confiabilidade</h2>
+                    </div>
+                    <div class="progresss-item">
+                        <div role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="--value: 95"></div>
+                        <h2 class="progress-label">Aprovação</h2>
+                    </div>
+                    <div class="progresss-item">
+                        <div role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="--value: 90"></div>
+                        <h2 class="progress-label">Empregabilidade</h2>
+                    </div>
                 </div>
             </div>
         </section>
