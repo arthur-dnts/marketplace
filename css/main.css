@@ -284,7 +284,8 @@ p, h1, h2, hr {
 
 .progress-label {
     text-align: center;
-    margin-top: 10%;
+    margin-top: 15%;
+    color: var(--color4);
 }
 
 @keyframes progress {
