@@ -222,7 +222,7 @@ p, h1, h2, hr {
     transition: ease-in-out .3s all;
 }
 
-/* E-books section and it's elements */
+/* Feedback section and it's elements */
 
 .ebooks-header {
     display: flex;
@@ -265,7 +265,7 @@ p, h1, h2, hr {
     line-height: 1.5;
 }
 
-/* Progress bar */
+/* Circle progress bar */
 
 .progress-container {
     display: flex;
@@ -332,6 +332,43 @@ p, h1, h2, hr {
     font-family: Helvetica, Arial, sans-serif;
     font-size: calc(var(--size) / 5);
     color: var(--color4);
+}
+
+/* E-books section and it's elements */
+
+#ebooks {
+    background-color: var(--color3);
+}
+
+.ebooks-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5% 0 10% 0;
+    h1 {
+        color: var(--color1);
+    }
+}
+
+.ebooks-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+.ebook {
+    margin-top: 5%;
+    background-color: var(--color2);
+    border-radius: 20px;
+    img {
+        width: 500px;
+        height: 400px;
+        border-radius: 20px;
+        border: var(--color2) 5px solid;
+        box-shadow: var(--color2) 10px 10px;
+    }
 }
 
 /* Marker */
