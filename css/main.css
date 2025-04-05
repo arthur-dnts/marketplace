@@ -517,14 +517,11 @@ hr {
     gap: 5px;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-}
-
-.footer-buttons {
     p {
         font-size: 1.2rem;
         color: var(--color1);
         margin: 10px 0;
+        cursor: pointer;
         white-space: nowrap;
     }
 }
