@@ -53,7 +53,7 @@ hr {
 }
 
 .site-name {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--color3);
 }
 
@@ -178,11 +178,11 @@ hr {
 }
 
 .create-account-button {
-    width: 220px;
+    width: 250px;
     height: 70px;
     background-color: var(--color4);
     color: var(--color1);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     border-radius: 10px;
     border: none;
     margin-top: 5%;
