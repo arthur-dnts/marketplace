@@ -5,6 +5,12 @@
     padding: 0;
 }
 
+/* Smooth scroll behavior */
+
+html {
+    scroll-behavior: smooth;
+}
+
 /* Body, colors and font-family */
 
 body {
@@ -28,21 +34,26 @@ h2 {
 
 p {
     font-size: 1.5rem;
+    font-weight: 200;
 }
 
-p, h1, h2, hr {
+p, h1, h2 {
     color: var(--color3);
+}
+
+hr {
+    color: var(--color1);
+    opacity: 20%;
 }
 
 /* Top navigator and it's elements */
 
-#logo {
+.logo {
     width: 65px;
 }
 
 .site-name {
     font-size: 2rem;
-    font-weight: 500;
     color: var(--color3);
 }
 
@@ -60,14 +71,18 @@ p, h1, h2, hr {
     padding: 12px 20px;
 }
 
-.nav-image {
-    width: 30px;
-}
-
 .nav-label {
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--color3);
+}
+
+.nav-image-button {
+    top: 5px;
+}
+
+.nav-image {
+    width: 32px;
 }
 
 .nav-account {
@@ -78,6 +93,7 @@ p, h1, h2, hr {
     border-radius: 10px;
     border: none;
     cursor: pointer;
+    bottom: 5px;
     h1 {
         text-align: center;
         color: var(--color1);
@@ -106,7 +122,7 @@ p, h1, h2, hr {
 
 .menu {
     display: flex;
-    margin-left: 25%;
+    margin-left: 20%;
     li {
         padding-left: 30px;
     }
@@ -152,9 +168,6 @@ p, h1, h2, hr {
         font-weight: 700;
         padding: 1% 0% 1% 0%;
     }
-    p {
-        font-weight: 200;
-    }
 }
 
 .banner-image-container {
@@ -166,10 +179,10 @@ p, h1, h2, hr {
 
 .create-account-button {
     width: 220px;
-    height: 50px;
+    height: 70px;
     background-color: var(--color4);
     color: var(--color1);
-    font-size: 1rem;
+    font-size: 1.2rem;
     border-radius: 10px;
     border: none;
     margin-top: 5%;
@@ -207,7 +220,7 @@ p, h1, h2, hr {
 .card {
     width: 350px;
     height: 400px;
-    background-color: var(--color3);
+    background: linear-gradient(to top right,#070707,#0F1414,#1A2526,#2A3A44,#023E7D);
     color: var(--color1);
     text-align: center;
     border-radius: 30px;
@@ -351,8 +364,8 @@ p, h1, h2, hr {
 .card-wrapper {
     align-items: center;
     justify-content: center;
-    background-color: var(--color3);
-    width: 80%;
+    background: linear-gradient(to top right,#070707,#0F1414,#1A2526,#2A3A44,#023E7D);
+    width: 70%;
     border-radius: 20px;
     padding: 5% 0 5% 0;
 }
@@ -364,10 +377,8 @@ p, h1, h2, hr {
     text-align: start;
     gap: 5%;
     img {
-        background-color: var(--color2);
-        border-radius: 20px;
-        width: 500px;
-        height: 500px;
+        width: 450px;
+        height: 450px;
     }
     p {
         max-width: 650px;
@@ -375,7 +386,7 @@ p, h1, h2, hr {
     }
 }
 
-.buy-button {
+.about-button {
     width: 250px;
     height: 70px;
     background-color: var(--color4);
@@ -384,8 +395,155 @@ p, h1, h2, hr {
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    margin-left: 12%;
 }
+
+/* Payment container and it's elements */
+
+#payments {
+    background: linear-gradient(to top right,#070707,#0F1414,#1A2526,#2A3A44,#023E7D);
+}
+
+.payment-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5% 0 5% 0;
+    h1 {
+        color: var(--color1);
+    }
+}
+
+.payment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    padding-top: 5%;
+    gap: 10%;
+    h1 {
+        max-width: 700px;
+        color: var(--color1);
+    }
+    p {
+        max-width: 550px;
+        padding-top: 2%;
+        color: var(--color1);
+    }
+    img {
+        width: 500px;
+    }
+}
+
+/* Work with us container */
+
+#work {
+    background-color: var(--color2);
+}
+
+.work-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5% 0 5% 0;
+}
+
+.worker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+    gap: 5%;
+    p {
+        max-width: 500px;
+        padding-top: 2%;
+    }
+    img {
+        width: 700px;
+    }
+}
+
+/* Footer section and it's elements */
+
+#footer {
+    background: linear-gradient(to top right, #070707, #0F1414, #1A2526, #2A3A44, #023E7D);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.website-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5% 0 5% 0;
+}
+
+.website {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.website {
+    h1 {
+        color: var(--color1);
+    }
+}
+
+.social-media {
+    p {
+        color: var(--color1);
+        padding: 5% 0 10% 0;
+    }
+}
+
+.social-icon {
+    width: 64px;
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+}
+
+.footer-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.footer-buttons {
+    p {
+        font-size: 1.2rem;
+        color: var(--color1);
+        margin: 10px 0;
+        white-space: nowrap;
+    }
+}
+
+.credits {
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    padding: 2% 0 8% 0;
+    margin-left: 35%;
+    p {
+        opacity: 50%;
+        font-size: 1rem;
+        color: var(--color1);
+    }
+    a {
+        color: var(--color1);
+    }
+}
+
 
 /* Marker */
 
