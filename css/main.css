@@ -233,6 +233,7 @@ hr {
     background-color: var(--color3);
     opacity: 80%;
     transition: ease-in-out .3s all;
+    transform: scale(1.1);
 }
 
 /* Feedback section and it's elements */
