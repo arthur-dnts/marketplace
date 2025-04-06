@@ -18,7 +18,7 @@ body {
     --color2: #F7F7FF;
     --color3: #070707;
     --color4: #0353A4;
-    background-color: var(--color1);
+    background-color: var(--color2);
     font-family: "Inter", sans-serif;
 }
 
@@ -61,9 +61,10 @@ hr {
 .form {
     display: flex;
     flex-direction: column;
-    padding: 3%;
+    background-color: var(--color1);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    padding: 3%;
 }
 
 .form-header {
@@ -73,15 +74,39 @@ hr {
 .form-input {
     width: 300px;
     height: 50px;
+    font-size: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin: 3% 0 3% 0;
     padding: 10px 40px 10px 10px;
-    text-indent: 10px;
+    text-indent: 8px;
 }
 
 .form-input:hover {
     border-color: var(--color3);
+}
+
+.telefone-container {
+    position: relative;
+}
+
+.prefix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.65);
+    top: 28%;
+    left: 8%;
+    gap: 10%;
+    img {
+        width: 30px;
+    }
+}
+
+#telefone-input {
+    text-indent: 80px;
 }
 
 .password-container {
