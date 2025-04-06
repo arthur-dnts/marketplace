@@ -139,10 +139,6 @@ hr {
     }
 }
 
-.mobile-login {
-    display: none;
-}
-
 .open-menu, .close-menu {
     display: none;
 }
@@ -518,6 +514,7 @@ hr {
     align-items: center;
     justify-content: center;
     p {
+        max-width: 80px;
         font-size: 1.2rem;
         color: var(--color1);
         margin: 10px 0;
