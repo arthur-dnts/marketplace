@@ -164,6 +164,9 @@ hr {
         font-weight: 700;
         padding: 1% 0% 1% 0%;
     }
+    p {
+        max-width: 900px;
+    }
 }
 
 .banner-image-container {
