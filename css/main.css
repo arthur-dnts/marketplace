@@ -232,7 +232,7 @@ hr {
 .card:hover {
     background-color: var(--color3);
     opacity: 80%;
-    transition: ease-in-out .3s all;
+    transition: ease-in-out .3s;
     transform: scale(1.1);
 }
 
