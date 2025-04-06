@@ -87,17 +87,17 @@ hr {
 
 .nav-account {
     width: 170px;
-    height: 35px;
-    text-align: center;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
     background-color: var(--color4);
     border-radius: 10px;
     border: none;
     cursor: pointer;
     bottom: 5px;
     h1 {
-        text-align: center;
         color: var(--color1);
-        padding-top: 5px;
+        padding-top: 5%;
     }
 }
 
