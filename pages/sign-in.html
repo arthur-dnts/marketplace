@@ -18,20 +18,20 @@
             <div class="form-container">
                 <form id="sign-in-form" class="form">
                     <h1 class="form-header">Marketplace</h1>
-                    <input class="form-input" type="text" placeholder="Nome">
-                    <input class="form-input" type="text" placeholder="Sobrenome">
-                    <input class="form-input" type="email" placeholder="Email">
+                    <input class="form-input" type="text" placeholder="Nome" maxlength="50" required>
+                    <input class="form-input" type="text" placeholder="Sobrenome" maxlength="50" required>
+                    <input class="form-input" type="email" placeholder="Email" maxlength="100" required>
                     <div class="telefone-container">
                         <span class="prefix"><img src="../assets/svg/static/flag-brazil.svg" alt=""> +55</span>
                         <input id="telefone-input" class="form-input" type="tel" placeholder="(99) 91234-5678" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" maxlength="15" required>
                     </div>
                     <hr>
                     <div class="password-container">
-                        <input class="form-input" type="password" placeholder="Senha" id="password">
+                        <input class="form-input" type="password" placeholder="Senha" id="password" minlength="8" maxlength="128" required>
                         <img class="show-password" src="../assets/svg/static/eye-closed.svg" alt="eye-closed" data-target="password">
                     </div>
                     <div class="password-container">
-                        <input class="form-input" type="password" placeholder="Confirmar senha" id="confirm-password">
+                        <input class="form-input" type="password" placeholder="Confirmar senha" id="confirm-password" minlength="8" maxlength="128" required>
                         <img class="show-password" src="../assets/svg/static/eye-closed.svg" alt="eye-closed" data-target="confirm-password">
                     </div>
                     <p class="form-description">Ao criar uma conta você aceita o nossos <a href="#">Termos e Condições</a></p>
