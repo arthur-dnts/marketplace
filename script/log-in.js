@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetId = icone.getAttribute('data-target');
         const inputSenha = document.getElementById(targetId);
         if (!targetId || !inputSenha) {
-            console.error('Erro: targetId ou inputSenha não encontrado. targetId:', targetId);
             return;
         }
         icone.addEventListener('click', () => {
