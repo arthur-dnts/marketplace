@@ -210,10 +210,12 @@ const dbPassword = process.env.DB_PASSWORD
 mongoose
     .connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.tbfjbrc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
     .then(() => {
-        app.listen(PORT)
-        console.log("Conexão ao MongoDB Atlas bem-sucedida.")
+        console.log('Conexão ao MongoDB Atlas bem-sucedida.');
     })
-    .catch((err) => console.log("Erro ao conectar ao MongoDB Atlas:", err))
+    .catch((err) => {
+        console.error('Erro ao conectar ao MongoDB Atlas:', err);
+        process.exit(1);
+    });
 
 // Rota pública
 app.get("/", (req, res) => {
@@ -258,3 +260,6 @@ function checkToken(req, res, next) {
     }
 
 }
+
+// Exportar o app para o Vercel
+module.exports = app;
