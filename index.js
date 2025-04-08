@@ -2,11 +2,44 @@ const bcrypt = require("bcrypt")
 const express = require("express")
 const mongoose = require("mongoose")
 const jwt = require("jsonwebtoken")
+const cors = require("cors")
 const path = require("path")
 require("dotenv").config()
 
 const app = express()
 const PORT = 3000
+
+// Lista de origens permitidas para o CORS
+
+// Lista de origens permitidas (apenas para desenvolvimento local)
+const allowedOrigins = [
+    'http://localhost:5500',  // Live Server (desenvolvimento)
+    'http://127.0.0.1:5500', // Live Server (desenvolvimento, variação com IP)
+    'http://localhost:3000' // Express servindo o front-end localmente
+];
+
+// Configurar CORS
+app.use(cors({
+    origin: (origin, callback) => {
+        // Permitir requisições sem origem (ex.: Postman/Local via file://)
+        if (!origin) return callback(null, true);
+        
+        // No ambiente de produção (Vercel)
+        // CORS não é necessário. Permitidas todas as origens no Vercel.
+        if (process.env.NODE_ENV === 'production') {
+            return callback(null, true);
+        }
+
+        // Ambiente local, verifica se a origem está na lista de permitidas
+        if (allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Origem não permitida pelo CORS'));
+        }
+    },
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // Configura a resposta em JSON
 app.use(express.json())
@@ -204,7 +237,6 @@ app.get("/user/:id", checkToken, async (req, res) => {
 })
 
 // Função para verificação do token
-
 function checkToken(req, res, next) {
 
     const authHeader = req.headers["authorization"]
@@ -217,7 +249,8 @@ function checkToken(req, res, next) {
     try {
         
         const secret = process.env.SECRET
-        jwt.verify(token, secret)
+        const decoded = jwt.verify(token, secret)
+        req.user = decoded
         next()
 
     } catch (error) {
