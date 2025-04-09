@@ -6,6 +6,7 @@ const cors = require("cors")
 const path = require("path")
 require("dotenv").config()
 
+const PORT = 3000
 const app = express()
 
 // Lista de origens permitidas para o CORS (Desenvolvimento local)
@@ -154,6 +155,7 @@ console.log("Conectando ao MongoDB Atlas...")
 mongoose
     .connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.tbfjbrc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
     .then(() => {
+        app.listen(PORT)
         console.log('Conexão ao MongoDB Atlas bem-sucedida.');
     })
     .catch((err) => {
@@ -204,6 +206,3 @@ function checkToken(req, res, next) {
     }
 
 }
-
-// Exportar o app para o Vercel
-module.exports = app;
