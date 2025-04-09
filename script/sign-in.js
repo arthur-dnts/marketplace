@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Determinar a URL base com base no ambiente
-    const API_BASE_URL = ['localhost', '127.0.0.1'].includes(window.location.hostname)
-        ? 'http://localhost:3000'
-        : 'https://marketplace-br.vercel.app'; // Domínio do back-end no Vercel
-
     // Mostrar/esconder senha
     const iconesSenha = document.querySelectorAll('.show-password');
     iconesSenha.forEach(icone => {
@@ -68,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Enviar os dados para o back-end
-            const response = await fetch(`${API_BASE_URL}/auth/register`, {
+            const response = await fetch("/auth/register", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
