@@ -1,0 +1,52 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "api/register.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "index.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "index.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "pages/**/*",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "assets/**/*",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "css/**/*",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "script/**/*",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/auth/register",
+            "dest": "/api/register.js",
+            "methods": ["POST"]
+        },
+        {
+            "src": "/auth/(.*)",
+            "dest": "/index.js"
+        },
+        {
+            "src": "/user/(.*)",
+            "dest": "/index.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
+        }
+    ]
+}
