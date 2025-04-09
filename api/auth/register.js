@@ -76,7 +76,7 @@ module.exports = async (req, res) => {
 
     // Ofuscação da senha do usuário
     console.log('Ofuscando a senha...');
-    const salt = await bcrypt.genSalt(10);
+    const salt = await bcrypt.genSalt(12);
     const passwordHash = await bcrypt.hash(password, salt);
 
     // Criação do usuário no banco
