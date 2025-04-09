@@ -7,15 +7,12 @@ const path = require("path")
 require("dotenv").config()
 
 const app = express()
-const PORT = 3000
 
-// Lista de origens permitidas para o CORS
-
-// Lista de origens permitidas (apenas para desenvolvimento local)
+// Lista de origens permitidas para o CORS (Desenvolvimento local)
 const allowedOrigins = [
-    'http://localhost:5500',  // Live Server (desenvolvimento)
-    'http://127.0.0.1:5500', // Live Server (desenvolvimento, variação com IP)
-    'http://localhost:3000' // Express servindo o front-end localmente
+    "http://localhost:5500",               // Live Server (desenvolvimento)
+    "http://127.0.0.1:5500",              // Live Server (desenvolvimento, variação com IP)
+    "http://localhost:3000",             // Express servindo o front-end localmente
 ];
 
 // Configurar CORS
@@ -26,9 +23,7 @@ app.use(cors({
         
         // No ambiente de produção (Vercel)
         // CORS não é necessário. Permitidas todas as origens no Vercel.
-        if (process.env.NODE_ENV === 'production') {
-            return callback(null, true);
-        }
+        if (process.env.NODE_ENV === 'production') {return callback(null, true);}
 
         // Ambiente local, verifica se a origem está na lista de permitidas
         if (allowedOrigins.includes(origin)) {
@@ -51,84 +46,48 @@ const { userInfo } = require("os")
 
 // Registrar e validar usuário
 app.post("/auth/register", async(req, res) => {
-
     const {name, surname, email, telefone, password, confirmpassword} = req.body
 
     // Validação do nome do usuário
     console.log("Iniciando validações...")
 
-    if (!name) {
-        return res.status(422).json({ msg: "O nome é obrigatório!" })
-    };
-    if (name.length > 50) {
-        return res.status(422).json({ msg: "Nome muito longo (Máx. 50 caracteres)." })
-    }
-    if (name.length < 2) {
-        return res.status(422).json({ msg: "Nome muito curto (Mín. 2 caracteres)." })
-    }
+    if (!name) {return res.status(422).json({ msg: "O nome é obrigatório!" })};
+    if (name.length > 50) {return res.status(422).json({ msg: "Nome muito longo (Máx. 50 caracteres)." })}
+    if (name.length < 2) {return res.status(422).json({ msg: "Nome muito curto (Mín. 2 caracteres)." })}
 
     // Validação do sobrenome do usuário
-    if (!surname) {
-        return res.status(422).json({ msg: "O sobrenome é obrigatório!" })
-    };
-    if (surname.length > 50) {
-        return res.status(422).json({ msg: "Sobrenome muito longo (Máx. 50 caracteres)." })
-    };
-    if (surname.length < 2) {
-        return res.status(422).json({ msg: "Sobrenome muito curto (Mín. 2 caracteres)." })
-    };
+    if (!surname) {return res.status(422).json({ msg: "O sobrenome é obrigatório!" })};
+    if (surname.length > 50) {return res.status(422).json({ msg: "Sobrenome muito longo (Máx. 50 caracteres)." })};
+    if (surname.length < 2) {return res.status(422).json({ msg: "Sobrenome muito curto (Mín. 2 caracteres)." })};
+
     // Validação do e-mail do usuário
-    if (!email) {
-        return res.status(422).json({ msg: "O e-mail é obrigatório!" })
-    };
-    if (email.length > 100) {
-        return res.status(422).json({ msg: "E-mail muito longo (Máx. 100 caracteres)." })
-    };
-    if (email.length < 6) {
-        return res.status(422).json({ msg: "E-mail muito curto (Mín. 6 caracteres)." })
-    };
+    if (!email) {return res.status(422).json({ msg: "O e-mail é obrigatório!" })};
+    if (email.length > 100) {return res.status(422).json({ msg: "E-mail muito longo (Máx. 100 caracteres)." })};
+    if (email.length < 6) {return res.status(422).json({ msg: "E-mail muito curto (Mín. 6 caracteres)." })};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        return res.status(422).json({ msg: "E-mail inválido!" });
-    }
+    if (!emailRegex.test(email)) {return res.status(422).json({ msg: "E-mail inválido!" });}
 
     // Validação do telefone do usuário
-    if (!telefone) {
-        return res.status(422).json({ msg: "O telefone é obrigatório!" })
-    };
-    if (telefone.length !== 15) {
-        return res.status(422).json({ msg: "Número de telefone inválido (Padrão (99) 91234-5678)." })
-    };
-    const telefoneRegex = /^\(\d{2}\) \d{5}-\d{4}$/;
-    if (!telefoneRegex.test(telefone)) {
-        return res.status(422).json({ msg: "Formato de telefone inválido! Use (99) 91234-5678." });
-    }
+    if (!telefone) {return res.status(422).json({ msg: "O telefone é obrigatório!" })}
+    if (telefone.length !== 15) {return res.status(422).json({ msg: "Número de telefone inválido (Padrão (99) 91234-5678)." })}
+    const telefoneRegex = /^\(\d{2}\) \d{5}-\d{4}$/
+    if (!telefoneRegex.test(telefone)) {return res.status(422).json({ msg: "Formato de telefone inválido! Use (99) 91234-5678." })}
 
     // Validação da senha e confirmação da senha do usuário
-    if (!password) {
-        return res.status(422).json({ msg: "A senha é obrigatória!" })
-    };
-    if (password.length > 128) {
-        return res.status(422).json({ msg: "Senha muito longa (Máx. 128 caracteres)." })
-    };
-    if (password.length < 8) {
-        return res.status(422).json({ msg: "Senha muito curta (Mín. 8 caracteres)." })
-    };
-    if (password !== confirmpassword) {
-        return res.status(422).json({ msg: "As senhas devem ser iguais!" })
-    }
+    if (!password) {return res.status(422).json({ msg: "A senha é obrigatória!" })};
+    if (password.length > 128) {return res.status(422).json({ msg: "Senha muito longa (Máx. 128 caracteres)." })};
+    if (password.length < 8) {return res.status(422).json({ msg: "Senha muito curta (Mín. 8 caracteres)." })};
+    if (password !== confirmpassword) {return res.status(422).json({ msg: "As senhas devem ser iguais!" })}
 
     // Verifica se o usuário já existe no banco
     console.log("Iniciando verificação do usuário no banco...")
     const userExists = await User.findOne({ email: email })
     console.log("Resultado da busca: ", userExists)
-    if (userExists) {
-        return res.status(422).json({ msg: "E-mail já cadastrado. Tente outro e-mail válido." })
-    }
+    if (userExists) {return res.status(422).json({ msg: "E-mail já cadastrado. Tente outro e-mail válido." })}
 
     // Ofuscação da senha do usuário
     console.log("Ofuscando a senha...")
-    const salt = await bcrypt.genSalt(12)
+    const salt = await bcrypt.genSalt(10)
     const passwordHash = await bcrypt.hash(password, salt)
 
     // Criação do usuário no banco
@@ -150,7 +109,6 @@ app.post("/auth/register", async(req, res) => {
         console.error('Erro ao processar /auth/register:', error)
         res.status(500).json({ msg: "Ocorreu um erro com o servidor, tente novamente mais tarde." })
     }
-
 })
 
 // Login e validação do usuário
@@ -159,26 +117,18 @@ app.post("/auth/login", async(req, res) => {
     const {email, password} = req.body
 
     // Validação do email
-    if (!email) {
-        return res.status(422).json({ msg: "O e-mail é obrigatório!" })
-    };
+    if (!email) {return res.status(422).json({ msg: "O e-mail é obrigatório!" })};
 
     // Validação da senha
-    if (!password) {
-        return res.status(422).json({ msg: "A senha é obrigatória!" })
-    };
+    if (!password) {return res.status(422).json({ msg: "A senha é obrigatória!" })};
 
     // Verifica se o usuário já existe no banco
     const user = await User.findOne({ email: email })
-    if (!user) {
-        return res.status(422).json({ msg: "Usuário não cadastrado." })
-    }
+    if (!user) {return res.status(422).json({ msg: "Usuário não cadastrado." })}
 
     // Verifica se a senha é a mesma do banco
     const checkPassword = await bcrypt.compare(password, user.password)
-    if (!checkPassword) {
-        return res.status(422).json({ msg: "Senha inválida." })
-    }
+    if (!checkPassword) {return res.status(422).json({ msg: "Senha inválida." })}
 
     try {
         const secret = process.env.SECRET
@@ -193,7 +143,6 @@ app.post("/auth/login", async(req, res) => {
         console.log(error)
         res.status(500).json({ msg: "Ocorreu um erro com o servidor, tente novamente mais tarde." })
     }
-
 })
 
 // Credenciais do MongoDB Atlas
@@ -201,6 +150,7 @@ const dbUser = process.env.DB_USER
 const dbPassword = process.env.DB_PASSWORD
 
 // Conexão com o MongoDB Atlas
+console.log("Conectando ao MongoDB Atlas...")
 mongoose
     .connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.tbfjbrc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
     .then(() => {
