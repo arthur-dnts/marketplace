@@ -2,11 +2,15 @@
     "version": 2,
     "builds": [
         {
-            "src": "api/register.js",
+            "src": "api/auth/register.js",
             "use": "@vercel/node"
         },
         {
-            "src": "index.js",
+            "src": "api/auth/login.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "api/user/[id].js",
             "use": "@vercel/node"
         },
         {
@@ -33,16 +37,17 @@
     "routes": [
         {
             "src": "/auth/register",
-            "dest": "/api/register.js",
+            "dest": "/api/auth/register.js",
             "methods": ["POST"]
         },
         {
-            "src": "/auth/(.*)",
-            "dest": "/index.js"
+            "src": "/auth/login",
+            "dest": "/api/auth/login.js",
+            "methods": ["POST"]
         },
         {
             "src": "/user/(.*)",
-            "dest": "/index.js"
+            "dest": "/api/user/[id].js"
         },
         {
             "src": "/(.*)",
