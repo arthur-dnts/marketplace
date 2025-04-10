@@ -48,7 +48,58 @@ hr {
     margin: 5% 0 5% 0;
 }
 
-/* Sign-in container and it's elements */
+/* Sign-in and Log-in container and it's elements */
+
+.decoration-container {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    background-color: var(--color4);
+    border-radius: 0 100% 0 0;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+}
+
+.decoration-circle {
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    background-color: var(--color4);
+    border-radius: 0 100% 0 0;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    opacity: 60%;
+}
+
+.decoration-shadow {
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    background-color: var(--color4);
+    border-radius: 0 100% 0 0;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    opacity: 40%;
+}
+
+.decoration-sub-shadow {
+    width: 650px;
+    height: 650px;
+    position: absolute;
+    background-color: var(--color4);
+    border-radius: 0 100% 0 0;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    opacity: 10%;
+}
+
+#form-login {
+    margin-top: 10%;
+}
 
 .form-container {
     display: flex;
@@ -56,46 +107,33 @@ hr {
     justify-content: center;
     text-align: center;
     padding-top: 3%;
-    gap: 10%;
+    gap: 5%;
 }
 
-.image-form {
+.side-text {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-bottom: 5%;
 }
 
-.image-text {
-    align-items: start;
+.text-description {
+    align-items: center;
     justify-content: start;
     text-align: start;
-    padding: 20px;
-    border-radius: 15px;
-    h1 {
-        font-size: 2rem;
-    }
     p {
-        font-size: 1.2rem;
-        max-width: 650px;
+        max-width: 850px;
     }
 }
 
-.image-header {
+.text-header {
     display: flex;
     align-items: center;
     justify-content: start;
-    h1 {
-        font-size: 1.5rem;
-    }
+    text-align: center;
+    margin-bottom: 2%;
     img {
-        width: 32px;
-        margin-left: 3%;
-    }
-}
-
-.side-image {
-    img {
-        width: 650px;
+        width: 64px;
     }
 }
 
