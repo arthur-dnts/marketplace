@@ -48,9 +48,9 @@ hr {
     margin: 5% 0 5% 0;
 }
 
-/* Sign-in and Log-in container and it's elements */
+/* Form decorations */
 
-.decoration-container {
+.bottom-decoration-container {
     width: 350px;
     height: 350px;
     position: absolute;
@@ -61,7 +61,7 @@ hr {
     left: 0;
 }
 
-.decoration-circle {
+.bottom-decoration-circle {
     width: 450px;
     height: 450px;
     position: absolute;
@@ -73,7 +73,7 @@ hr {
     opacity: 60%;
 }
 
-.decoration-shadow {
+.bottom-decoration-shadow {
     width: 550px;
     height: 550px;
     position: absolute;
@@ -85,7 +85,7 @@ hr {
     opacity: 40%;
 }
 
-.decoration-sub-shadow {
+.bottom-decoration-sub-shadow {
     width: 650px;
     height: 650px;
     position: absolute;
@@ -96,6 +96,43 @@ hr {
     left: 0;
     opacity: 10%;
 }
+
+.top-decoration-container {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    background-color: var(--color4);
+    border-radius: 0 0 0 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+}
+
+.top-decoration-circle {
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    background-color: var(--color4);
+    border-radius: 0 0 0 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    opacity: 60%;
+}
+
+.top-decoration-shadow {
+    width: 550px;
+    height: 550px;
+    position: absolute;
+    background-color: var(--color4);
+    border-radius: 0 0 0 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    opacity: 40%;
+}
+
+/* Sign-in and Log-in container and it's elements */
 
 #form-login {
     margin-top: 10%;
@@ -145,7 +182,6 @@ hr {
     border-radius: 10px;
     padding: 3%;
 }
-
 
 .form-header {
     padding-bottom: 10%;

@@ -1,0 +1,368 @@
+/* Reset all css elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth scroll behavior */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body, colors and font-family */
+
+body {
+    --color1: #FFFFFF;
+    --color2: #F7F7FF;
+    --color3: #070707;
+    --color4: #0353A4;
+    background-color: var(--color1);
+    font-family: "Inter", sans-serif;
+}
+
+/* Headers */
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+p, h1, h2 {
+    color: var(--color3);
+}
+
+hr {
+    color: var(--color1);
+    opacity: 20%;
+}
+
+/* Top navigator and it's elements */
+
+.logo {
+    width: 65px;
+}
+
+.site-name {
+    font-size: 2.5rem;
+    color: var(--color3);
+}
+
+.nav-bar {
+    background-color: var(--color1);
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    padding: 12px 20px;
+}
+
+.nav-label {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color3);
+}
+
+.nav-image-button {
+    top: 5px;
+}
+
+.nav-image {
+    width: 32px;
+}
+
+.nav-account {
+    width: 170px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color4);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    bottom: 5px;
+    h1 {
+        color: var(--color1);
+        padding-top: 5%;
+    }
+}
+
+.nav-button::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 4px;
+    background-color: var(--color4);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .2s ease-in-out;
+}
+
+.nav-button:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.menu {
+    display: flex;
+    margin-left: 11%;
+    li {
+        padding-left: 30px;
+    }
+    a {
+        font-size: 1.5rem;
+    }
+    li, a {
+        display: inline-block;
+        color: var(--color3);
+        text-decoration: none;
+        text-align: center;
+        position: relative;
+        letter-spacing: 2px;
+    }
+}
+
+.open-menu, .close-menu {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* Top banner section and it's elements */
+
+.banner-container {
+    background-color: var(--color1);
+    margin-top: 5%;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    gap: 10%;
+}
+
+.top-banner {
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 2%;
+    }
+    p {
+        max-width: 600px;
+    }
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    margin-top: 5%;
+    position: relative;
+}
+
+.search-input {
+    width: 550px;
+    height: 45px;
+    text-indent: 15px;
+    font-size: 1.2rem;
+    background-color: var(--color2);
+    border: 1px solid var(--color3);
+    border-color: #a3a3a3;
+    border-radius: 30px;
+    position: relative;
+}
+
+.search-icon {
+    width: 35px;
+    position: absolute;
+    background-color: var(--color3);
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    left: 85%;
+    opacity: 70%;
+}
+
+.search-icon:hover {
+    opacity: 1;
+}
+
+/* Courses categories section and it's elements */
+
+.categories-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--color2);
+    padding: 2% 0 2% 0;
+}
+
+.categories-top {
+    padding: 5% 0 4% 0;
+}
+
+.categories-bottom {
+    padding-bottom: 2%;
+}
+
+.category-button, .more-categories {
+    border: 1px solid var(--color4);
+    border-radius: 10px;
+    margin: 0 5px 0 5px;
+    padding: 1%;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.category-button:hover, .more-categories:hover {
+    background-color: var(--color4);
+    color: var(--color1);
+}
+
+/* Top courses section and it's elements */
+
+.top-courses {
+    padding: 2% 0 5% 0;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2% 0 2% 0%;
+    gap: 38%;
+    h2 {
+        font-size: 2.5rem;
+    }
+}
+
+
+.carousel {
+    height: 400px;
+    width: 75%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-bottom: 5%;
+}
+
+.card {
+    width: 350px;
+    height: 400px;
+    background: linear-gradient(to top right, #070707, #0f1414, #1a2526, #2a3a44, #023e7d);
+    color: var(--color1);
+    text-align: center;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.group {
+    display: flex;
+    gap: 20px;
+    will-change: transform;
+    animation: scrolling 12s linear infinite; /* Ajustado para fluidez */
+}
+
+.carousel:hover .group {
+    animation-play-state: paused;
+}
+
+@keyframes scrolling {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-1 * (350px + 20px) * 3)); /* 3 cartões: -1110px */
+    }
+}
+
+.more-button {
+    width: 250px;
+    height: 60px;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: var(--color4);
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.more-button:hover {
+    background-color: var(--color4);
+    color: var(--color1);
+}
+
+/* Create course section and it's elements */
+
+.create-container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to top right, #070707, #0f1414, #1a2526, #2a3a44, #023e7d);
+    padding: 5% 0 5% 0;
+    h1, p {
+        color: var(--color1);
+    }
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    padding-top: 5%;
+    gap: 5%;
+}
+
+.banner-text {
+    p {
+        max-width: 550px;
+    }
+}
+
+/* Marker and about button */
+
+.blue {
+    color: var(--color4);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.about-button {
+    width: 250px;
+    height: 70px;
+    background-color: var(--color4);
+    color: var(--color1);
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
