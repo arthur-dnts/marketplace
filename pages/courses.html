@@ -14,87 +14,173 @@
 <body>
     <main>
         <!-- Top menu navigator -->
-        <section>
+        <section id="home">
             <head>
                 <nav>
                     <ul class="nav-bar">
                         <a href="../index.html"><div class="logo-container"><img class="logo" src="../assets/svg/static/logo/logo-black.svg" alt="site logo"></div></a>
                         <input type="checkbox" id="check"><a href="../index.html" style="text-decoration: none;"><h1 class="site-name">Marketplace</h1></a>
                         <span class="menu">
-                            <label for="check" class="close-menu"><img src="assets/svg/close-menu.svg" alt="close menu button" width="32px"></label>
-                                <ul>
-                                    <li><input class="search-input" type="text" placeholder="Pesquisar"></li>
-                                    <li><a class="nav-button" href="#">Categorias</a></li>
-                                    <li><a class="nav-image-button" href="#cart"><img class="nav-image" src="../assets/svg/static/main/cart.svg" alt="cart"></a></li>
-									<li><a href="pages/log-in.html" target="_blank"><h1 style="color: #0353A4;" class="nav-label">Login</h1></a></li>
-									<li><a class="nav-account" href="pages/sign-in.html" target="_blank"><h1 class="nav-label">Cadastre-se</h1></a></li>
-								</ul>
-							</span>
-							<label for="check" class="open-menu"><img src="assets/svg/open-menu.svg" alt="open menu button" width="32px"></label>
-						</ul>
-					</nav>
-				</head>
-			</section>
-			<!-- Top banner section -->
-			<section>
-				<div class="banner-container">
-					<div class="banner">
-						<div class="top-banner">
-							<h1>O que você quer <br> <marker class="blue">estudar</marker> hoje?</h1>
-							<p>Navegue entre centenas de cursos e alavanque o seu conhecimento!</p>
-                            <div class="search-container">
-                                <input class="search-input" type="text" placeholder="Pesquise um curso ex.: Finanças">
-                                <img class="search-icon" src="../assets/svg/static/courses/search.svg" alt="search-button">
-                            </div>
-						</div>
-                        <img src="../assets/svg/static/courses/study.svg" alt="study">
-                    </div>
-                    <div class="categories-container">
-                        <h1>Navegue entre as dezenas de <marker class="blue">categorias</marker> <br> dos nossos cursos</h1>
-                        <div class="categories-top">
-                            <span class="category-button">Finanças</span>
-                            <span class="category-button">Marketing digital</span>
-                            <span class="category-button">Design</span>
-                            <span class="category-button">Inglês</span>
-                            <span class="category-button">Espanhol</span>
-                            <span class="category-button">Networking</span>
-                            <span class="category-button">Mindset</span>
-                        </div>
-                        <div class="categories-bottom">
-                            <span class="category-button">Economia</span>
-                            <span class="category-button">Matemática financeira</span>
-                            <span class="category-button">UI/UX</span>
-                            <span class="category-button">Inteligência Artificial</span>
-                            <span class="category-button">Edição de vídeo</span>
-                            <span class="more-categories">Mais categorias →</span>
-                        </div>
-                    </div>
-                </div>
+                        <label for="check" class="close-menu"><img src="assets/svg/close-menu.svg" alt="close menu button" width="32px"></label>
+                            <ul>
+                                <li><a class="nav-button" href="#home">Início</a></li>
+                                <li><a class="nav-button" href="#categories">Categorias</a></li>
+                                <li><a class="nav-button" href="#courses">Cursos</a></li>
+                                <li><a class="nav-button" href="#publish-course">Publicar curso</a></li>
+                                <li><a class="nav-image-button" href="#cart"><img class="nav-image" src="../assets/svg/static/main/cart.svg" alt="cart"></a></li>
+                                <li><a href="../pages/log-in.html" target="_blank"><h1 style="color: #0353A4;" class="nav-label">Login</h1></a></li>
+                                <li><a class="nav-account" href="../pages/sign-in.html" target="_blank"><h1 class="nav-label">Cadastre-se</h1></a></li>
+                            </ul>
+                        </span>
+                        <label for="check" class="open-menu"><img src="assets/svg/open-menu.svg" alt="open menu button" width="32px"></label>
+                    </ul>
+                </nav>
+            </head>
         </section>
-        <!-- Top courses section -->
+        <!-- Top banner section -->
         <section>
-            <div class="top-courses">
-                <div class="header">
-                    <h2>Top cursos da plataforma</h2>
-                    <button class="more-button">Acessar todos →</button>
+            <div class="banner-container">
+                <div class="banner">
+                    <div class="top-banner">
+                        <h1>O que você quer <br> <marker class="blue">estudar</marker> hoje?</h1>
+                        <p>Navegue entre centenas de cursos e alavanque o seu conhecimento!</p>
+                        <div class="search-container">
+                            <input class="search-input" type="text" placeholder="Pesquise um curso ex.: Finanças">
+                            <img class="search-icon" src="../assets/svg/static/courses/search.svg" alt="search-button">
+                        </div>
+                    </div>
+                    <img src="../assets/svg/static/courses/study.svg" alt="study">
                 </div>
-                <div class="carousel">
-                    <div class="group">
-                        <div class="card">Curso 1</div>
-                        <div class="card">Curso 2</div>
-                        <div class="card">Curso 3</div>
-                        <div class="card">Curso 1</div>
-                        <div class="card">Curso 2</div>
-                        <div class="card">Curso 3</div>
-                        <div class="card">Curso 1</div>
+                <div id="categories" class="categories-container">
+                    <h1>Navegue entre as dezenas de <marker class="blue">categorias</marker> <br> dos nossos cursos</h1>
+                    <div class="categories-top">
+                        <span class="category-button">Finanças</span>
+                        <span class="category-button">Marketing digital</span>
+                        <span class="category-button">Design</span>
+                        <span class="category-button">Inglês</span>
+                        <span class="category-button">Espanhol</span>
+                        <span class="category-button">Networking</span>
+                        <span class="category-button">Mindset</span>
+                    </div>
+                    <div class="categories-bottom">
+                        <span class="category-button">Economia</span>
+                        <span class="category-button">Matemática financeira</span>
+                        <span class="category-button">UI/UX</span>
+                        <span class="category-button">Inteligência Artificial</span>
+                        <span class="category-button">Edição de vídeo</span>
+                        <span class="more-categories">Mais categorias →</span>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Top courses section -->
+        <section id="courses">
+            <div class="top-courses">
+                <div class="header">
+                    <h2>Cursos bem avaliados</h2>
+                    <button class="more-button">Acessar todos →</button>
+                </div>
+                <div class="carousel">
+                    <div class="group">
+
+                        <div class="card">
+                            <img class="card-cover" src="../assets/courses-covers/cover.png" alt="course-cover">
+                            <div class="card-content">
+                                <p class="rating">⭐ 5.0 (1272)</p>
+                                <h2 class="card-title">Economia Empresarial</h2>
+                                <h3 class="author">Emanuelle Araújo</h3>
+                                <h2 class="price">R$ 39,90</h2>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img class="card-cover" src="../assets/courses-covers/cover.png" alt="course-cover">
+                            <div class="card-content">
+                                <p class="rating">⭐ 5.0 (1272)</p>
+                                <h2 class="card-title">Economia Empresarial</h2>
+                                <h3 class="author">Emanuelle Araújo</h3>
+                                <h2 class="price">R$ 39,90</h2>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img class="card-cover" src="../assets/courses-covers/cover.png" alt="course-cover">
+                            <div class="card-content">
+                                <p class="rating">⭐ 5.0 (1272)</p>
+                                <h2 class="card-title">Economia Empresarial</h2>
+                                <h3 class="author">Emanuelle Araújo</h3>
+                                <h2 class="price">R$ 39,90</h2>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img class="card-cover" src="../assets/courses-covers/cover.png" alt="course-cover">
+                            <div class="card-content">
+                                <p class="rating">⭐ 5.0 (1272)</p>
+                                <h2 class="card-title">Economia Empresarial</h2>
+                                <h3 class="author">Emanuelle Araújo</h3>
+                                <h2 class="price">R$ 39,90</h2>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <img class="card-cover" src="../assets/courses-covers/cover.png" alt="course-cover">
+                            <div class="card-content">
+                                <p class="rating">⭐ 5.0 (1272)</p>
+                                <h2 class="card-title">Economia Empresarial</h2>
+                                <h3 class="author">Emanuelle Araújo</h3>
+                                <h2 class="price">R$ 39,90</h2>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img class="card-cover" src="../assets/courses-covers/cover.png" alt="course-cover">
+                            <div class="card-content">
+                                <p class="rating">⭐ 5.0 (1272)</p>
+                                <h2 class="card-title">Economia Empresarial</h2>
+                                <h3 class="author">Emanuelle Araújo</h3>
+                                <h2 class="price">R$ 39,90</h2>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img class="card-cover" src="../assets/courses-covers/cover.png" alt="course-cover">
+                            <div class="card-content">
+                                <p class="rating">⭐ 5.0 (1272)</p>
+                                <h2 class="card-title">Economia Empresarial</h2>
+                                <h3 class="author">Emanuelle Araújo</h3>
+                                <h2 class="price">R$ 39,90</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Best sellers -->
+        <section id="best-sellers">
+            <div class="best-sellers-container">
+                <div class="header">
+                    <h2>Cursos mais vendidos</h2>
+                    <button class="more-button">Acessar todos →</button>
+                </div>
+                <div class="best-sellers-top">
+                    <div class="best-seller-card"></div>
+                    <div class="best-seller-card"></div>
+                    <div class="best-seller-card"></div>
+                    <div class="best-seller-card"></div>
+                </div>
+                <div class="best-sellers-bottom">
+                    <div class="best-seller-card"></div>
+                    <div class="best-seller-card"></div>
+                    <div class="best-seller-card"></div>
+                    <div class="best-seller-card"></div>
+                </div>
+            </div>
+        </section>
         <!-- Create a course section -->
-        <section>
+        <section id="publish-course">
             <div class="create-container">
-                <h1>Crie <marker class="blue">seu próprio curso</marker> <br> e publique na nossa plataforma!</h1>
+                <h1>Publique <marker class="blue">seu próprio curso</marker> <br> na nossa plataforma!</h1>
                 <div class="banner">
                     <img src="../assets/svg/static/courses/create.svg" alt="create-course">
                     <div class="banner-text">
@@ -102,6 +188,37 @@
                         <p>Entre em contato com nossa equipe e receba apoio 24h para publicar seus cursos em nossa plataforma!</p>
                         <br><br><button class="about-button">Publicar →</button></p>
                     </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer section -->
+        <section id="footer">
+            <div class="footer-container">
+                <div class="website-info">
+                    <div class="website">
+                        <img class="logo" src="../assets/svg/static/logo/logo-white.svg" alt="site-logo">
+                        <h1>Marketplace</h1>
+                    </div>
+                    <div class="social-media">
+                        <p>Aprenda, Pratique e Monetize. <br>Transformando vidas pelo digital.</p>
+                        <img class="social-icon" src="../assets/svg/static/main/facebook.svg" alt="Facebook">
+                        <img class="social-icon" src="../assets/svg/static/main/instagram.svg" alt="Instagram">
+                        <img class="social-icon" src="../assets/svg/static/main/linkedin.svg" alt="Linkedin">
+                    </div>
+                </div>
+                <div class="footer-buttons">
+                    <p>Início</p>
+                    <p>Produtos</p>
+                    <p>Cursos</p>
+                    <p>Trabalhe Conosco</p>
+                    <p>E-books</p>
+                    <p>Suporte</p>
+                </div>
+                <hr><hr>
+                <div class="credits">
+                    <p>Marketplace | CNPJ 00.000.000/0000-00</p>
+                    <p>@ Todos os direitos reservados</p>
+                    <p><a href="#">Termos de uso</a> - <a href="#">Política de Privacidade</a></p>
                 </div>
             </div>
         </section>

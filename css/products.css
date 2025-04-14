@@ -122,7 +122,7 @@ hr {
 
 .menu {
     display: flex;
-    margin-left: 19%;
+    margin-left: 25%;
     li {
         padding-left: 30px;
     }
@@ -147,107 +147,70 @@ hr {
     display: none;
 }
 
-/* Top banner section and it's elements */
-
-.courses-container {
-    background-color: var(--color1);
-    margin-top: 5%;
-}
-
-.banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/* Products section and it's elements */
 
 .top-banner {
-    h1 {
-        font-size: 4rem;
-        margin-bottom: 2%;
-    }
-    p {
-        max-width: 600px;
-    }
-}
-
-.search-container {
     display: flex;
     align-items: center;
-    justify-content: start;
-    text-align: center;
-    margin-top: 5%;
-    position: relative;
-}
-
-.search-input {
-    width: 550px;
-    height: 45px;
-    text-indent: 15px;
-    font-size: 1.2rem;
-    background-color: var(--color2);
-    border: 1px solid var(--color3);
-    border-color: #a3a3a3;
-    border-radius: 30px;
-    position: relative;
-}
-
-.search-icon {
-    width: 35px;
-    position: absolute;
-    background-color: var(--color3);
-    border-radius: 20px;
-    padding: 10px;
-    cursor: pointer;
-    transition: opacity 0.3s ease-in-out;
-    left: 85%;
-    opacity: 70%;
-}
-
-.search-icon:hover {
-    opacity: 1;
-}
-
-/* Courses categories section and it's elements */
-
-.categories-container {
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    margin: 10% 0 0 5%;
+    gap: 10%;
+}
+
+.banner-text-container {
+    align-items: start;
+    justify-content: start;
+    max-width: 50%;
+    h1 {
+        font-weight: 700;
+        padding: 1% 0% 1% 0%;
+    }
+    p {
+        max-width: 900px;
+        padding-bottom: 10%;
+    }
+}
+
+.banner-image-container {
+    img {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+/* Featured products section and it's elements */
+
+#featured-products {
     background-color: var(--color2);
-    padding: 2% 0 2% 0;
 }
 
-.categories-top {
-    padding: 5% 0 4% 0;
-}
-
-.categories-bottom {
-    padding-bottom: 2%;
-}
-
-.category-button, .more-categories {
-    border: 1px solid var(--color4);
-    border-radius: 10px;
-    margin: 0 5px 0 5px;
-    padding: 1%;
-    cursor: pointer;
-    transition: .2s ease-in-out;
-}
-
-.category-button:hover, .more-categories:hover {
-    background-color: var(--color4);
-    color: var(--color1);
-}
-
-/* Top courses section and it's elements */
-
-.top-courses {
-    padding: 2% 0 5% 0;
-    position: relative;
+.featured-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 5%;
+}
+
+.featured-top, .featured-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 5px;
+}
+
+.featured-card {
+    width: 300px;
+    height: 250px;
+    border-radius: 20px;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.featured-card:hover {
+    background-color: rgba(128, 128, 128, 0.5);
 }
 
 .header {
@@ -261,81 +224,6 @@ hr {
     h2 {
         font-size: 2.5rem;
     }
-}
-
-.carousel {
-    height: 450px;
-    width: 75%;
-    margin: 0 auto;
-    overflow: hidden;
-    padding-bottom: 5%;
-}
-
-.card {
-    width: 390px;
-    height: 450px;
-    background: linear-gradient(to top right, #070707, #0f1414, #1a2526, #2a3a44, #023e7d);
-    color: var(--color1);
-    text-align: center;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    text-align: start;
-    flex-shrink: 0;
-    cursor: pointer;
-    h2 {
-        font-size: 1.5rem;
-    }
-    h3 {
-        font-size: 1rem;
-    }
-    h2, h3 {
-       color: var(--color1);
-    }
-    & .price {
-        color: var(--color4);
-    }
-}
-
-.group {
-    display: flex;
-    gap: 20px;
-    will-change: transform;
-    animation: scrolling 12s linear infinite; /* Ajustado para fluidez */
-}
-
-.carousel:hover .group {
-    animation-play-state: paused;
-}
-
-@keyframes scrolling {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-1 * (390px + 20px) * 3));
-    }
-}
-
-.card-cover {
-    width: 100%;
-    height: 100%;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-}
-
-.card-content {
-    flex: 1;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-}
-
-.rating {
-    margin: 0;
-    color: #f1c40f;
 }
 
 .more-button {
@@ -355,63 +243,57 @@ hr {
     color: var(--color1);
 }
 
-/* Create course section and it's elements */
+/* Shipping section and it's elements */
 
-.create-container {
+.shipping-container {
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 5% 0 5% 0;
+    h1 {
+        padding-bottom: 5%;
+    }
 }
 
-.banner {
+.shipping-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    gap: 5%;
+}
+
+
+/* Sell product section and it's elements */
+
+#sell {
+    background-color: var(--color2);
+}
+
+.sell-container {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 0 5% 0;
+}
+
+.sell-banner {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: start;
     padding-top: 5%;
-    gap: 5%;
+    gap: 10%;
 }
 
-.banner-text {
+.sell-banner-text {
     p {
-        max-width: 550px;
+        padding-bottom: 10%;
     }
 }
 
-/* Best sellers courses container */
-
-#best-sellers {
-    background-color: var(--color2);
-}
-
-.best-sellers-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 5%;
-}
-
-.best-sellers-top, .best-sellers-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 10px;
-    padding: 5px;
-}
-
-.best-seller-card {
-    width: 300px;
-    height: 250px;
-    border-radius: 20px;
-    background-color: gray;
-    cursor: pointer;
-}
-
-.best-seller-card:hover {
-    background-color: rgba(128, 128, 128, 0.5);
+.sell-banner-image {
+    width: 600px;
 }
 
 /* Footer section and it's elements */

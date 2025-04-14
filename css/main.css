@@ -149,7 +149,7 @@ hr {
 
 /* Top banner and it's elements */
 
-#top-banner {
+.top-banner {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -563,7 +563,6 @@ hr {
         color: var(--color1);
     }
 }
-
 
 /* Marker */
 
