@@ -1,0 +1,129 @@
+/* Reset all css elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth scroll behavior */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body, colors and font-family */
+
+body {
+    --color1: #FFFFFF;
+    --color2: #F7F7FF;
+    --color3: #070707;
+    --color4: #0353A4;
+    background-color: var(--color1);
+    font-family: "Inter", sans-serif;
+}
+
+/* Headers */
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+p, h1, h2 {
+    color: var(--color3);
+}
+
+hr {
+    color: var(--color1);
+    opacity: 20%;
+}
+
+/* Footer section and it's elements */
+
+#footer {
+    background: linear-gradient(to top right, #070707, #0F1414, #1A2526, #2A3A44, #023E7D);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.website-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5% 0 5% 0;
+}
+
+.website {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h1 {
+        color: var(--color1);
+    }
+    img {
+        width: 65px;
+    }
+}
+
+.social-media {
+    p {
+        color: var(--color1);
+        padding: 5% 0 10% 0;
+    }
+}
+
+.social-icon {
+    width: 40px;
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+}
+
+.footer-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    p {
+        color: var(--color1);
+        max-width: 80px;
+        font-size: 1.2rem;
+        color: var(--color1);
+        margin: 10px 0;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+}
+
+.credits {
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    padding: 2% 0 8% 0;
+    margin-left: 35%;
+    p {
+        opacity: 50%;
+        font-size: 1rem;
+        color: var(--color1);
+        padding: 2px 0 2px 0;
+    }
+    a {
+        color: var(--color1);
+    }
+}

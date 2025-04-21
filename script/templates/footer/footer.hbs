@@ -1,0 +1,27 @@
+<section id="footer">
+    <div class="footer-container">
+        <div class="website-info">
+            <div class="website">
+                <img class="logo" src="{{logoSrc}}" alt="site-logo">
+                <h1>{{titulo}}</h1>
+            </div>
+            <div class="social-media">
+                <p>{{{slogan}}}</p>
+                {{#each socialIcons}}
+                    <img class="social-icon" src="{{this.src}}" alt="{{this.alt}}">
+                {{/each}}
+            </div>
+        </div>
+        <div class="footer-buttons">
+            {{#each links}}
+                <p>{{this.text}}</p>
+            {{/each}}
+        </div>
+        <hr><hr>
+        <div class="credits">
+            <p>{{titulo}} | CNPJ {{cnpj}}</p>
+            <p>{{direitos}}</p>
+            <p><a href="{{termosUrl}}">Termos de uso</a> - <a href="{{privacidadeUrl}}">Política de Privacidade</a></p>
+        </div>
+    </div>
+</section>

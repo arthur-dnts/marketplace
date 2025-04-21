@@ -8,36 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="script/templates/navbar/navbar.css">
+    <link rel="stylesheet" href="script/templates/footer/footer.css">
     <link rel="stylesheet" href="css/main.css">
     <title>Marketplace</title>
 </head>
 <body>
     <main>
-        <!-- Top menu navigator -->
-        <section>
-            <head>
-                <nav>
-                    <ul class="nav-bar">
-                        <a href="#"><div class="logo-container"><img class="logo" src="assets/svg/static/logo/logo-black.svg" alt="site logo"></div></a>
-                        <input type="checkbox" id="check"><a href="#" style="text-decoration: none;"><h1 class="site-name">Marketplace</h1></a>
-                        <span class="menu">
-                            <label for="check" class="close-menu"><img src="assets/svg/close-menu.svg" alt="close menu button" width="32px"></label>
-                            <ul>
-                                <li><a class="nav-button" href="#"><h1 class="nav-label">Início</h1></a></li>
-                                <li><a class="nav-button" href="pages/courses.html"><h1 class="nav-label">Cursos</h1></a></li>
-                                <li><a class="nav-button" href="#ebooks"><h1 class="nav-label">E-books</h1></a></li>
-                                <li><a class="nav-button" href="pages/products.html"><h1 class="nav-label">Produtos</h1></a></li>
-                                <li><a class="nav-button" href="#work"><h1 class="nav-label">Trabalhe Conosco</h1></a></li>
-                                <li><a class="nav-image-button" href="#cart"><img class="nav-image" src="assets/svg/static/main/cart.svg" alt="cart"></a></li>
-                                <li><a href="pages/log-in.html" target="_blank"><h1 style="color: #0353A4;" class="nav-label">Login</h1></a></li>
-                                <li><a class="nav-account" href="pages/sign-in.html" target="_blank"><h1 class="nav-label">Cadastre-se</h1></a></li>
-                            </ul>
-                        </span>
-                        <label for="check" class="open-menu"><img src="assets/svg/open-menu.svg" alt="open menu button" width="32px"></label>
-                    </ul>
-                </nav>
-            </head>
-        </section>
+        <!-- Navbar placeholder -->
+        <section id="navbar"></section>
         <!-- Top banner section -->
         <section id="home">
             <div class="top-banner">
@@ -45,7 +24,7 @@
                     <h1>Aprenda, Pratique e <marker class="blue">Monetize</marker>.</h1>
                     <h1>Tudo sobre <marker class="blue">Marketing Digital</marker> e <marker class="blue">Design</marker> em um só lugar!</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, cupiditate. Culpa accusantium sit natus, esse, iste impedit odio perspiciatis architecto maiores fuga, ullam exercitationem? Excepturi delectus in expedita cum illo.</p>
-                    <button id="accountBtn" class="create-account-button" onclick="window.location='pages/sign-in.html'">Cadastre-se agora →</button>
+                    <button id="accountBtn" class="create-account-button" onclick="window.location='/sign-in'">Cadastre-se agora →</button>
                 </div>  
                 <div class="banner-image-container">
                     <img src="assets/svg/animated/banner-animation.gif" alt="banner-animation">
@@ -89,7 +68,7 @@
                     <div class="vertical-bar"></div>
                     <div class="comment-content">
                         <h1 class="user-name">Vanessa Galdino</h1>
-                        <p class="comment">A melhor compra que já fiz! Valeu cada  centavo.</p>
+                        <p class="comment">A melhor compra que já fiz! Valeu cada centavo.</p>
                         <div class="rating">⭐⭐⭐⭐⭐</div>
                     </div>
                     <div class="vertical-bar"></div>
@@ -101,7 +80,7 @@
                     <div class="vertical-bar"></div>
                     <div class="comment-content">
                         <h1 class="user-name">Larissa Nóbrega</h1>
-                        <p class="comment">Gostei muito dos cursos e e-books, recomendo que todos deemm uma chance.</p>
+                        <p class="comment">Gostei muito dos cursos e e-books, recomendo que todos deem uma chance.</p>
                         <div class="rating">⭐⭐⭐⭐⭐</div>
                     </div>
                 </div>
@@ -153,37 +132,13 @@
                 </div>
             </div>
         </section>
-        <!-- Footer section -->
-        <section id="footer">
-            <div class="footer-container">
-                <div class="website-info">
-                    <div class="website">
-                        <img class="logo" src="assets/svg/static/logo/logo-white.svg" alt="site-logo">
-                        <h1>Marketplace</h1>
-                    </div>
-                    <div class="social-media">
-                        <p>Aprenda, Pratique e Monetize. <br>Transformando vidas pelo digital.</p>
-                        <img class="social-icon" src="assets/svg/static/main/facebook.svg" alt="Facebook">
-                        <img class="social-icon" src="assets/svg/static/main/instagram.svg" alt="Instagram">
-                        <img class="social-icon" src="assets/svg/static/main/linkedin.svg" alt="Linkedin">
-                    </div>
-                </div>
-                <div class="footer-buttons">
-                    <p>Início</p>
-                    <p>Produtos</p>
-                    <p>Cursos</p>
-                    <p>Trabalhe Conosco</p>
-                    <p>E-books</p>
-                    <p>Suporte</p>
-                </div>
-                <hr><hr>
-                <div class="credits">
-                    <p>Marketplace | CNPJ 00.000.000/0000-00</p>
-                    <p>@ Todos os direitos reservados</p>
-                    <p><a href="#">Termos de uso</a> - <a href="#">Política de Privacidade</a></p>
-                </div>
-            </div>
-        </section>
+        <!-- Footer placeholder -->
+        <section id="footer"></section>
     </main>
+
+    <!-- Include Handlebars.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="script/navbar.js"></script>
+    <script src="script/footer.js"></script>
 </body>
 </html>

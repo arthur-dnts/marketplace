@@ -1,0 +1,27 @@
+<section id="navbar">
+    <header>
+        <nav>
+            <ul class="nav-bar">
+                <a href="/"><div class="logo-container"><img src="{{logoSrc}}" alt="site-logo"></div></a>
+                <input type="checkbox" id="check"><a href="/" style="text-decoration: none;"><h1 class="site-name">{{titulo}}</h1></a>
+                <span class="menu">
+                    <label for="check" class="close-menu"><img src="{{closeMenuSrc}}" alt="close-menu-button" width="32px"></label>
+                    <ul>
+                        {{#each links}}
+                            <li>
+                                <a class="{{this.class}}" href="{{this.href}}" {{#if this.target}}target="{{this.target}}"{{/if}}>
+                                    {{#if this.src}}
+                                        <img src="{{this.src}}" alt="{{this.alt}}" class="nav-image">
+                                    {{else}}
+                                        <h1 class="nav-label" style="{{this.style}}">{{this.text}}</h1>
+                                    {{/if}}
+                                </a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </span>
+                <label for="check" class="open-menu"><img src="{{openMenuSrc}}" alt="open-menu-button" width="32px"></label>
+            </ul>
+        </nav>
+    </header>
+</section>
