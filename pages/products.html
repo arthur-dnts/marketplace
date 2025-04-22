@@ -8,35 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../script/templates/navbar/navbar.css">
+    <link rel="stylesheet" href="../script/templates/footer/footer.css">
     <link rel="stylesheet" href="../css/products.css">
     <title>Produtos | Marketplace</title>
 </head>
 <body>
     <main>
-        <!-- Top menu navigator -->
-        <section>
-            <head>a
-                <nav>
-                    <ul class="nav-bar">
-                        <a href="../index.html"><div class="logo-container"><img class="logo" src="../assets/svg/static/logo/logo-black.svg" alt="site logo"></div></a>
-                        <input type="checkbox" id="check"><a href="../index.html" style="text-decoration: none;"><h1 class="site-name">Marketplace</h1></a>
-                        <span class="menu">
-                            <label for="check" class="close-menu"><img src="assets/svg/close-menu.svg" alt="close menu button" width="32px"></label>
-                                <ul>
-                                    <li><a class="nav-button" href="#"><h1 class="nav-label">Início</h1></a></li>
-                                    <li><a class="nav-button" href="#featured-produts"><h1 class="nav-label">Produtos</h1></a></li>
-                                    <li><a class="nav-button" href="#shipping"><h1 class="nav-label">Envio</h1></a></li>
-                                    <li><a class="nav-button" href="#publish-product"><h1 class="nav-label">Anunciar</h1></a></li>
-                                    <li><a class="nav-image-button" href="#cart"><img class="nav-image" src="../assets/svg/static/main/cart.svg" alt="cart"></a></li>
-									<li><a href="../pages/log-in.html" target="_blank"><h1 style="color: #0353A4;" class="nav-label">Login</h1></a></li>
-									<li><a class="nav-account" href="../pages/sign-in.html" target="_blank"><h1 class="nav-label">Cadastre-se</h1></a></li>
-								</ul>
-							</span>
-							<label for="check" class="open-menu"><img src="assets/svg/open-menu.svg" alt="open menu button" width="32px"></label>
-						</ul>
-					</nav>
-				</head>
-        </section>
+        <!-- Navbar placeholder -->
+        <section id="navbar"></section>
         <!-- Products banner -->
         <section id="home">
             <div class="top-banner">
@@ -102,37 +82,13 @@
                 </div>
             </div>
         </section>
-        <!-- Footer section -->
-        <section id="footer">
-            <div class="footer-container">
-                <div class="website-info">
-                    <div class="website">
-                        <img class="logo" src="../assets/svg/static/logo/logo-white.svg" alt="site-logo">
-                        <h1>Marketplace</h1>
-                    </div>
-                    <div class="social-media">
-                        <p>Aprenda, Pratique e Monetize. <br>Transformando vidas pelo digital.</p>
-                        <img class="social-icon" src="../assets/svg/static/main/facebook.svg" alt="Facebook">
-                        <img class="social-icon" src="../assets/svg/static/main/instagram.svg" alt="Instagram">
-                        <img class="social-icon" src="../assets/svg/static/main/linkedin.svg" alt="Linkedin">
-                    </div>
-                </div>
-                <div class="footer-buttons">
-                    <p>Início</p>
-                    <p>Produtos</p>
-                    <p>Cursos</p>
-                    <p>Trabalhe Conosco</p>
-                    <p>E-books</p>
-                    <p>Suporte</p>
-                </div>
-                <hr><hr>
-                <div class="credits">
-                    <p>Marketplace | CNPJ 00.000.000/0000-00</p>
-                    <p>@ Todos os direitos reservados</p>
-                    <p><a href="#">Termos de uso</a> - <a href="#">Política de Privacidade</a></p>
-                </div>
-            </div>
-        </section>
+        <!-- Footer placeholder -->
+        <section id="footer"></section>
     </main>
+
+    <!-- Include Handlebars.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="../script/navbar.js"></script>
+    <script src="../script/footer.js"></script>
 </body>
 </html>
