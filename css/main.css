@@ -22,7 +22,7 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-/* Headers */
+/* Fonts */
 
 h1 {
     font-size: 3rem;
@@ -44,107 +44,6 @@ p, h1, h2 {
 hr {
     color: var(--color1);
     opacity: 20%;
-}
-
-/* Top navigator and it's elements */
-
-.logo {
-    width: 65px;
-}
-
-.site-name {
-    font-size: 2.5rem;
-    color: var(--color3);
-}
-
-.nav-bar {
-    background-color: var(--color1);
-    width: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    padding: 12px 20px;
-}
-
-.nav-label {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--color3);
-}
-
-.nav-image-button {
-    top: 5px;
-}
-
-.nav-image {
-    width: 32px;
-}
-
-.nav-account {
-    width: 170px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color4);
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    bottom: 5px;
-    h1 {
-        color: var(--color1);
-        padding-top: 5%;
-    }
-}
-
-.nav-button::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    border-radius: 4px;
-    background-color: var(--color4);
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .2s ease-in-out;
-}
-
-.nav-button:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
-}
-
-.menu {
-    display: flex;
-    margin-left: 15%;
-    li {
-        padding-left: 30px;
-    }
-    a {
-        font-size: 1.5rem;
-    }
-    li, a {
-        display: inline-block;
-        color: var(--color3);
-        text-decoration: none;
-        text-align: center;
-        position: relative;
-        letter-spacing: 2px;
-    }
-}
-
-.open-menu, .close-menu {
-    display: none;
-}
-
-#check {
-    display: none;
 }
 
 /* Top banner and it's elements */
@@ -188,7 +87,7 @@ hr {
     cursor: pointer;
 }
 
-/* Multiplataform section */
+/* Multiplataform section and it'ss elements */
 
 #multiplataform {
     background-color: var(--color2);
@@ -221,15 +120,11 @@ hr {
 }
 
 .header {
-    display: block;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin-top: 2%;
     padding: 5%;
-    h1 {
-        display: block;
-    }
 }
 
 .courses-cards {
@@ -462,7 +357,7 @@ hr {
     }
 }
 
-/* Work with us container */
+/* Work with us section and it's elements */
 
 .work-container {
     align-items: center;
@@ -494,3 +389,266 @@ hr {
     font-style: italic;
 }
 
+/* Media queries */
+
+/* Small (smartphones in portrait mode) */
+@media screen and (max-width: 480px) {
+    /* Remove horizontal overflow */
+
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Fonts */
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    /* Top banner and it's elements */
+
+    .top-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .banner-text-container {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 100%;
+        margin: 0 0 15% 0;
+        order: 2;
+        p {
+            margin-top: 2%;
+            max-width: 95%;
+            padding-left: 5%;
+        }
+    }
+
+    .banner-image-container {
+        margin-top: 15%;
+        img {
+            width: 400px;
+            height: 400px;
+            order: 1;
+        }
+    }
+
+    .create-account-button {
+        width: 210px;
+        height: 60px;
+       font-size: 1rem; 
+    }
+
+    /* Multiplataform section and it's elements */
+
+    .multiplataform-container {
+        padding: 10% 0 10% 0;
+    }
+
+    .multiplataform-banner {
+        display: flex;
+        flex-direction: column;
+        h1 {
+            order: 2;
+        }
+        img {
+            margin: 5% 0 5% 0;
+            width: 250px;
+            order: 1;
+        }
+    }
+
+    /* Courses section and it's elements */
+
+    .courses-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-bottom: 10%;
+    }
+
+    .card {
+        width: 250px;
+        height: 300px;
+    }
+
+    /* Feedback section and it's elements */
+
+    .ebooks-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vertical-bar {
+        display: none;
+    }
+
+    .user-comment {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .user-name {
+        font-size: 1rem;
+    }
+
+    .comment {
+        font-size: 0.8rem;
+    }
+
+    .comment-content {
+        text-align: center;
+        h1, p {
+            margin: 0;
+            padding: 0;
+            max-width: 300px;
+        }
+    }
+
+    /* Circle progress container */
+
+    .progress-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10%;
+    }
+
+    [role="progressbar"] {
+        --size: 200px;
+    }
+
+    .progress-label {
+        font-size: 1.5rem;
+        margin: 10% 0 25% 0;
+    }
+
+    /* E-books section and it's elements */
+
+    .ebook-container {
+        padding: 15% 0 15% 0;
+        h1 {
+            margin: 5% 0;
+        }
+    }
+
+    .card-wrapper {
+        width: 95%;
+    }
+
+    .ebook-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        img {
+            width: 250px;
+            height: 250px;
+            margin: 5% 0 5% 0;
+        }
+        p {
+            max-width: 95%;
+        }
+    }
+
+    /* Payment container and it's elements */
+
+    .payment-container {
+        padding: 10% 0 10% 0;
+    }
+
+    .payment {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        img {
+            order: 1;
+            width: 250px;
+            margin: 5% 0 5% 0;
+        }
+        h1 {
+            order: 2;
+        }
+    }
+
+    /* Work with us section and it's elements */
+
+    .work-container {
+        padding: 10% 0 10% 0;
+    }
+
+    .worker {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        img {
+            width: 250px;
+            order: 1;
+            margin: 10% 0 10% 0;
+        }
+        h1 {
+            order: 2;
+        }
+    }
+
+    /* About button */
+
+    .about-button {
+        width: 190px;
+        height: 60px;
+        font-size: 1.2rem; 
+    }
+}
+
+/* Medium (Big smartphones and small tablets in portrait mode) */
+@media screen and (max-width: 610px) {
+
+}
+
+/* Tablets (e.g., iPad in portrait mode) */
+@media screen and (max-width: 768px) {
+
+}
+
+/* Tablets in landscpae and small laptops */
+@media screen and (max-width: 1024px) {
+
+}
+
+/* Laptops (e.g., 1366x768) */
+@media screen and (max-width: 1366px) {
+    
+}
+
+/* Desktops (e.g., 1440px) */
+@media screen and (min-width: 1440px) {
+
+}
+
+/* Big desktops (e.g., 1920px or higher) */
+@media screen and (min-width: 1920px) {
+    
+}

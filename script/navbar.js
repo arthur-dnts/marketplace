@@ -8,8 +8,8 @@ async function renderNavbar() {
         const navbarData = {
             logoSrc: "/assets/svg/static/logo/logo-black.svg",
             titulo: "Marketplace",
-            closeMenuSrc: "/assets/svg/close-menu.svg",
-            openMenuSrc: "/assets/svg/open-menu.svg",
+            closeMenuSrc: "/assets/svg/static/navbar/close-menu.svg",
+            openMenuSrc: "/assets/svg/static/navbar/open-menu.svg",
             links: [
                 { class: "nav-button", href: "#home", text: "Início" },
                 { class: "nav-button", href: "/cursos", text: "Cursos" },

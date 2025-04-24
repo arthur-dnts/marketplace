@@ -127,3 +127,93 @@ hr {
         color: var(--color1);
     }
 }
+
+/* Small (smartphones in portrait mode) */
+@media screen and (max-width: 480px) {
+    /* Remove horizontal overflow */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Fonts */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* Footer section and it's elements */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .social-icon {
+        width: 32px;
+        margin: 0 5px;
+    }
+    
+    .website {
+        img {
+            width: 50px;
+        }
+    }
+
+    .footer-buttons {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        margin-bottom: 5%;
+        p {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+
+    .website-info, .social-media {
+        padding: 10px 0;
+    }
+
+    .credits {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 2% 0;
+    }
+
+}
+
+/* Medium (Big smartphones and small tablets in portrait mode) */
+@media screen and (max-width: 610px) {
+
+}
+
+/* Tablets (e.g., iPad in portrait mode) */
+@media screen and (max-width: 768px) {
+
+}
+
+/* Tablets in landscpae and small laptops */
+@media screen and (max-width: 1024px) {
+
+}
+
+/* Laptops (e.g., 1366x768) */
+@media screen and (max-width: 1366px) {
+    
+}
+
+/* Desktops (e.g., 1440px) */
+@media screen and (min-width: 1440px) {
+
+}
+
+/* Big desktops (e.g., 1920px or higher) */
+@media screen and (min-width: 1920px) {
+    
+}
