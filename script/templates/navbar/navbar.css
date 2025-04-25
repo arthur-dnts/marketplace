@@ -191,7 +191,19 @@ hr {
     cursor: pointer;
 }
 
-/* Small (smartphones in portrait mode) */ /* 660x960 */
+@media screen and (max-width: 1466px) {
+
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+
 @media screen and (max-width: 480px) {
 
     /* Remove horizontal overflow */
@@ -287,132 +299,4 @@ hr {
         right: 0;
     }
 
-}
-
-/* Medium (Big smartphones and small tablets in portrait mode) */
-@media screen and (max-width: 610px) {
-
-    /* Remove horizontal overflow */
-
-    html, body {
-        overflow-x: hidden;
-    }
-
-    /* Fonts */
-    h1 {
-        font-size: 3rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1.2rem;
-    }
-
-    /* Navbar */
-
-    .nav-bar {
-        padding: 8px 10px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .logo-container {
-        img {
-            width: 64px;
-        }
-    }
-
-    .site-name {
-        font-size: 2rem;
-    }
-
-    .nav-image {
-        width: 50px;
-    }
-    
-    .nav-label {
-        font-size: 1.5rem;
-        color: var(--color3);
-    }
-
-    .nav-account {
-        height: 50px;
-        h1 {
-            padding-bottom: 5%;
-        }
-    }
-
-    .menu {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        z-index: 100;
-        background-color: var(--color1);
-        transition: all 0.2s ease-in-out;
-        box-sizing: border-box;
-        li, a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 10px 0;
-            width: 100%;
-        }
-    }
-
-    .open-menu {
-        margin-left: 45%;
-    }
-
-    .close-menu {
-        position: absolute;
-        top: 15px;
-        right: 18px;
-    }
-
-    .open-menu, .close-menu {
-        display: block;
-        cursor: pointer;
-        img {
-            width: 50px;
-        }
-    }
-
-    #check:checked ~ .menu {
-        right: 0;
-    }
-    
-}
-
-/* Tablets (e.g., iPad in portrait mode) */
-@media screen and (max-width: 768px) {
-
-}
-
-/* Tablets in landscpae and small laptops */
-@media screen and (max-width: 1024px) {
-
-}
-
-/* Laptops (e.g., 1366x768) */
-@media screen and (max-width: 1366px) {
-    
-}
-
-/* Desktops (e.g., 1440px) */
-@media screen and (min-width: 1440px) {
-
-}
-
-/* Big desktops (e.g., 1920px or higher) */
-@media screen and (min-width: 1920px) {
-    
 }
