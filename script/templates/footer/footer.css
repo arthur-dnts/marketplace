@@ -130,6 +130,7 @@ hr {
 
 /* Small (smartphones in portrait mode) */
 @media screen and (max-width: 480px) {
+
     /* Remove horizontal overflow */
     html, body {
         overflow-x: hidden;
@@ -154,17 +155,17 @@ hr {
         grid-template-columns: 1fr;
     }
 
-    .social-icon {
-        width: 32px;
-        margin: 0 5px;
-    }
-    
     .website {
         img {
             width: 50px;
         }
     }
-
+    
+    .social-icon {
+        width: 32px;
+        margin: 0 5px;
+    }
+    
     .footer-buttons {
         grid-template-columns: 1fr;
         gap: 5px;
@@ -173,10 +174,6 @@ hr {
             max-width: 100%;
             text-align: center;
         }
-    }
-
-    .website-info, .social-media {
-        padding: 10px 0;
     }
 
     .credits {
@@ -190,6 +187,58 @@ hr {
 
 /* Medium (Big smartphones and small tablets in portrait mode) */
 @media screen and (max-width: 610px) {
+        
+    /* Remove horizontal overflow */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Fonts */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    /* Footer section and it's elements */
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .website {
+        img {
+            width: 64px;
+        }
+    }
+
+    .social-icon {
+        width: 50px;
+        margin: 0 5px;
+    }
+    
+    .footer-buttons {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        margin-bottom: 5%;
+        p {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+
+    .credits {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 2% 0;
+    }
 
 }
 
