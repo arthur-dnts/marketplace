@@ -424,16 +424,17 @@ hr {
 
     .logo-container {
         img {
-            width: 32px;
+            width: 40px;
         }
     }
 
     .site-name {
+        display: block;
         font-size: 1.5rem;
     }
 
     .nav-image {
-        width: 30px;
+        width: 40px;
     }
     
     .nav-label {
@@ -443,6 +444,7 @@ hr {
     }
 
     .nav-account {
+        height: 50px;
         h1 {
             margin: 0;
             padding-bottom: 5%;
@@ -478,20 +480,20 @@ hr {
     }
 
     .open-menu {
-        margin-left: 38%;
+        margin-left: 35%;
     }
 
     .close-menu {
         position: absolute;
         top: 10px;
-        right: 13px;
+        right: 10px;
     }
 
     .open-menu, .close-menu {
         display: block;
         cursor: pointer;
         img {
-            width: 32px;
+            width: 40px;
         }
     }
 

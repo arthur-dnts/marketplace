@@ -459,6 +459,11 @@ hr {
         font-size: 1.5rem;
     }
 
+    .comment-content {
+        max-width: 70%;
+        margin-left: 15%;
+    }
+
     .comment {
         font-size: 1rem;
     }
@@ -491,7 +496,7 @@ hr {
             margin-left: 2%;
         }
         p {
-            font-size: 1.5rem;
+            font-size: 1rem;
             max-width: 40%;
         }
     }
