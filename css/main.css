@@ -391,22 +391,504 @@ hr {
 
 /* Media queries */
 
+/* Devtools: 1366x768 */
 @media screen and (max-width: 1366px) {
+        
+    /* Fonts */
+
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Top banner and it's elements */
+
+    .top-banner {
+        gap: 0;
+    }
+    
+    .banner-image-container {
+        img {
+            width: 700px;
+            height: 700px;
+        }
+    }
+
+    .create-account-button {
+        width: 310px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+
+    /* Multiplataform section and it's elements */
+
+    .multiplataform-container {
+        padding: 5% 0 5% 0;
+    }
+
+    .multiplataform-banner {
+        img {
+            width: 550px;
+        }
+    }
+
+    /* E-books and it's elements */
+
+    .header {
+        margin-top: 0;
+    }
+
+    .courses-cards {
+        gap: 30px;
+    }
+
+    .card {
+        width: 350px;
+        height: 350px;
+    }
+
+    /* Feedback section and it's elements */
+
+    .vertical-bar {
+        margin-right: 10px;
+    }
+
+    .user-name {
+        font-size: 1.5rem;
+    }
+
+    .comment {
+        font-size: 1rem;
+    }
+
+    .user-comment {
+        gap: 5px;
+        margin: 0 3% 0 5%;
+    }
+
+    /* Circle progress container */
+
+    [role="progressbar"] {
+        --size: 250px;
+    }
+
+    .progress-label {
+        font-size: 2rem;
+    }
+
+    /* E-books section and it's elements */
+
+    .card-wrapper {
+        width: 95%;
+    }
+
+    .ebook-wrapper {
+        img {
+            width: 500px;
+            height: 500px;
+            margin-left: 2%;
+        }
+        p {
+            font-size: 1.5rem;
+            max-width: 40%;
+        }
+    }
+
+    /* Payment section and it's elements */
+
+    .payment {
+        gap: 15%;
+        img {
+            width: 500px;
+        }
+        p {
+            max-width: 400px;
+        }
+    }
+
+    /* Work with us section and it's elements */
+
+    .worker {
+        img {
+            width: 500px;
+        }
+    }
 
 }
 
+/* Devtools: 1024x768 */
 @media screen and (max-width: 1024px) {
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+
+    /* Top banner and it's elements */
+
+    .top-banner {
+        gap: 0;
+    }
+    
+    .banner-image-container {
+        img {
+            width: 550px;
+            height: 550px;
+        }
+    }
+
+    .create-account-button {
+        width: 250px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    /* Multiplataform section and it's elements */
+
+    .multiplataform-container {
+        padding: 5% 0 5% 0;
+    }
+
+    .multiplataform-banner {
+        img {
+            width: 450px;
+        }
+    }
+
+    /* E-books and it's elements */
+
+    .header {
+        margin-top: 0;
+    }
+
+    .courses-cards {
+        gap: 25px;
+    }
+
+    .card {
+        width: 300px;
+        height: 350px;
+    }
+
+    /* Feedback section and it's elements */
+
+    .vertical-bar {
+        margin-right: 10px;
+    }
+
+    .user-comment {
+        gap: 5px;
+        margin: 0 3% 0 5%;
+    }
+
+    /* Circle progress container */
+
+    [role="progressbar"] {
+        --size: 200px;
+    }
+
+    .progress-label {
+        font-size: 1.5rem;
+    }
+
+    /* E-books section and it's elements */
+
+    .card-wrapper {
+        width: 95%;
+    }
+
+    .ebook-wrapper {
+        img {
+            width: 450px;
+            height: 450px;
+            margin-left: 2%;
+        }
+        p {
+            max-width: 40%;
+        }
+    }
+
+    /* Payment section and it's elements */
+
+    .payment {
+        gap: 10%;
+        img {
+            width: 400px;
+        }
+        p {
+            max-width: 400px;
+        }
+    }
+
+    /* Work with us section and it's elements */
+
+    .worker {
+        img {
+            width: 450px;
+        }
+    }
 
 }
 
+/* Devtools: 768x1024 */
 @media screen and (max-width: 768px) {
 
+    /* Remove horizontal scroll */
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Top banner and it's elements */
+
+    .top-banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .banner-text-container {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 100%;
+        margin: 0 0 10% 0;
+        order: 2;
+        h1 {
+            max-width: 750px;
+        }
+        p {
+            margin-top: 2%;
+            max-width: 95%;
+            padding-left: 5%;
+        }
+    }
+
+    .banner-image-container {
+        margin-top: 15%;
+        img {
+            width: 700px;
+            height: 700px;
+            order: 1;
+        }
+    }
+
+    .create-account-button {
+        width: 320px;
+        height: 90px;
+        font-size: 1.5rem; 
+    }
+
+    /* Multiplataform section and it's elements */
+
+    .multiplataform-container {
+        padding: 10% 0 10% 0;
+    }
+
+    .multiplataform-banner {
+        display: flex;
+        flex-direction: column;
+        h1 {
+            order: 2;
+        }
+        img {
+            margin: 5% 0 5% 0;
+            width: 500px;
+            order: 1;
+        }
+    }
+
+    /* Courses section and it's elements */
+
+    .ebooks-container {
+        display: flex;
+        flex-direction: column;
+        padding: 5% 0;
+    }
+
+    .courses-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-bottom: 10%;
+    }
+
+    .card {
+        width: 500px;
+        height: 550px;
+    }
+
+    /* Feedback section and it's elements */
+
+    #feedback {
+        padding: 5% 0;
+    }
+
+    .vertical-bar {
+        display: none;
+    }
+
+    .user-comment {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .user-name {
+        font-size: 2rem;
+    }
+
+    .comment {
+        font-size: 1.5rem;
+    }
+
+    .comment-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        h1, p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    /* Circle progress container */
+
+    .progress-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10%;
+    }
+
+    [role="progressbar"] {
+        --size: 350px;
+    }
+
+    .progress-label {
+        font-size: 3rem;
+        margin: 10% 0;
+    }
+
+    /* E-books section and it's elements */
+
+    .ebook-container {
+        padding: 15% 0 15% 0;
+        h1 {
+            margin: 5% 0;
+        }
+    }
+
+    .card-wrapper {
+        width: 95%;
+    }
+
+    .ebook-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        img {
+            width: 450px;
+            margin: 5% 0 5% 0;
+        }
+        p {
+            max-width: 700px;
+        }
+    }
+
+    /* Payment section and it's elements */
+
+    .payment-container {
+        padding: 10% 0 10% 0;
+    }
+
+    .payment {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        img {
+            order: 1;
+            width: 500px;
+            margin: 5% 0 5% 0;
+        }
+        h1 {
+            order: 2;
+        }
+    }
+
+    /* Work with us section and it's elements */
+
+    .work-container {
+        padding: 10% 0 10% 0;
+    }
+
+    .worker {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        img {
+            width: 500px;
+            order: 1;
+            margin: 10% 0 10% 0;
+        }
+        h1 {
+            order: 2;
+        }
+        p {
+            max-width: 600px;
+        }
+    }
+
+    /* About button */
+
+    .about-button {
+        width: 300px;
+        height: 80px;
+        font-size: 1.8rem; 
+    }
+    
 }
 
+/* Devtools: 360x640 */
 @media screen and (max-width: 480px) {
 
-    /* Remoe horizontal overflow */
-
+    /* Remove horizontal scroll */
+    
     html, body {
         overflow-x: hidden;
     }
@@ -626,7 +1108,7 @@ hr {
         justify-content: center;
         text-align: center;
         img {
-            width: 250px;
+            width: 300px;
             order: 1;
             margin: 10% 0 10% 0;
         }
@@ -641,246 +1123,7 @@ hr {
     /* About button */
 
     .about-button {
-        width: 190px;
-        height: 60px;
-        font-size: 1.2rem; 
-    }/* Remoe horizontal overflow */
-
-    html, body {
-        overflow-x: hidden;
-    }
-    
-    /* Fonts */
-
-    h1 {
-        font-size: 1.2rem;
-    }
-
-    h2 {
-        font-size: 1rem;
-    }
-
-    p {
-        font-size: 0.9rem;
-    }
-
-    /* Top banner and it's elements */
-
-    .top-banner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .banner-text-container {
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        max-width: 100%;
-        margin: 0 0 10% 0;
-        order: 2;
-        h1 {
-            max-width: 95%;
-        }
-        p {
-            margin-top: 2%;
-            max-width: 95%;
-            padding-left: 5%;
-        }
-    }
-
-    .banner-image-container {
-        margin-top: 15%;
-        img {
-            width: 400px;
-            height: 400px;
-            order: 1;
-        }
-    }
-
-    .create-account-button {
-        width: 210px;
-        height: 60px;
-       font-size: 1rem; 
-    }
-
-    /* Multiplataform section and it's elements */
-
-    .multiplataform-container {
-        padding: 10% 0 10% 0;
-    }
-
-    .multiplataform-banner {
-        display: flex;
-        flex-direction: column;
-        h1 {
-            order: 2;
-        }
-        img {
-            margin: 5% 0 5% 0;
-            width: 250px;
-            order: 1;
-        }
-    }
-
-    /* Courses section and it's elements */
-
-    .ebooks-container {
-        display: flex;
-        flex-direction: column;
-        padding: 5% 0;
-    }
-
-    .courses-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        padding-bottom: 10%;
-    }
-
-    .card {
-        width: 250px;
-        height: 300px;
-    }
-
-    /* Feedback section and it's elements */
-
-    #feedback {
-        padding: 5% 0;
-    }
-
-    .vertical-bar {
-        display: none;
-    }
-
-    .user-comment {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-    }
-
-    .user-name {
-        font-size: 1rem;
-    }
-
-    .comment {
-        font-size: 0.8rem;
-    }
-
-    .comment-content {
-        text-align: center;
-        h1, p {
-            margin: 0;
-            padding: 0;
-            max-width: 300px;
-        }
-    }
-
-    /* Circle progress container */
-
-    .progress-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-top: 10%;
-    }
-
-    [role="progressbar"] {
-        --size: 200px;
-    }
-
-    .progress-label {
-        font-size: 1.5rem;
-        margin: 10% 0;
-    }
-
-    /* E-books section and it's elements */
-
-    .ebook-container {
-        padding: 15% 0 15% 0;
-        h1 {
-            margin: 5% 0;
-        }
-    }
-
-    .card-wrapper {
-        width: 95%;
-    }
-
-    .ebook-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        img {
-            width: 250px;
-            height: 250px;
-            margin: 5% 0 5% 0;
-        }
-        p {
-            max-width: 300px;
-        }
-    }
-
-    /* Payment container and it's elements */
-
-    .payment-container {
-        padding: 10% 0 10% 0;
-    }
-
-    .payment {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        img {
-            order: 1;
-            width: 250px;
-            margin: 5% 0 5% 0;
-        }
-        h1 {
-            order: 2;
-        }
-    }
-
-    /* Work with us section and it's elements */
-
-    .work-container {
-        padding: 10% 0 10% 0;
-    }
-
-    .worker {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        img {
-            width: 250px;
-            order: 1;
-            margin: 10% 0 10% 0;
-        }
-        h1 {
-            order: 2;
-        }
-        p {
-            max-width: 300px;
-        }
-    }
-
-    /* About button */
-
-    .about-button {
-        width: 190px;
+        width: 200px;
         height: 60px;
         font-size: 1.2rem; 
     }
