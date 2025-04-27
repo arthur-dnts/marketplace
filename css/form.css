@@ -284,3 +284,479 @@ hr {
         text-decoration: none;
     }
 }
+
+/* Media queries */
+
+/* Devtools: 1366x768 */
+@media screen and (max-width: 1366px) {
+        
+    /* Remove horizontal scroll */
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Fonts */
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Background decorations */
+
+    .bottom-decoration-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .bottom-decoration-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .bottom-decoration-shadow {
+        width: 400px;
+        height: 400px;
+    }
+
+    .bottom-decoration-sub-shadow {
+        width: 500px;
+        height: 500px;
+    }   
+    
+    .top-decoration-container {
+        width: 100px;
+        height: 200px;
+    }
+
+    .top-decoration-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .top-decoration-shadow {
+        width: 400px;
+        height: 400px;
+    }
+
+    /* Centralize form login */
+
+    #form-login {
+        margin-top: 15%;
+    }
+
+    /* Form */
+
+    .form-container {
+        gap: 10%;
+        padding-top: 2%;
+    }
+
+    .form {
+        padding: 3%;
+    }
+
+    .text-description {
+        max-width: 600px;
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+
+    .text-header {
+        img {
+            width: 50px;
+        }
+    }
+
+    .form-header {
+        padding: 2%;
+    }
+
+    .confirm-button {
+        margin-top: 5%;
+    }
+
+}
+
+/* Devtools: 1024x768 */
+@media screen and (max-width: 1024px) {
+    
+    /* Remove horizontal scroll */
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Fonts */
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Background decorations */
+
+    .bottom-decoration-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .bottom-decoration-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .bottom-decoration-shadow {
+        width: 400px;
+        height: 400px;
+    }
+
+    .bottom-decoration-sub-shadow {
+        width: 500px;
+        height: 500px;
+    }   
+    
+    .top-decoration-container {
+        width: 100px;
+        height: 200px;
+    }
+
+    .top-decoration-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .top-decoration-shadow {
+        width: 400px;
+        height: 400px;
+    }
+
+    /* Centralize form login */
+
+    #form-login {
+        margin-top: 15%;
+    }
+
+    /* Form */
+
+    .form-container {
+        gap: 15%;
+        padding-top: 3%;
+    }
+
+    .form {
+        padding: 3%;
+    }
+
+    .text-description {
+        max-width: 400px;
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+
+    .text-header {
+        img {
+            width: 50px;
+        }
+    }
+
+    .form-header {
+        padding: 2%;
+    }
+
+    .confirm-button {
+        margin-top: 5%;
+    }
+
+}
+
+/* Devtools: 768x1024 */
+@media screen and (max-width: 768px) {
+        
+    /* Remove horizontal scroll */
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Fonts */
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Background decorations */
+
+    .bottom-decoration-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .bottom-decoration-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .bottom-decoration-shadow {
+        width: 300px;
+        height: 300px;
+    }
+
+    .bottom-decoration-sub-shadow {
+        width: 350px;
+        height: 350px;
+    }   
+    
+    .top-decoration-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .top-decoration-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .top-decoration-shadow {
+        width: 300px;
+        height: 300px;
+    }
+
+    /* Centralize form login */
+
+    #form-login {
+        margin-top: 30%;
+    }
+
+    /* Form */
+
+    .form-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .text-description, .text-header {
+        display: none;
+    }
+
+    .text-header {
+        img {
+            width: 40px;
+        }
+    }
+
+    .form {
+        padding: 5%;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+    }
+
+    .form-header {
+        padding-bottom: 2%;
+    }
+
+    .form-input,
+    .confirm-button {
+        width: 100%;
+        max-width: 450px;
+        height: 60px;
+        font-size: 1.5rem;
+        border-radius: 8px;
+    }
+
+    .confirm-button {
+        height: 70px;
+        font-size: 2rem;
+        margin-top: 10%;
+    }
+
+    .form-description,
+    .form-bottom,
+    .forget-password {
+        max-width: 450px;
+        font-size: 1.5rem;
+    }
+  
+    .prefix {
+        left: 5%;
+        top: 30%;
+        gap: 5px;
+        font-size: 1.5rem;
+        img {
+            width: 32px;
+        }
+    }
+
+    #telefone-input {
+        text-indent: 100px;
+    } 
+
+    .password-container {
+        input {
+            width: 425px;
+        }
+    }
+
+    .show-password {
+        width: 32px;
+        height: 32px;
+        left: 125%;
+    }
+    
+}
+
+/* Devtools: 360x640 */
+@media screen and (max-width: 480px) {
+    
+    /* Remove horizontal scroll */
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Fonts */
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    /* Background decorations */
+
+    .bottom-decoration-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .bottom-decoration-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .bottom-decoration-shadow {
+        width: 200px;
+        height: 200px;
+    }
+
+    .bottom-decoration-sub-shadow {
+        display: none;
+    }   
+    
+    .top-decoration-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .top-decoration-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .top-decoration-shadow {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Centralize form login */
+
+    #form-login {
+        margin-top: 40%;
+    }
+
+    /* Form */
+
+    .form-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .text-description, .text-header {
+        display: none;
+    }
+
+    .text-header {
+        img {
+            width: 40px;
+        }
+    }
+
+    .form {
+        padding: 8%;
+        width: 100%;
+        max-width: 320px;
+        border-radius: 8px;
+    }
+
+    .form-header {
+        padding-bottom: 2%;
+    }
+
+    .form-input,
+    .confirm-button {
+        width: 100%;
+        max-width: 280px;
+        height: 40px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+
+    .confirm-button {
+        height: 50px;
+        font-size: 1.2rem;
+        margin-top: 10%;
+    }
+
+    .form-description,
+    .form-bottom,
+    .forget-password {
+        font-size: 0.8rem;
+    }
+  
+    .prefix {
+        left: 8%;
+        top: 33%;
+        gap: 5px;
+        font-size: 0.9rem;
+        img {
+            width: 20px;
+        }
+    }
+
+    #telefone-input {
+        text-indent: 70px;
+    }
+
+    .show-password {
+        width: 20px;
+        height: 20px;
+        right: 5%;
+    }
+    
+}

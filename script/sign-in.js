@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
         icone.addEventListener('click', () => {
             if (inputSenha.type === 'password') {
                 inputSenha.type = 'text';
-                icone.src = '/assets/svg/static/eye-open.svg';
+                icone.src = '../../assets/svg/static/form/eye-open.svg';
             } else {
                 inputSenha.type = 'password';
-                icone.src = '/assets/svg/static/eye-closed.svg';
+                icone.src = '../../assets/svg/static/form/eye-closed.svg';
             }
         });
     });
