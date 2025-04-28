@@ -1,57 +1,77 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "api/auth/register.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "api/auth/login.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "api/user/[id].js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "index.html",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "pages/**/*",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "assets/**/*",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "css/**/*",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "script/**/*",
-            "use": "@vercel/static"
-        }
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "api/auth/register.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "api/auth/login.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "api/user/[id].js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "index.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "pages/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "assets/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "css/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "script/**/*",
+        "use": "@vercel/static"
+      }
     ],
     "routes": [
-        {
-            "src": "/auth/register",
-            "dest": "/api/auth/register.js",
-            "methods": ["POST"]
-        },
-        {
-            "src": "/auth/login",
-            "dest": "/api/auth/login.js",
-            "methods": ["POST"]
-        },
-        {
-            "src": "/user/(.*)",
-            "dest": "/api/user/[id].js"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/$1"
-        }
+      {
+        "src": "/auth/register",
+        "dest": "/api/auth/register.js",
+        "methods": ["POST"]
+      },
+      {
+        "src": "/auth/login",
+        "dest": "/api/auth/login.js",
+        "methods": ["POST"]
+      },
+      {
+        "src": "/user/(.*)",
+        "dest": "/api/user/[id].js"
+      },
+      {
+        "src": "/css/(.*)",
+        "dest": "/css/$1"
+      },
+      {
+        "src": "/script/(.*)",
+        "dest": "/script/$1"
+      },
+      {
+        "src": "/assets/(.*)",
+        "dest": "/assets/$1"
+      },
+      {
+        "src": "/pages/(.*)",
+        "dest": "/pages/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.js"
+      }
     ]
 }
