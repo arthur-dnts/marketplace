@@ -56,14 +56,26 @@
     },
     {
       "src": "/log-in",
-      "dest": "/api/auth/login.js",
+      "dest": "/api/auth/login",
       "methods": ["POST"], 
       "status": 200
     },
     {
       "src": "/sign-in",
-      "dest": "/api/auth/register.js",
+      "dest": "/api/auth/register",
       "methods": ["POST"], 
+      "status": 200
+    },
+    {
+      "src": "/log-in",
+      "dest": "/pages/log-in.html",
+      "methods": ["GET"],
+      "status": 200
+    },
+    {
+      "src": "/sign-in",
+      "dest": "/pages/sign-in.html",
+      "methods": ["GET"],
       "status": 200
     }
   ]
