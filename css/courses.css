@@ -168,7 +168,7 @@ hr {
 }
 
 .header {
-    width: 90%;
+    width: 105%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -306,25 +306,6 @@ hr {
     background-color: rgba(128, 128, 128, 0.5);
 }
 
-/* Marker and about button */
-
-.blue {
-    color: var(--color4);
-    font-weight: bold;
-    font-style: italic;
-}
-
-.about-button {
-    width: 250px;
-    height: 70px;
-    background-color: var(--color4);
-    color: var(--color1);
-    font-size: 1.5rem;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-}
-
 /* Create course section and it's elements */
 
 .create-container {
@@ -349,6 +330,25 @@ hr {
     }
 }
 
+/* Marker and about button */
+
+.blue {
+    color: var(--color4);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.about-button {
+    width: 250px;
+    height: 70px;
+    background-color: var(--color4);
+    color: var(--color1);
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
 /* Media queries */
 
 /* Devtools: 1366x768 */
@@ -363,7 +363,186 @@ hr {
 
 /* Devtools: 768x1024 */
 @media screen and (max-width: 768px) {
+        /* Remove horizontal scroll */
 
+        html, body {
+            overflow-x: hidden;
+        }
+    
+        /* Fonts */
+    
+        h1 {
+            font-size: 1.5rem;
+        }
+    
+        p {
+            font-size: 1rem;
+        }
+    
+        /* Top banner section and it's elements */
+    
+        .banner {
+            flex-direction: column;
+            text-align: center;
+            margin: 20% 0 5% 0;
+        }
+    
+        .banner-text-container {
+            order: 2;
+            max-width: 100%;
+            p {
+                max-width: 85%;
+                margin: 0 auto;
+            }
+        }
+    
+        .banner-image-container {
+            order: 1;
+            img {
+                max-width: 90%;
+                height: auto;
+                max-height: 300px;
+            }
+        }
+    
+        .search-bar {
+            align-items: center;
+            justify-content: center;
+            margin-top: 5%;
+        }
+    
+        .search-input {
+            max-width: 300px;
+            height: 40px;
+            font-size: 1rem;
+        }
+    
+        .search-icon {
+            width: 30px !important;
+            padding: 6px;
+            right: 5px;
+        }
+    
+        /* Courses categories section and it's elements */
+    
+        .categories-container {
+            flex-direction: column;
+            padding: 10% 0 10% 0;
+        }
+    
+        .categories {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            padding-top: 5%;
+        }
+    
+        .category {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: auto;
+            height: 55px;
+        }
+    
+        .category-bottom {
+            display: none;
+        }
+    
+        .more-categories {
+            margin-top: 5%;
+            font-size: 1rem;
+        }
+    
+        /* Carousel */
+    
+        .header {
+            margin-bottom: 5;
+            h2 {
+                font-size: 1.5rem;
+            }
+            button {
+                display: none;
+            }
+        }
+    
+        .carousel {
+            width: 80%;
+            height: auto;
+        }
+    
+        .card {
+            width: 100%;
+            max-width: 300px;
+            height: 400px;
+            h2 {
+                font-size: 1.2rem;
+            }
+            h3 {
+                font-size: 0.9rem;
+            }
+        }
+    
+        .last-card {
+            display: none;
+        }
+    
+        .group {
+            animation: none;
+            flex-direction: column;
+            gap: 20px;
+        }
+    
+        /* Best sellers section and it's elements */
+    
+        .best-sellers-container {
+            padding: 10% 0 15% 0;
+        }
+    
+        .header {
+            margin-bottom: 5%;
+        }
+    
+        .best-sellers-top, .best-sellers-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    
+        .best-seller-card {
+            width: 160px;
+            height: 160px !important;
+            max-width: 280px;
+            height: 200px;
+            margin: 5px;
+        }
+    
+        /* Create course section and it's elements*/
+    
+        .create-container {
+            padding: 10% 0 10% 0;
+        }
+    
+        .banner {
+            flex-direction: column;
+            img {
+                width: 340px;
+            }
+        }
+    
+        .banner-text {
+            padding-top: 5%;
+        }
+    
+        /* About button */
+        .more-button {
+            width: 200px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
 }
 
 /* Devtools: 360x640 */

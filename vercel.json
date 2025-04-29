@@ -39,39 +39,10 @@
     }
   ],
   "routes": [
-    {
-      "src": "/auth/register",
-      "dest": "/api/auth/register.js",
-      "methods": ["POST"]
-    },
-    {
-      "src": "/auth/login",
-      "dest": "/api/auth/login.js",
-      "methods": ["POST"]
-    },
-    {
-      "src": "/user/(.*)",
-      "dest": "/api/user/[id].js"
-    },
-    {
-      "src": "/css/(.*)",
-      "dest": "/css/$1"
-    },
-    {
-      "src": "/script/(.*)",
-      "dest": "/script/$1"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/pages/(.*)",
-      "dest": "/pages/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.js"
-    }
+    { "src": "/cursos", "dest": "/pages/courses.html", "status": 200 },
+    { "src": "/ebooks", "dest": "index.html", "status": 200 },
+    { "src": "/produtos", "dest": "/pages/products.html", "status": 200 },
+    { "src": "/log-in", "dest": "/pages/log-in.html", "status": 200 },
+    { "src": "/sign-in", "dest": "/pages/sign-in.html", "status": 200 }
   ]
 }
