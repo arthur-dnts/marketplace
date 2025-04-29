@@ -1,6 +1,6 @@
 async function renderFooter() {
     try {
-        const response = await fetch('script/templates/footer/footer.hbs');
+        const response = await fetch('/script/templates/footer/footer.hbs');
         if (!response.ok) throw new Error('Falha ao carregar footer.hbs');
         const templateText = await response.text();
         const footerTemplate = Handlebars.compile(templateText);
