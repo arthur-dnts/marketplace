@@ -42,7 +42,7 @@
     { "src": "/cursos", "dest": "/pages/courses.html", "status": 200 },
     { "src": "/ebooks", "dest": "index.html", "status": 200 },
     { "src": "/produtos", "dest": "/pages/products.html", "status": 200 },
-    { "src": "/log-in", "dest": "/pages/log-in.html", "status": 200 },
-    { "src": "/sign-in", "dest": "/pages/sign-in.html", "status": 200 }
+    { "src": "/log-in", "dest": "/pages/log-in.html", "methods": ["POST"], "status": 200 },
+    { "src": "/sign-in", "dest": "/pages/sign-in.html", "methods": ["POST"], "status": 200 }
   ]
 }
