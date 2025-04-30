@@ -144,16 +144,9 @@ hr {
 }
 
 .more-categories {
-    background: none;
-    border: none;
-    color: var(--color4);
-    font-size: 1.2rem;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.more-categories:hover {
-    text-decoration: underline;
+    width: 280px;
+    font-size: 1rem;
+    margin-top: 2%;
 }
 
 /* Top courses section and it's elements */
@@ -254,24 +247,8 @@ hr {
     color: #f1c40f;
 }
 
-.more-button {
-    width: 250px;
-    height: 60px;
-    background: none;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    color: var(--color4);
-    cursor: pointer;
-    transition: .2s ease-in-out;
-}
 
-.more-button:hover {
-    background-color: var(--color4);
-    color: var(--color1);
-}
-
-/* Best sellers courses container */
+/* Best sellers courses section and it's elements */
 
 #best-sellers {
     background-color: var(--color2);
@@ -315,7 +292,7 @@ hr {
     padding: 5% 0 5% 0;
 }
 
-.banner {
+.create-banner {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -349,200 +326,451 @@ hr {
     cursor: pointer;
 }
 
+.more-button, .more-categories {
+    height: 60px;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: var(--color4);
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.more-button:hover, .more-categories:hover {
+    background-color: var(--color4);
+    color: var(--color1);
+}
+
 /* Media queries */
 
 /* Devtools: 1366x768 */
 @media screen and (max-width: 1366px) {
+            
+    /* Fonts */
+
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Top banner section and it's elements */
+
+    .banner {
+        height: 650px;
+        max-height: 650px;
+        gap: 5%;
+        padding: 0;
+    }
+
+    .banner-text-container {
+        p {
+            max-width: 600px;
+        }
+    }
+
+    .banner-image {
+        width: 600px !important;
+        height: 600px !important;
+    }
+
+    .search-input {
+        width: 600px;
+    }
+
+    .search-icon {
+        right: 5px;
+        top: 22px;
+    }
+
+    /* Courses categories section and it's elements */
+
+    .category {
+        height: 80px;
+        font-size: 1.5rem;
+    }
+
+    /* Top courses section and it's elements */
+
+    .header {
+        width: 95%;
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .more-button {
+        width: 250px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .carousel {
+        width: 80%;
+        height: auto;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        height: 400px;
+        h2 {
+            font-size: 1.5rem;
+        }
+        h3 {
+            font-size: 1rem;
+        }
+    }
+
+    @keyframes scrolling {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-1 * (300px + 20px) * 3));
+        }
+    }
+
+    /* Best sellers courses section and it's elements */
+
+    .best-seller-card {
+        width: 260px;
+        height: 260px;
+        margin: 5px;
+    }
+
+    /* Create course section and it's elements */
+
+    .create-banner {
+        img {
+            width: 600px;
+        }
+        p {
+            max-width: 400px;
+        }
+    }
 
 }
 
 /* Devtools: 1024x768 */
 @media screen and (max-width: 1024px) {
+        
+    /* Fonts */
+
+    h1 {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+
+    /* Top banner section and it's elements */
+
+    .banner {
+        height: 550px;
+        max-height: 550px;
+        gap: 10%;
+        padding: 0;
+    }
+
+    .banner-text-container {
+        p {
+            max-width: 350px;
+        }
+    }
+
+    .banner-image {
+        width: 500px !important;
+        height: 400px !important;
+    }
+
+    .search-input {
+        width: 350px;
+    }
+
+    .search-icon {
+        right: 5px;
+    }
+
+    /* Courses categories section and it's elements */
+
+    .category {
+        height: 70px;
+        font-size: 1.2rem;
+    }
+
+    /* Top courses section and it's elements */
+
+    .header {
+        width: 85%;
+        h2 {
+            font-size: 1.7rem;
+        }
+    }
+
+    .more-button {
+        width: 200px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .carousel {
+        width: 80%;
+        height: auto;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        height: 400px;
+        h2 {
+            font-size: 1.5rem;
+        }
+        h3 {
+            font-size: 1rem;
+        }
+    }
+
+    @keyframes scrolling {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-1 * (300px + 20px) * 3));
+        }
+    }
+
+    /* Best sellers courses section and it's elements */
+
+    .best-seller-card {
+        width: 200px;
+        height: 200px;
+        margin: 5px;
+    }
+
+    /* Create course section and it's elements */
+
+    .create-banner {
+        img {
+            width: 550px;
+        }
+        p {
+            max-width: 350px;
+        }
+    }
 
 }
 
 /* Devtools: 768x1024 */
 @media screen and (max-width: 768px) {
-        /* Remove horizontal scroll */
 
-        html, body {
-            overflow-x: hidden;
-        }
+    /* Remove horizontal scroll */
     
-        /* Fonts */
+    html, body {
+        overflow-x: hidden;
+    }
     
-        h1 {
-            font-size: 1.5rem;
-        }
+    /* Fonts */
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
     
+    /* Top banner section and it's elements */
+
+    .banner {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 20% 0 20% 0;
+        gap: 0;
+    }
+
+    .banner-text-container {
+        order: 2;
+        max-width: 100%;
         p {
-            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
-    
-        /* Top banner section and it's elements */
-    
-        .banner {
-            flex-direction: column;
-            text-align: center;
-            margin: 20% 0 5% 0;
+    }
+
+    .banner-image-container {
+        order: 1;
+    }
+
+    .banner-image {
+        max-width: 100%;
+        height: auto;
+        max-height: 500px;
+    }
+
+    .search-bar {
+        align-items: center;
+        justify-content: center;
+        margin-top: 5%;
+    }
+
+    .search-input {
+        width: 600px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .search-icon {
+        width: 40px;
+        padding: 6px;
+        right: 5px;
+        top: 24px;
+    }
+
+    /* Courses categories section and it's elements */
+
+    .categories-container {
+        flex-direction: column;
+        padding: 10% 0 10% 0;
+    }
+
+    .categories {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        padding-top: 5%;
+    }
+
+    .category {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: auto;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+
+    .category-bottom {
+        display: none;
+    }
+
+    .more-categories {
+        margin-top: 5%;
+        font-size: 1.5rem;
+    }
+
+    /* Top courses section and it's elements */
+
+    .header {
+        margin-bottom: 5;
+        h2 {
+            font-size: 2.5rem;
         }
-    
-        .banner-text-container {
-            order: 2;
-            max-width: 100%;
-            p {
-                max-width: 85%;
-                margin: 0 auto;
-            }
-        }
-    
-        .banner-image-container {
-            order: 1;
-            img {
-                max-width: 90%;
-                height: auto;
-                max-height: 300px;
-            }
-        }
-    
-        .search-bar {
-            align-items: center;
-            justify-content: center;
-            margin-top: 5%;
-        }
-    
-        .search-input {
-            max-width: 300px;
-            height: 40px;
-            font-size: 1rem;
-        }
-    
-        .search-icon {
-            width: 30px !important;
-            padding: 6px;
-            right: 5px;
-        }
-    
-        /* Courses categories section and it's elements */
-    
-        .categories-container {
-            flex-direction: column;
-            padding: 10% 0 10% 0;
-        }
-    
-        .categories {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: 10px;
-            padding-top: 5%;
-        }
-    
-        .category {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: auto;
-            height: 55px;
-        }
-    
-        .category-bottom {
+        button {
             display: none;
         }
-    
-        .more-categories {
-            margin-top: 5%;
-            font-size: 1rem;
+    }
+
+    .carousel {
+        height: auto;
+    }
+
+    .group {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        height: 450px;
+        h2 {
+            font-size: 1.8rem;
         }
-    
-        /* Carousel */
-    
-        .header {
-            margin-bottom: 5;
-            h2 {
-                font-size: 1.5rem;
-            }
-            button {
-                display: none;
-            }
+        h3 {
+            font-size: 1.3rem;
         }
-    
-        .carousel {
-            width: 80%;
-            height: auto;
+    }
+
+    .rating {
+        font-size: 1rem
+    }
+
+    .last-card {
+        display: none;
+    }
+
+    .group {
+        animation: none;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Best sellers section and it's elements */
+
+    .best-sellers-container {
+        padding: 10% 0 15% 0;
+    }
+
+    .header {
+        margin-bottom: 5%;
+    }
+
+    .best-sellers-top, .best-sellers-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .best-seller-card {
+        width: 300px;
+        height: 350px !important;
+        max-width: 400px;
+        height: 200px;
+        margin: 10px;
+    }
+
+    /* Create course section and it's elements*/
+
+    .create-container {
+        padding: 10% 0 10% 0;
+        h1 {
+            margin-bottom: 2%;
         }
-    
-        .card {
-            width: 100%;
-            max-width: 300px;
-            height: 400px;
-            h2 {
-                font-size: 1.2rem;
-            }
-            h3 {
-                font-size: 0.9rem;
-            }
+    }
+
+    .create-banner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        img {
+            width: 600px;
         }
-    
-        .last-card {
-            display: none;
+        p {
+            max-width: 600px;
         }
-    
-        .group {
-            animation: none;
-            flex-direction: column;
-            gap: 20px;
-        }
-    
-        /* Best sellers section and it's elements */
-    
-        .best-sellers-container {
-            padding: 10% 0 15% 0;
-        }
-    
-        .header {
-            margin-bottom: 5%;
-        }
-    
-        .best-sellers-top, .best-sellers-bottom {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-    
-        .best-seller-card {
-            width: 160px;
-            height: 160px !important;
-            max-width: 280px;
-            height: 200px;
-            margin: 5px;
-        }
-    
-        /* Create course section and it's elements*/
-    
-        .create-container {
-            padding: 10% 0 10% 0;
-        }
-    
-        .banner {
-            flex-direction: column;
-            img {
-                width: 340px;
-            }
-        }
-    
-        .banner-text {
-            padding-top: 5%;
-        }
-    
-        /* About button */
-        .more-button {
-            width: 200px;
-            height: 50px;
-            font-size: 1.2rem;
-        }
+    }
+
+    .banner-text {
+        padding-top: 5%;
+    }
+
+    /* About button */
+
+    .about-button {
+        width: 270px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
 }
 
 /* Devtools: 360x640 */
@@ -566,9 +794,11 @@ hr {
     /* Top banner section and it's elements */
 
     .banner {
+        display: flex;
         flex-direction: column;
         text-align: center;
-        margin: 20% 0 5% 0;
+        margin: 10% 0 10% 0;
+        gap: 0;
     }
 
     .banner-text-container {
@@ -582,11 +812,12 @@ hr {
 
     .banner-image-container {
         order: 1;
-        img {
-            max-width: 90%;
-            height: auto;
-            max-height: 300px;
-        }
+    }
+
+    .banner-image {
+        max-width: 90%;
+        height: auto;
+        max-height: 300px;
     }
 
     .search-bar {
@@ -596,7 +827,7 @@ hr {
     }
 
     .search-input {
-        max-width: 300px;
+        width: 300px;
         height: 40px;
         font-size: 1rem;
     }
@@ -631,6 +862,7 @@ hr {
         text-align: center;
         width: auto;
         height: 55px;
+        font-size: 1rem;
     }
 
     .category-bottom {
@@ -642,7 +874,14 @@ hr {
         font-size: 1rem;
     }
 
-    /* Carousel */
+    /* Top courses section and it's elements */
+    
+    .top-courses {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
     .header {
         margin-bottom: 5;
@@ -676,8 +915,9 @@ hr {
     }
 
     .group {
-        animation: none;
+        display: flex;
         flex-direction: column;
+        animation: none;
         gap: 20px;
     }
 
@@ -708,9 +948,12 @@ hr {
 
     .create-container {
         padding: 10% 0 10% 0;
+        h1 {
+            margin-bottom: 2%;
+        }
     }
 
-    .banner {
+    .create-banner {
         flex-direction: column;
         img {
             width: 340px;
@@ -718,13 +961,17 @@ hr {
     }
 
     .banner-text {
-        padding-top: 5%;
+        p {
+            max-width: 350px;
+            font-size: 1rem;
+        }
     }
 
     /* About button */
-    .more-button {
+    .about-button {
         width: 200px;
-        height: 50px;
-        font-size: 1.2rem;
+        height: 60px;
+        font-size: 1.5rem;
     }
+
 }
