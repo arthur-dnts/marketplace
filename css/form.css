@@ -634,54 +634,28 @@ hr {
         overflow-x: hidden;
     }
 
+    body {
+        background-color: var(--color1);
+    }
+
     /* Fonts */
 
     h1 {
         font-size: 1.5rem;
     }
 
-    h2 {
-        font-size: 1.2rem;
-    }
-
     p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     /* Background decorations */
 
-    .bottom-decoration-container {
-        width: 100px;
-        height: 100px;
-    }
-
-    .bottom-decoration-circle {
-        width: 150px;
-        height: 150px;
-    }
-
-    .bottom-decoration-shadow {
-        width: 200px;
-        height: 200px;
-    }
-
-    .bottom-decoration-sub-shadow {
+    .bottom-decoration-container, .bottom-decoration-circle, .bottom-decoration-shadow, .bottom-decoration-sub-shadow {
         display: none;
-    }   
-    
-    .top-decoration-container {
-        width: 100px;
-        height: 100px;
     }
 
-    .top-decoration-circle {
-        width: 150px;
-        height: 150px;
-    }
-
-    .top-decoration-shadow {
-        width: 200px;
-        height: 200px;
+    .top-decoration-container, .top-decoration-circle, .top-decoration-shadow, .bottom-decoration-circle {
+        display: none;
     }
 
     /* Centralize form login */
@@ -694,7 +668,9 @@ hr {
 
     .form-container {
         flex-direction: column;
-        gap: 5px;
+        gap: 0;
+        padding: 0;
+        height: 100%;
     }
 
     .text-description, .text-header {
@@ -708,10 +684,10 @@ hr {
     }
 
     .form {
-        padding: 8%;
+        padding: 5%;
         width: 100%;
         max-width: 320px;
-        border-radius: 8px;
+        border: none;
     }
 
     .form-header {
