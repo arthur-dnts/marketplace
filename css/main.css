@@ -918,6 +918,8 @@ hr {
     }
 
     .banner-text-container {
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -925,7 +927,7 @@ hr {
         margin: 0 0 10% 0;
         order: 2;
         p {
-            max-width: 500px;
+            max-width: 350px;
             margin-top: 10px;
             padding: 0;
         }
@@ -989,6 +991,10 @@ hr {
 
     #feedback {
         padding: 5% 0;
+    }
+
+    .ebooks-header {
+        margin-bottom: 5%;
     }
 
     .vertical-bar {
