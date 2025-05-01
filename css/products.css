@@ -170,9 +170,9 @@ hr {
 }
 
 .sell-container {
-    text-align: center;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 5% 0 5% 0;
 }
 
@@ -212,4 +212,420 @@ hr {
     border-radius: 10px;
     border: none;
     cursor: pointer;
+}
+
+/* Media queries */
+
+/* Devtools: 1366x768 */
+@media screen and (max-width: 1366px) {
+        
+    /* Fonts */
+
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Products section and it's elements */
+
+    .top-banner {
+        margin: 10% 0 5% 0;
+        gap: 5%;
+    }
+
+    .banner-text-container {
+        max-width: 600px;
+    }
+
+    .banner-image-container {
+        img {
+            width: 600px;
+            height: 600px;
+        }
+    }
+
+    /* Featured products section and it's elements */
+
+    .header {
+        width: 95%;
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
+    .more-button {
+        width: 250px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .featured-card {
+        max-width: 270px;
+        height: 270px;
+        h2 {
+            font-size: 1.5rem;
+        }
+        h3 {
+            font-size: 1rem;
+        }
+    
+    }
+
+    /* Shipping section and it's elements */
+
+    .shipping-banner-image {
+        img {
+            width: 750px;
+        }
+    }
+
+    /* Sell product section and it's elements */
+
+    .sell-banner {
+        gap: 5%;
+    }
+
+    .sell-banner-image {
+        width: auto;
+        img {
+            width: 600px;
+        }
+    }
+
+}
+
+/* Devtools: 1024x768 */
+@media screen and (max-width: 1024px) {
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+
+    /* Products section and it's elements */
+
+    .top-banner {
+        margin: 10% 0 5% 0;
+        gap: 5%;
+    }
+
+    .banner-text-container {
+        max-width: 400px;
+    }
+
+    .banner-image-container {
+        img {
+            width: 400px;
+            height: 400px;
+        }
+    }
+
+    /* Featured products section and it's elements */
+
+    .header {
+        width: 85%;
+        h2 {
+            font-size: 1.7rem;
+        }
+    }
+
+    .more-button {
+        width: 200px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .featured-card {
+        width: 200px;
+        height: 200px;
+        margin: 0px;
+    }
+
+    /* Shipping section and it's elements */
+
+    .shipping-banner-image {
+        img {
+            width: 550px;
+        }
+    }
+
+    /* Sell product section and it's elements */
+
+    .sell-banner {
+        gap: 5%;
+    }
+
+    .sell-banner-image {
+        width: auto;
+        img {
+            width: 400px;
+        }
+    }
+
+}
+
+/* Devtools: 768x1024 */
+@media screen and (max-width: 768px) {
+
+    /* Remove horizontal scroll */
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Products section and it's elements */
+
+    .top-banner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20% 0 10% 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .banner-text-container {
+        max-width: 100%;
+        order: 2;
+    }
+
+    .banner-image-container {
+        order: 1;
+        img {
+            width: 600px;
+            height: 600px;
+        }
+    }
+
+    /* Featured products section and it's elements */
+
+    .featured-container {
+        padding: 10% 0 10% 0;
+        height: auto;
+    }
+
+    .header {
+        margin-bottom: 5;
+        h2 {
+            font-size: 2.5rem;
+        }
+        button {
+            display: none;
+        }
+    }
+
+    .featured-top, .featured-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .featured-card {
+        width: 300px;
+        height: 350px !important;
+        max-width: 400px;
+        height: 200px;
+        margin: 5px;
+    }
+
+    /* Shipping section and it's elements */
+
+    .shipping-container {
+        padding: 10% 0 10% 0;
+    }
+
+    .shipping-banner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .shipping-banner-image {
+        margin-bottom: 5%;
+        img {
+            width: 700px;
+        }
+    }
+
+    /* Sell product section and it's elements */
+
+    .sell-container {
+        padding: 10% 0 10% 0;
+    }
+
+    .sell-banner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .sell-banner-image {
+        order: 1;
+        margin-bottom: 5%;
+        img {
+            width: 600px;
+        }
+    }
+
+    .sell-banner-text {
+        order: 2;
+
+    }
+
+    /* About button */
+
+    .about-button {
+        width: 300px;
+        height: 80px;
+        font-size: 1.8rem; 
+    }
+
+}
+
+/* Devtools: 360x640 */
+@media screen and (max-width: 360px) {
+
+    /* Remove horizontal scroll */
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+
+    /* Products section and it's elements */
+
+    .top-banner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20% 0 10% 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .banner-text-container {
+        max-width: 100%;
+        order: 2;
+    }
+
+    .banner-image-container {
+        order: 1;
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+    /* Featured products section and it's elements */
+
+    .featured-container {
+        padding: 10% 0 10% 0;
+        height: auto;
+    }
+
+    .header {
+        margin-bottom: 5;
+        h2 {
+            font-size: 1.5rem;
+        }
+        button {
+            display: none;
+        }
+    }
+
+    .featured-top, .featured-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .featured-card {
+        width: 160px;
+        height: 160px !important;
+        max-width: 280px;
+        height: 200px;
+        margin: 0px;
+    }
+
+    /* Shipping section and it's elements */
+
+    .shipping-container {
+        padding: 10% 0 10% 0;
+    }
+
+    .shipping-banner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .shipping-banner-image {
+        margin-bottom: 5%;
+        img {
+            width: 350px;
+        }
+    }
+
+    /* Sell product section and it's elements */
+
+    .sell-container {
+        padding: 10% 0 10% 0;
+    }
+
+    .sell-banner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .sell-banner-image {
+        order: 1;
+        margin-bottom: 5%;
+        img {
+            width: 350px;
+        }
+    }
+
+    .sell-banner-text {
+        order: 2;
+
+    }
+
+    /* About button */
+
+    .about-button {
+        width: 200px;
+        height: 60px;
+        font-size: 1.2rem; 
+    }
+
 }
