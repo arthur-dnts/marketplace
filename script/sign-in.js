@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // Enviar os dados para o back-end
-            const response = await fetch("/auth/register", {
+            const response = await fetch("https://marketplace-rpch.onrender.com/auth/register", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

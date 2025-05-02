@@ -195,7 +195,7 @@ hr {
 .comment {
     margin: 5px 0;
     font-size: 1.2em;
-    max-width: 90%;
+    max-width: 400px;
     color: var(--color3);
     opacity: 70%;
     line-height: 1.5;
