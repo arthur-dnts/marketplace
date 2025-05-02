@@ -194,15 +194,6 @@ hr {
 /* Devtools: 1366x768 */
 @media screen and (max-width: 1366px) {
 
-    /* Fonts */
-
-    h1 {
-        font-size: 2rem;
-    }
-    p {
-        font-size: 1.5rem;
-    }
-
     /* Navbar */
 
     .logo-container {
@@ -238,15 +229,6 @@ hr {
 
 /* Devtools: 1024x768 */
 @media screen and (max-width: 1024px) {
-
-    /* Fonts */
-
-    h1 {
-        font-size: 1.7rem;
-    }
-    p {
-        font-size: 1.2rem;
-    }
 
     /* Navbar */
 
@@ -288,20 +270,6 @@ hr {
 
     html, body {
         overflow-x: hidden;
-    }
-
-    /* Fonts */
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-
-    p {
-        font-size: 1.5rem;
     }
 
     /* Navbar */
@@ -369,6 +337,10 @@ hr {
         }
     }
 
+    .nav-label {
+        font-size: 1.5rem;
+    }
+
     .open-menu {
         margin-left: 50%;
     }
@@ -400,16 +372,6 @@ hr {
 
     html, body {
         overflow-x: hidden;
-    }
-
-    /* Fonts */
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1rem;
     }
 
     /* Navbar */
@@ -471,10 +433,13 @@ hr {
             align-items: center;
             justify-content: center;
             text-align: center;
-            font-size: 1rem !important;
-            padding: 8px 0 !important;
+            padding: 10px 0;
             width: 100%;
         }
+    }
+
+    .nav-label {
+        font-size: 1rem !important;
     }
 
     .open-menu {
