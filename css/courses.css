@@ -17,7 +17,7 @@ body {
     --color1: #FFFFFF;
     --color2: #F7F7FF;
     --color3: #070707;
-    --color4: #0353A4;
+    --color4: #016FB9;
     background-color: var(--color1);
     font-family: "Inter", sans-serif;
 }
@@ -53,11 +53,20 @@ hr {
     align-items: center;
     justify-content: center;
     text-align: start;
+    gap: 20%;
+    padding: 10% 0 5% 0;
 }
 
 .banner-text-container {
     p {
-        max-width: 700px;
+        max-width: 600px;
+    }
+}
+
+.banner-image-container {
+    img {
+        width: 550px;
+        height: 550px;
     }
 }
 
@@ -94,7 +103,7 @@ hr {
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
     top: 50%;
-    right: 10px;
+    right: 5px;
     transform: translateY(-48%);
     opacity: 70%;
 }

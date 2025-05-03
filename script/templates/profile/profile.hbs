@@ -1,0 +1,63 @@
+<!-- Profile section -->
+<section>
+    <div class="profile-container">
+        <div class="profile">
+            <!-- Profile info card -->
+            <div class="left-column">
+                <div class="card welcome-card">
+                    <h1>Olá, {{firstName}}! 🚀</h1>
+                </div>
+                <div class="card profile-card">
+                    <img class="avatar" src="{{avatarSrc}}" alt="Avatar">
+                    <h1>{{fullName}}</h1>
+                    <p>{{email}}</p>
+                    <p>{{city}}, {{state}}</p>
+                    <button class="dark-btn">Editar</button>
+                    <button class="white-btn">Sair</button>
+                </div>
+                <div class="card medal-card">
+                    <h2>Nível: {{accountLevel}}</h2>
+                    <img class="medal" src="{{medalSrc}}" alt="Medal">
+                </div>
+            </div>
+
+            <!-- Profile data card -->
+            <div class="right-column">
+                <div class="card info-card">
+                    <div class="header">
+                        <h2>Dados pessoais</h2>
+                    </div>
+                    <p><strong>Nome:</strong> {{fullName}}</p>
+                    <p><strong>Sexo:</strong> {{gender}}</p>
+                    <p><strong>Email:</strong> {{email}}</p>
+                    <p><strong>Telefone:</strong> {{phone}}</p>
+                    <p><strong>Endereço:</strong> {{street}}, {{city}}, {{state}} - {{number}} {{complement}}</p>
+                    <button class="dark-btn">Editar</button>
+                </div>
+
+                <!-- Courses and E-books card -->
+                <div class="courses-status-row">
+                    <div class="card status-card">
+                        <div class="header">
+                            <h2>Cursos</h2>
+                        </div>
+                        {{#each courses}}
+                            <p>{{this.name}}</p>
+                            <progress value="{{this.progress}}" max="100"></progress>
+                        {{/each}}
+                    </div>
+
+                    <div class="card status-card">
+                        <div class="header">
+                            <h2>E-books</h2>
+                        </div>
+                        {{#each ebooks}}
+                            <p>{{this.name}}</p>
+                            <progress value="{{this.progress}}" max="100"></progress>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

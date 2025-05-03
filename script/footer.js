@@ -1,7 +1,7 @@
 async function renderFooter() {
     try {
-        const response = await fetch('/script/templates/footer/footer.hbs');
-        if (!response.ok) throw new Error('Falha ao carregar footer.hbs');
+        const response = await fetch("/script/templates/footer/footer.hbs");
+        if (!response.ok) throw new Error("Falha ao carregar footer.hbs");
         const templateText = await response.text();
         const footerTemplate = Handlebars.compile(templateText);
         const footerData = {
@@ -28,7 +28,7 @@ async function renderFooter() {
         };
         document.getElementById("footer").innerHTML = footerTemplate(footerData);
     } catch (error) {
-        console.error('Erro ao renderizar footer:', error);
+        console.error("Erro ao renderizar footer:", error);
     }
 }
-document.addEventListener('DOMContentLoaded', renderFooter);
+document.addEventListener("DOMContentLoaded", renderFooter);

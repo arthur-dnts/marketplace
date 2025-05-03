@@ -77,6 +77,11 @@
       "dest": "/pages/sign-in.html",
       "methods": ["GET"],
       "status": 200
+    },
+    {
+      "src": "/perfil",
+      "dest": "/pages/profile.html",
+      "status": 200
     }
   ]
 }

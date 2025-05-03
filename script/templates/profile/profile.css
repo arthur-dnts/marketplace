@@ -1,0 +1,391 @@
+/* Reset all css elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth scroll behavior */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body, colors and font-family */
+
+body {
+    --color1: #FFFFFF;
+    --color2: #F7F7FF;
+    --color3: #070707;
+    --color4: #016FB9;
+    background-color: var(--color2);
+    font-family: "Inter", sans-serif;
+}
+
+/* Fonts */
+
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin: 5px;
+}
+
+p, h1, h2 {
+    color: var(--color3);
+}
+
+hr {
+    color: var(--color1);
+    opacity: 20%;
+}
+
+/* Profile section and it's elements */
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6% 0 0 0;
+}
+
+.profile {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+    gap: 25px;
+}
+
+.avatar {
+    width: 150px;
+}
+
+.medal {
+    width: 100px;
+    margin-top: 2%;
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-column {
+    width: 100%;
+}
+  
+.right-column {
+    width: 100%;
+    padding-top: 7%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.card {
+    background: var(--color1);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.info-card {
+    text-align: start;
+}
+
+.courses-status-row {
+    display: flex;
+    gap: 20px;
+}
+
+.status-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+}
+
+progress {
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+}
+
+progress::-moz-progress-bar { background: var(--color4); }
+
+.dark-btn {
+    margin: 15px 5px 0 0;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--color4);
+    color: var(--color1);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}
+
+.white-btn {
+    margin: 15px 5px 0 0;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid var(--color4);
+    background-color: var(--color2);
+    color: var(--color4);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Media queries */
+
+/* Devtools: 1366x768 */
+@media screen and (max-width: 1366px) {
+
+    /* Fonts */
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* Profile section and it's elements */
+
+    .profile {
+        padding: 5px 0 0 0;
+    }
+
+    .medal {
+        width: 80px;
+    }
+
+    .card {
+        padding: 35px;
+    }
+
+    .left-column, .right-column {
+        gap: 10px;
+    }
+
+}
+
+/* Devtools: 1024x768 */
+@media screen and (max-width: 1024px) {
+
+    /* Fonts */
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* Profile section and it's elements */
+
+    .profile {
+        padding: 20px 0 0 0;
+    }
+
+    .medal {
+        width: 80px;
+    }
+
+    .card {
+        padding: 35px;
+    }
+
+    .left-column, .right-column {
+        gap: 10px;
+    }
+
+}
+
+/* Devtools: 768x1024 */
+@media screen and (max-width: 768px) {
+
+    /* Remove horizontal scroll */
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Profile section and it's elements */
+
+    .profile-container {
+        padding: 5% 0 5% 0;
+    }
+
+    .profile {
+        flex-direction: column;
+        align-content: center;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .avatar {
+        width: 200px;
+    }
+
+    .medal {
+        width: 150px;
+    }
+
+    .courses-status-row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .welcome-card {
+        margin-top: 10%;
+        order: 1;
+    }
+
+    .profile-card {
+        order: 2;
+    }
+
+    .medal-card {
+        order: 3;
+    }
+
+    .status-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 700px;
+        padding: 50px;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        padding: 0;
+        gap: 20px;
+    }
+
+    .right-column {
+        padding-top: 0;
+    }
+
+    .dark-btn, .white-btn {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Devtools: 360x640 */
+@media screen and (max-width: 480px) {
+
+    /* Remove horizontal scroll */
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+    }
+
+    /* Profile section and it's elements */
+
+    .profile-container {
+        padding: 10% 0 5% 0;
+    }
+
+    .profile {
+        flex-direction: column;
+        align-content: center;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .courses-status-row {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .welcome-card {
+        margin-top: 10%;
+        order: 1;
+    }
+
+    .profile-card {
+        order: 2;
+    }
+
+    .medal-card {
+        order: 3;
+    }
+
+    .status-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 330px;
+        padding: 30px;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        padding: 0;
+        gap: 10px;
+    }
+
+    .right-column {
+        padding-top: 0;
+    }
+
+}

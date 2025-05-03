@@ -17,7 +17,7 @@ body {
     --color1: #FFFFFF;
     --color2: #F7F7FF;
     --color3: #070707;
-    --color4: #0353A4;
+    --color4: #016FB9;
     background-color: var(--color1);
     font-family: "Inter", sans-serif;
 }
@@ -53,7 +53,7 @@ hr {
     align-items: center;
     justify-content: center;
     margin: 10% 0 0 5%;
-    gap: 10%;
+    gap: 15%;
 }
 
 .banner-text-container {
