@@ -51,7 +51,7 @@ hr {
 
 .logo-container {
     img {
-        width: 64px;
+        width: 128px;
     }
 }
 
@@ -129,7 +129,7 @@ hr {
 
 .menu {
     display: flex;
-    margin-left: 15%;
+    margin-left: 22%;
     li {
         padding-left: 30px;
     }

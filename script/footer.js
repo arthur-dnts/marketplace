@@ -5,7 +5,7 @@ async function renderFooter() {
         const templateText = await response.text();
         const footerTemplate = Handlebars.compile(templateText);
         const footerData = {
-            logoSrc: "/assets/svg/static/logo/logo-white.svg",
+            logoSrc: "/assets/svg/static/logo/logo-white.png",
             titulo: "Marketplace",
             slogan: "Aprenda, Pratique e Monetize.<br>Transformando vidas pelo digital.",
             socialIcons: [

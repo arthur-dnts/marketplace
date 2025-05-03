@@ -6,7 +6,7 @@ async function renderNavbar() {
         const templateText = await response.text();
         const navbarTemplate = Handlebars.compile(templateText);
         const navbarData = {
-            logoSrc: "/assets/svg/static/logo/logo-black.svg",
+            logoSrc: "/assets/svg/static/logo/logo-black.png",
             titulo: "Marketplace",
             closeMenuSrc: "/assets/svg/static/navbar/close-menu.svg",
             openMenuSrc: "/assets/svg/static/navbar/open-menu.svg",
