@@ -82,6 +82,11 @@
       "src": "/perfil",
       "dest": "/pages/profile.html",
       "status": 200
+    },
+    {
+      "src": "/carrinho",
+      "dest": "/pages/cart.html",
+      "status": 200
     }
   ]
 }

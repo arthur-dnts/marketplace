@@ -1,0 +1,47 @@
+/* Reset all css elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth scroll behavior */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body, colors and font-family */
+
+body {
+    --color1: #FFFFFF;
+    --color2: #F7F7FF;
+    --color3: #070707;
+    --color4: #016FB9;
+    background-color: var(--color1);
+    font-family: "Inter", sans-serif;
+}
+
+/* Fonts */
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+p, h1, h2 {
+    color: var(--color3);
+}
+
+hr {
+    color: var(--color1);
+    opacity: 20%;
+}

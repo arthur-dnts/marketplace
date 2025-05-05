@@ -16,7 +16,7 @@ async function renderNavbar() {
                 { class: "nav-button", href: "/ebooks", text: "E-books" },
                 { class: "nav-button", href: "/produtos", text: "Produtos" },
                 { class: "nav-button", href: "/trabalhe-conosco", text: "Trabalhe Conosco" },
-                { class: "nav-image-button", href: "/carrinho", src: "/assets/svg/static/main/cart.svg", alt: "cart-button" },
+                { class: "nav-image-button", href: "/carrinho", src: "/assets/svg/static/navbar/bag.svg", alt: "cart-button" },
                 { class: "nav-button", href: "/log-in", style: "color: #016FB9;", target: "_blank", text: "Login" },
                 { class: "nav-account", href: "/sign-in", target: "_blank", text: "Cadastre-se" }
             ]
