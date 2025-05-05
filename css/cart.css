@@ -123,7 +123,6 @@ hr {
     align-items: stretch;
     justify-content: center;
     gap: 10px;
-    font-family: sans-serif;
 }
   
 .btn {
@@ -220,4 +219,245 @@ hr {
     color: var(--color3);
     transition: .2s ease-in-out;
     cursor: pointer;
+}
+
+/* Media queries */
+
+/* Devtools: 1366x768 */
+@media screen and (max-width: 1366px) {
+
+}
+
+/* Devtools: 1024x768 */
+@media screen and (max-width: 1024px) {
+
+}
+
+/* Devtools: 768x1024 */
+@media screen and (max-width: 768px) {
+
+    /* Remove horizontal scroll */
+    
+    html, body {
+        overflow-x: hidden;
+    }
+
+    body {
+        background-color: red;
+    }
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+
+    /* Cart section and it's elements */
+
+    .cart-container {
+        padding: 10% 0 0 0;
+    }
+
+    .cart {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header {
+        margin: 0 5% 5% 5%;
+    }
+
+    /* Products section */
+
+    .products-container {
+        max-width: 770px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        padding: 10% 0 10% 0;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        margin: 5% 0 5% 0;
+    }
+
+    .product-image {
+        width: 256px;
+    }
+
+    .product-description {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 2px;
+        .category {
+            font-size: 1.5rem;
+        }
+        .name {
+            font-size: 2rem;
+        }
+    }
+
+    .item-counter {
+        gap: 10px;
+    }
+
+    /* Price section */
+
+    .price-container {
+        max-width: 770px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        padding: 10% 0;
+    }
+
+    .summary {
+        gap: 50%;
+        margin: 0 5% 0 5%;
+    }
+
+    .promotional-code {
+        margin: 0 5% 0 5%;
+    }
+
+    .final-price {
+        margin: 0 5% 0 5%;
+    }
+
+    .checkout {
+        width: 90%;
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Devtools: 360x640 */
+@media screen and (max-width: 360px) {
+
+    /* Remove horizontal scroll */
+    
+    html, body {
+        overflow-x: hidden;
+    }
+
+    body {
+        background-color: var(--color1);
+    }
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+    }
+
+    /* Cart section and it's elements */
+
+    .cart-container {
+        padding: 20% 0 0 0;
+    }
+
+    .cart {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header {
+        margin: 0 5% 5% 5%;
+    }
+
+    /* Products section */
+
+    .products-container {
+        max-width: 360px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        padding: 10% 0 10% 0;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center !important;
+        gap: 10px;
+        margin: 5% 0 5% 0;
+    }
+
+    .product-image {
+        width: 128px;
+    }
+
+    .product-description {
+        gap: 2px;
+        .category {
+            font-size: 0.9rem;
+        }
+        .name {
+            font-size: 1.2rem;
+        }
+    }
+
+    .item-counter {
+        gap: 5px;
+    }
+
+    /* Price section */
+
+    .price-container {
+        max-width: 360px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        padding: 10% 0;
+    }
+
+    .summary {
+        gap: 50%;
+        margin: 0 5% 0 5%;
+    }
+
+    .promotional-code {
+        margin: 0 5% 0 5%;
+    }
+
+    .final-price {
+        margin: 0 5% 0 5%;
+    }
+
+    .checkout {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
 }

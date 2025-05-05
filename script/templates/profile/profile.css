@@ -50,7 +50,7 @@ hr {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 6% 0 0 0;
+    padding: 7% 0 0 0;
 }
 
 .profile {
@@ -248,7 +248,7 @@ button:hover {
     /* Profile section and it's elements */
 
     .profile-container {
-        padding: 5% 0 5% 0;
+        padding: 8% 0 5% 0;
     }
 
     .profile {
@@ -256,6 +256,10 @@ button:hover {
         align-content: center;
         gap: 20px;
         padding: 0 10px;
+    }
+
+    .dark-btn, .white-btn {
+        font-size: 1.5rem;
     }
 
     .avatar {
@@ -338,7 +342,7 @@ button:hover {
     /* Profile section and it's elements */
 
     .profile-container {
-        padding: 10% 0 5% 0;
+        padding: 15% 0 5% 0;
     }
 
     .profile {
@@ -346,6 +350,10 @@ button:hover {
         align-content: center;
         gap: 10px;
         padding: 0 10px;
+    }
+
+    .dark-btn, .white-btn {
+        font-size: 1rem;
     }
 
     .courses-status-row {
