@@ -336,6 +336,7 @@ hr {
         max-height: 650px;
         gap: 5%;
         padding: 0;
+        margin-top: 5%;
     }
 
     .banner-text-container {
@@ -345,8 +346,8 @@ hr {
     }
 
     .banner-image {
-        width: 600px !important;
-        height: 600px !important;
+        width: 450px !important;
+        height: 450px !important;
     }
 
     .search-input {
@@ -368,7 +369,7 @@ hr {
     /* Top courses section and it's elements */
 
     .header {
-        width: 95%;
+        width: 100%;
         h2 {
             font-size: 2rem;
         }
@@ -404,14 +405,6 @@ hr {
         100% {
             transform: translateX(calc(-1 * (300px + 20px) * 3));
         }
-    }
-
-    /* Best sellers courses section and it's elements */
-
-    .best-seller-card {
-        width: 260px;
-        height: 260px;
-        margin: 5px;
     }
 
     /* Create course section and it's elements */
@@ -450,13 +443,13 @@ hr {
 
     .banner-text-container {
         p {
-            max-width: 350px;
+            max-width: 400px;
         }
     }
 
     .banner-image {
-        width: 500px !important;
-        height: 400px !important;
+        width: 350px !important;
+        height: 350px !important;
     }
 
     .search-input {
@@ -515,14 +508,6 @@ hr {
         }
     }
 
-    /* Best sellers courses section and it's elements */
-
-    .best-seller-card {
-        width: 200px;
-        height: 200px;
-        margin: 5px;
-    }
-
     /* Create course section and it's elements */
 
     .create-banner {
@@ -561,7 +546,7 @@ hr {
         display: flex;
         flex-direction: column;
         text-align: center;
-        margin: 20% 0 20% 0;
+        margin: 25% 0 20% 0;
         gap: 0;
     }
 
@@ -579,9 +564,8 @@ hr {
     }
 
     .banner-image {
-        max-width: 100%;
+        width: 500px;
         height: auto;
-        max-height: 500px;
     }
 
     .search-bar {
@@ -642,7 +626,7 @@ hr {
     /* Top courses section and it's elements */
 
     .header {
-        margin-bottom: 5;
+        margin-bottom: 5%;
         h2 {
             font-size: 2.5rem;
         }
@@ -685,29 +669,6 @@ hr {
         animation: none;
         flex-direction: column;
         gap: 20px;
-    }
-
-    /* Best sellers section and it's elements */
-
-    .best-sellers-container {
-        padding: 10% 0 15% 0;
-    }
-
-    .header {
-        margin-bottom: 5%;
-    }
-
-    .best-sellers-top, .best-sellers-bottom {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .best-seller-card {
-        width: 300px;
-        height: 350px !important;
-        max-width: 400px;
-        height: 200px;
-        margin: 10px;
     }
 
     /* Create course section and it's elements*/
@@ -770,7 +731,7 @@ hr {
         display: flex;
         flex-direction: column;
         text-align: center;
-        margin: 10% 0 10% 0;
+        margin: 20% 0 10% 0;
         gap: 0;
     }
 
@@ -788,9 +749,8 @@ hr {
     }
 
     .banner-image {
-        max-width: 90%;
+        width: 300px !important;
         height: auto;
-        max-height: 300px;
     }
 
     .search-bar {
@@ -807,8 +767,8 @@ hr {
 
     .search-icon {
         width: 30px !important;
-        padding: 6px;
-        right: 2px;
+        top: 19px;
+        right: 5px;
     }
 
     /* Courses categories section and it's elements */
@@ -857,7 +817,7 @@ hr {
     }
 
     .header {
-        margin-bottom: 5;
+        margin-bottom: 5%;
         h2 {
             font-size: 1.5rem;
         }
@@ -892,35 +852,6 @@ hr {
         flex-direction: column;
         animation: none;
         gap: 20px;
-    }
-
-    /* Best sellers section and it's elements */
-
-    .best-sellers-container {
-        padding: 10% 0 10% 0;
-    }
-
-    .header {
-        margin-bottom: 5;
-        h2 {
-            font-size: 1.5rem;
-        }
-        button {
-            display: none;
-        }
-    }
-
-    .best-sellers-top, .best-sellers-bottom {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .best-seller-card {
-        width: 160px;
-        height: 160px !important;
-        max-width: 280px;
-        height: 200px;
-        margin: 4px;
     }
 
     /* Create course section and it's elements*/

@@ -108,3 +108,184 @@ p, h1, h2 {
     background-color: var(--color4);
     color: var(--color1);
 }
+
+/* Media queries */
+
+/* Devtools: 1366x768 */
+@media screen and (max-width: 1366px) {
+        
+    /* Fonts */
+
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Cards section and it's elements */
+
+    .cards-header {
+        width: 120%;
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
+    
+    .featured-card {
+        max-width: 270px;
+        height: 270px;
+        h2 {
+            font-size: 1.5rem;
+        }
+        h3 {
+            font-size: 1rem;
+        }
+        
+    }
+
+    .more-button {
+        width: 250px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Devtools: 1024x768 */
+@media screen and (max-width: 1024px) {
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+
+    /* Cards section and it's elements */
+
+    .cards-header {
+        width: 110%;
+        h2 {
+            font-size: 1.7rem;
+        }
+    }
+
+    .featured-card {
+        width: 200px;
+        height: 200px;
+        margin: 0px;
+    }
+    
+    .more-button {
+        width: 200px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+}
+
+/* Devtools: 768x1024 */
+@media screen and (max-width: 768px) {
+    
+    /* Remove horizontal scroll */
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Cards section and it's elements */
+
+    .cards-container {
+        padding: 10% 0 10% 0;
+        height: auto;
+    }
+
+    .cards-header {
+        margin-bottom: 5%;
+        h2 {
+            font-size: 2.5rem;
+        }
+        button {
+            display: none;
+        }
+    }
+
+    .top-cards, .bottom-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .featured-card {
+        width: 320px;
+        height: 320px !important;
+        max-width: 400px;
+        height: 200px;
+        margin: 5px;
+    }
+
+}
+
+/* Devtools: 360x640 */
+@media screen and (max-width: 360px) {
+
+    /* Remove horizontal scroll */
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Fonts */
+
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+
+    /* Cards section and it's elements */
+
+    .cards-container {
+        padding: 10% 0 10% 0;
+        height: auto;
+    }
+
+    .cards-header {
+        margin-bottom: 5%;
+        h2 {
+            font-size: 1.5rem;
+        }
+        button {
+            display: none;
+        }
+    }
+
+    .top-cards, .bottom-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .featured-card {
+        width: 160px;
+        height: 160px !important;
+        max-width: 280px;
+        height: 200px;
+        margin: 0px;
+    }
+
+}

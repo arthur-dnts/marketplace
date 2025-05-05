@@ -181,33 +181,6 @@ hr {
         }
     }
 
-    /* Featured products section and it's elements */
-
-    .header {
-        width: 95%;
-        h2 {
-            font-size: 2rem;
-        }
-    }
-
-    .more-button {
-        width: 250px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-
-    .featured-card {
-        max-width: 270px;
-        height: 270px;
-        h2 {
-            font-size: 1.5rem;
-        }
-        h3 {
-            font-size: 1rem;
-        }
-    
-    }
-
     /* Shipping section and it's elements */
 
     .shipping-banner-image {
@@ -259,27 +232,6 @@ hr {
             width: 400px;
             height: 400px;
         }
-    }
-
-    /* Featured products section and it's elements */
-
-    .header {
-        width: 85%;
-        h2 {
-            font-size: 1.7rem;
-        }
-    }
-
-    .more-button {
-        width: 200px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-
-    .featured-card {
-        width: 200px;
-        height: 200px;
-        margin: 0px;
     }
 
     /* Shipping section and it's elements */
@@ -347,36 +299,6 @@ hr {
             width: 600px;
             height: 600px;
         }
-    }
-
-    /* Featured products section and it's elements */
-
-    .featured-container {
-        padding: 10% 0 10% 0;
-        height: auto;
-    }
-
-    .header {
-        margin-bottom: 5;
-        h2 {
-            font-size: 2.5rem;
-        }
-        button {
-            display: none;
-        }
-    }
-
-    .featured-top, .featured-bottom {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .featured-card {
-        width: 300px;
-        height: 350px !important;
-        max-width: 400px;
-        height: 200px;
-        margin: 5px;
     }
 
     /* Shipping section and it's elements */
@@ -477,36 +399,6 @@ hr {
             width: 300px;
             height: 300px;
         }
-    }
-
-    /* Featured products section and it's elements */
-
-    .featured-container {
-        padding: 10% 0 10% 0;
-        height: auto;
-    }
-
-    .header {
-        margin-bottom: 5;
-        h2 {
-            font-size: 1.5rem;
-        }
-        button {
-            display: none;
-        }
-    }
-
-    .featured-top, .featured-bottom {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .featured-card {
-        width: 160px;
-        height: 160px !important;
-        max-width: 280px;
-        height: 200px;
-        margin: 0px;
     }
 
     /* Shipping section and it's elements */
