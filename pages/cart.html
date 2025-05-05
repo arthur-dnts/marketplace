@@ -7,16 +7,110 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="script/templates/navbar/navbar.css">
-        <link rel="stylesheet" href="script/templates/footer/footer.css">
+        <link rel="stylesheet" href="../script/templates/navbar/navbar.css">
+        <link rel="stylesheet" href="../script/templates/footer/footer.css">
         <link rel="stylesheet" href="../css/cart.css">
         <title>Carrinho | Marketplace</title>
     </head>
 <body>
     <main>
+        <!-- Navbar placeholder -->
+        <section id="navbar"></section>
+        <!-- Cart section -->
         <section>
-            
+            <div class="cart-container">
+                <div class="cart">
+                    <div class="products-container">
+                        <div class="header">
+                            <h2>Carrinho de Compras</h2>
+                            <h3>3 itens</h3>
+                        </div>
+                        <hr>
+
+                        <div class="product-card">
+                            <img class="product-image" src="../assets/mockup/ebook-mockup.png" alt="product-image">
+                            <div class="product-description">
+                                <p class="category">E-book</p>
+                                <p class="name">Matemática Financeira</p>
+                            </div>
+                            <div class="item-counter">
+                                <button class="btn minus">-</button>
+                                <input type="text" class="quantity" value="1" readonly>
+                                <button class="btn plus">+</button>
+                            </div>
+                            <h3 class="product-price"><strong>R$ 39,90</strong></h3>
+                            <button class="btn remove">×</button>
+                        </div>
+
+                        <hr>
+
+                        <div class="product-card">
+                            <img class="product-image" src="../assets/mockup/ebook-mockup.png" alt="product-image">
+                            <div class="product-description">
+                                <p class="category">E-book</p>
+                                <p class="name"><strong>Matemática Financeira</strong></p>
+                            </div>
+                            <div class="item-counter">
+                                <button class="btn minus">-</button>
+                                <input type="text" class="quantity" value="1" readonly>
+                                <button class="btn plus">+</button>
+                            </div>
+                            <h3 class="product-price"><strong>R$ 39,90</strong></h3>
+                            <button class="btn remove">×</button>
+                        </div>
+
+                        <hr>
+
+                        <div class="product-card">
+                            <img class="product-image" src="../assets/mockup/ebook-mockup.png" alt="product-image">
+                            <div class="product-description">
+                                <p class="category">E-book</p>
+                                <p class="name"><strong>Matemática Financeira</strong></p>
+                            </div>
+                            <div class="item-counter">
+                                <button class="btn minus">-</button>
+                                <input type="text" class="quantity" value="1" readonly>
+                                <button class="btn plus">+</button>
+                            </div>
+                            <h3 class="product-price"><strong>R$ 39,90</strong></h3>
+                            <button class="btn remove">×</button>
+                        </div>
+
+                        <hr>
+
+                    </div>
+                    <div class="price-container">
+                        <div class="header">
+                            <h2>Resumo</h2>
+                        </div>
+                        <hr>
+                        <div class="summary">
+                            <h3>3 ITENS</h3>
+                            <h3>R$ 119,70</h3>
+                            <h3>ENVIO</h3>
+                            <h3>R$ 28,80</h3>
+                        </div>
+                        <div class="promotional-code">
+                            <h2>Código Promocional</h2>
+                            <input type="text" class="code-container" placeholder="Código">
+                        </div>
+                        <hr>
+                        <div class="final-price">
+                            <h2>Total do Pedido</h2>
+                            <h2>R$ 148,50</h2>
+                        </div>
+                        <button class="checkout">Finalizar Pedido</button>
+                    </div>
+                </div>
+            </div>
         </section>
+        <!-- Footrer placeholder -->
+        <search id="footer"></search>
     </main>
+
+    <!-- Include Handlebars.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="../script/navbar.js"></script>
+    <script src="../script/footer.js"></script>
 </body>
 </html>
