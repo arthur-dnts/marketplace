@@ -202,7 +202,7 @@ hr {
 
     .logo-container {
         img {
-            width: 50px;
+            width: 100px;
         }
     }
 
@@ -211,7 +211,7 @@ hr {
     }
 
     .menu {
-        margin-left: 7%;
+        margin-left: 17%;
         li {
             padding-left: 20px;
         }
@@ -238,7 +238,7 @@ hr {
 
     .logo-container {
         img {
-            width: 40px;
+            width: 80px;
         }
     }
 
@@ -286,7 +286,7 @@ hr {
 
     .logo-container {
         img {
-            width: 64px;
+            width: 128px;
         }
     }
 
@@ -346,13 +346,13 @@ hr {
     }
 
     .open-menu {
-        margin-left: 50%;
+        margin-left: 70%;
     }
 
     .close-menu {
         position: absolute;
-        top: 10px;
-        right: 13px;
+        top: 20px;
+        right: 25px;
     }
 
     .open-menu, .close-menu {
@@ -388,7 +388,7 @@ hr {
 
     .logo-container {
         img {
-            width: 40px;
+            width: 80px;
         }
     }
 
@@ -447,13 +447,13 @@ hr {
     }
 
     .open-menu {
-        margin-left: 35%;
+        margin-left: 60%;
     }
 
     .close-menu {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 15px;
+        right: 18px;
     }
 
     .open-menu, .close-menu {

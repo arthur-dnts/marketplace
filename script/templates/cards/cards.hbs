@@ -1,0 +1,26 @@
+<section id="cards">
+    <div class="cards-container">
+        <div class="cards-header">
+            <h2>{{sectionTitle}}</h2>
+            <button class="more-button">{{moreButtonText}} →</button>
+        </div>
+
+        <div class="top-cards">
+            {{#each topProducts}}
+                <div class="featured-card">
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                </div>
+            {{/each}}
+        </div>
+
+        <div class="bottom-cards">
+            {{#each bottomProducts}}
+                <div class="featured-card">
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
