@@ -1,0 +1,55 @@
+<!-- Cart section -->
+<section>
+    <div class="cart-container">
+        <div class="cart">
+            <div class="products-container">
+                <div class="header">
+                    <h2>Meu Carrinho</h2>
+                    <h3>{{products.length}} itens</h3>
+                </div>
+                <hr>
+
+                {{#each products}}
+                <div class="product-card">
+                    <img class="product-image" src="{{this.image}}" alt="product-image">
+                    <div class="product-description">
+                        <p class="category">{{this.category}}</p>
+                        <p class="name"><strong>{{this.product}}</strong></p>
+                    </div>
+                    <div class="item-counter">
+                        <button class="btn minus">-</button>
+                        <input type="text" class="quantity" value="{{this.quantity}}">
+                        <button class="btn plus">+</button>
+                    </div>
+                    <h3 class="product-price"><strong>R$ {{this.price}}</strong></h3>
+                    <button class="btn remove">×</button>
+                </div>
+                <hr>
+                {{/each}}
+
+            </div>
+            <div class="price-container">
+                <div class="header">
+                    <h2>Resumo</h2>
+                </div>
+                <hr>
+                <div class="summary">
+                    <h3>{{products.length}} ITENS</h3>
+                    <h3>R$ {{totalPrice}}</h3>
+                    <h3>ENVIO</h3>
+                    <h3>{{#if shippingFree}}Grátis{{else}}R$ {{shippingPrice}}{{/if}}</h3>
+                </div>
+                <div class="promotional-code">
+                    <h2>Código Promocional</h2>
+                    <input type="text" class="code-container" placeholder="Código">
+                </div>
+                <hr>
+                <div class="final-price">
+                    <h2>Total</h2>
+                    <h2>R$ {{finalPrice}}</h2>
+                </div>
+                <button class="checkout">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+</section>
