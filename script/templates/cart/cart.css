@@ -20,6 +20,7 @@ body {
     --color4: #016FB9;
     background-color: var(--color2);
     font-family: "Inter", sans-serif;
+    overflow-y: hidden;
 }
 
 /* Fonts */
@@ -219,6 +220,10 @@ hr {
     color: var(--color3);
     transition: .2s ease-in-out;
     cursor: pointer;
+}
+
+.checkout:hover {
+    transform: scale(1.02);
 }
 
 /* Media queries */
@@ -652,7 +657,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10% 0 5% 0;
+    padding: 7% 0;
 }
 
 .cart {
@@ -757,7 +762,7 @@ hr {
 
 .price-container {
     width: 700px;
-    background-color: var(--color3);
+    background: linear-gradient(to top right,#070707,#0F1414,#1A2526,#2A3A44,#023E7D);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     h1, h2, h3, p, hr {

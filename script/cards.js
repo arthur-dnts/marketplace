@@ -23,7 +23,7 @@ async function renderCards() {
         };
         document.getElementById("cards").innerHTML = cardsTemplate(cardsData);
     } catch (error) {
-        console.log("Erro ao renderizar cards:", error);
+        console.error("Erro ao renderizar cards:", error);
     }
 }
 document.addEventListener("DOMContentLoaded", renderCards);

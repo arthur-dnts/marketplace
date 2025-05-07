@@ -1,3 +1,4 @@
+// footer.js
 async function renderFooter() {
     try {
         const response = await fetch("/script/templates/footer/footer.hbs");

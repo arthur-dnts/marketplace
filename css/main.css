@@ -281,7 +281,7 @@ hr {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 5% 0 10% 0;
+    padding: 5% 0 5% 0;
     h1 {
         color: var(--color1);
         margin-bottom: 5%;
@@ -305,7 +305,7 @@ hr {
     gap: 5%;
     img {
         width: 450px;
-        height: 450px;
+        height: 500px;
     }
     p {
         max-width: 650px;
@@ -495,7 +495,7 @@ hr {
 
     .ebook-wrapper {
         img {
-            width: 500px;
+            width: 450px;
             height: 500px;
         }
         p {
@@ -626,7 +626,7 @@ hr {
 
     .ebook-wrapper {
         img {
-            width: 400px;
+            width: 350px;
             height: 400px;
         }
         p {
@@ -846,6 +846,7 @@ hr {
         text-align: center;
         img {
             width: 450px;
+            height: 500px;
             margin: 5% 0 5% 0;
         }
         p {
@@ -1101,7 +1102,7 @@ hr {
         padding: 5% 0 5% 0;
         img {
             width: 250px;
-            height: 250px;
+            height: 300px;
             margin: 5% 0 5% 0;
         }
         p {

@@ -1,3 +1,4 @@
+// profile.js
 async function renderProfile() {
     try {
         const response = await fetch("/script/templates/profile/profile.hbs");
@@ -30,7 +31,7 @@ async function renderProfile() {
         };
         document.getElementById("profile").innerHTML = profileTemplate(profileData);
     } catch (error) {
-        console.log("Erro ao renderizar profile:", error);
+        console.error("Erro ao renderizar profile:", error);
     }
 }
 document.addEventListener("DOMContentLoaded", renderProfile);

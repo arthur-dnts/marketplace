@@ -1,3 +1,4 @@
+// sign-in.js
 document.addEventListener('DOMContentLoaded', () => {
     // Mostrar/esconder senha
     const iconesSenha = document.querySelectorAll('.show-password');

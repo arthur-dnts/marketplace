@@ -1,3 +1,4 @@
+// cart.js
 async function renderCart() {
     try {
         const response = await fetch("/script/templates/cart/cart.hbs");

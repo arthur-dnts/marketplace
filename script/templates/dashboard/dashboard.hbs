@@ -1,0 +1,52 @@
+<section id="main-section">
+  <section class="content-container">
+    <div class="content">
+
+      <div class="top-cards">
+        {{#each topCards}}
+        <div class="card-top">
+          <div class="desc">
+            <h1>{{title}}</h1>
+            <h2><strong>{{value}}</strong></h2>
+          </div>
+          <img src="{{icon}}" alt="{{alt}}">
+        </div>
+        {{/each}}
+      </div>
+
+      <div class="bottom-cards">
+        <div class="card-bottom-left">
+          <div class="header">
+            <h1>Rendimento Semestral - {{year}}</h1>
+            <button class="btn">Ver tudo</button>
+          </div>
+          <hr>
+          <canvas id="salesChart"></canvas>
+        </div>
+
+        <div class="card-bottom-right">
+          <div class="header">
+            <h1>Usuários Recentes</h1>
+            <button class="btn">Ver tudo</button>
+          </div>
+          <hr>
+          <div class="user-table">
+            <h3>Perfil</h3>
+            <h3>Nome</h3>
+            <h3>Opções</h3>
+          </div>
+
+          {{#each recentUsers}}
+          <div class="user-card">
+            <img class="user-image" src="{{profileIcon}}" alt="user-image">
+            <h2>{{name}}</h2>
+            <img class="user-image" src="{{settingsIcon}}" alt="settings">
+          </div>
+          {{/each}}
+          
+        </div>
+      </div>
+
+    </div>
+  </section>
+</section>

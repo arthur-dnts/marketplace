@@ -87,6 +87,11 @@
       "src": "/carrinho",
       "dest": "/pages/cart.html",
       "status": 200
+    },
+    {
+      "src": "/dashboard",
+      "dest": "pages/dashboard.html",
+      "status": 200
     }
   ]
 }
