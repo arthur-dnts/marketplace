@@ -1,7 +1,7 @@
 // dashboard.js
 async function renderDash() {
     try {
-        const response = await fetch("/script/templates/dashboard/dashboard.hbs");
+        const response = await fetch("/script/templates/dashboard/main/main.hbs");
         if (!response.ok) throw new Error("Falha ao carregar dashboard.hbs");
         const templateText = await response.text();
         const dashTemplate = Handlebars.compile(templateText);
