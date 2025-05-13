@@ -1,10 +1,10 @@
-<section id="main-section">
+<section id="main-section" class="main-content">
   <section class="content-container">
     <div class="content">
 
       <div class="top-cards">
         {{#each topCards}}
-        <div class="card-top">
+        <div class="card-top-small">
           <div class="desc">
             <h1>{{title}}</h1>
             <h2><strong>{{value}}</strong></h2>
@@ -37,7 +37,7 @@
           </div>
 
           {{#each recentUsers}}
-          <div class="user-card">
+          <div class="user-label">
             <img class="user-image" src="{{profileIcon}}" alt="user-image">
             <h2>{{name}}</h2>
             <img class="user-image" src="{{settingsIcon}}" alt="settings">

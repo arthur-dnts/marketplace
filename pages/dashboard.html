@@ -14,27 +14,42 @@
     <main>
         <aside class="sidebar-container">
             <div class="sidebar">
-                <h1>Dashboard</h1>
+                <img class="logo" src="../assets/svg/static/logo/logo-white.png" alt="logo">
                 <nav class="sidebar-menu">
                     <ul>
-                        <li><a href="#"><img class="side-image" src="../assets/svg/static/dashboard/layer.svg" alt="layer"><span>Painel Geral</span></a></li>
-                        <li><a href="#"><img class="side-image" src="../assets/svg/static/dashboard/book.svg" alt="book"><span>E-books</span></a></li>
-                        <li><a href="#"><img class="side-image" src="../assets/svg/static/dashboard/products.svg" alt="product"><span>Produtos</span></a></li>
-                        <li><a href="#"><img class="side-image" src="../assets/svg/static/dashboard/user.svg" alt="user"><span>Usuários</span></a></li>
-                        <li><a href="#"><img class="side-image" src="../assets/svg/static/dashboard/dev.svg" alt="dev"><span>Dev</span></a></li>
+                        <li><a href="#" data-routes="main"><img class="side-image" src="../assets/svg/static/dashboard/dashboard.svg" alt="dashboard"><span>Painel Geral</span></a></li>
+                        <li><a href="#" data-routes="ebooks"><img class="side-image" src="../assets/svg/static/dashboard/book.svg" alt="book"><span>E-books</span></a></li>
+                        <li><a href="#" data-routes="products"><img class="side-image" src="../assets/svg/static/dashboard/products.svg" alt="product"><span>Produtos</span></a></li>
+                        <li><a href="#" data-routes="users"><img class="side-image" src="../assets/svg/static/dashboard/user.svg" alt="user"><span>Usuários</span></a></li>
+                        <li><a href="#" data-routes="dev"><img class="side-image" src="../assets/svg/static/dashboard/dev.svg" alt="dev"><span>Dev</span></a></li>
                     </ul>
                 </nav>
             </div>
-        </aside>        
-        <!-- Dashboard placeholder -->
-        <section id="dashboard"></section>
+        </aside>
+        <section class="content-container">
+            <div class="topbar">
+                <div class="search-bar">
+                    <input type="text" placeholder="Pesquisar">
+                    <img class="topbar-icon" src="../assets/svg/static/courses/search.svg" alt="search-icon">
+                </div>
+                <div class="topbar-actions">
+                    <a href="#"><img class="topbar-icon" src="../assets/svg/static/dashboard/notification.svg" alt="notification-icon"></a>
+                    <a href="#"><img class="user-icon" src="../assets/svg/static/dashboard/user.svg" alt="user-icon"></a>
+                </div>
+            </div>
+            <!-- Dashboard placeholder -->
+            <div id="content"></div>
+        </section>
     </main>
 
-    <!-- Include Handlebars.js -->
+    <!-- Include Handlebars.js, Chartjs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-    <script src="../script/templates/dashboard/main/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Main -->
     <script src="../script/templates/dashboard/main/chart.js"></script>
-
+    
+    <!-- Dashrouter -->
+    <script src="../script/templates/dashboard/dash-router.js"></script>
 </body>
 </html>

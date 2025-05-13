@@ -1,0 +1,30 @@
+<section id="main-section">
+    <div class="content-container">
+        <div class="content">
+            <div class="top-cards">
+
+                {{#each devCards}}
+                <div class="card-top-small">
+                    <div class="desc">
+                        <h1>{{title}}</h1>
+                        <div class="card-btns">
+
+                            {{#if adm}}
+                            <button class="adm-btn">Adicionar</button>
+                            <button class="adm-btn">Remover</button>
+                            {{/if}}
+
+                            {{#if test}}
+                            <button class="adm-btn">Testar</button>
+                            {{/if}}
+
+                        </div>
+                    </div>
+                    <img src="{{imgSrc}}" alt="{{alt}}">
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+    </div>
+</section>

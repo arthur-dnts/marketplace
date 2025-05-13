@@ -1,0 +1,48 @@
+<section id="main-section" class="products-content">
+    <div class="content-container">
+        <div class="content">
+            <div class="top-cards">
+
+                {{#each topCards}}
+                <div class="card-top-small">
+                    <div class="desc">
+                        <h1>{{title}}</h1>
+                        <h2><strong>{{value}}</strong></h2>
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            {{#if condition}}
+                                <button class="adm-btn">Adicionar</button>
+                                <button class="adm-btn">Remover</button>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <img src="{{imgSrc}}" alt="{{alt}}">
+                </div>
+                {{/each}}
+
+            </div>
+
+            <div class="bottom-cards">
+
+                <div class="card-bottom-medium">
+                    <div class="header">
+                        <h1>Top 5 Produtos - Semestre 2025</h1>
+                        <button class="btn">Ver tudo</button>
+                    </div>
+                    <hr>
+                    <canvas id="topProducts"></canvas>
+                </div>
+
+                <div class="card-bottom-medium">
+                    <div class="header">
+                        <h1>Compras e Pedidos - Semestre 2025</h1>
+                        <button class="btn">Ver tudo</button>
+                    </div>
+                    <hr>
+                    <canvas id="salesProducts"></canvas>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,45 @@
+<section id="main-content" class="user-content">
+    <div class="content-container">
+        <div class="content">
+            <div class="top-cards">
+                <div class="card-big">
+                    <div class="header">
+                        <h1>Cadastro de Usuários - 2025</h1>
+                    </div>
+                    <hr>
+                    <canvas id="usersData"></canvas>
+                </div>
+            </div>
+            <div class="bottom-cards">
+                <div class="card-big">
+                    <div class="header">
+                        <h1>Usuários Cadastrados</h1>
+                    </div>
+                    <hr>
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Status</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each users}}
+                                <tr>
+                                    <td><strong>{{id}}</strong></td>
+                                    <td>{{name}}</td>
+                                    <td><span class="status {{statusClass}}">{{status}}</span></td>
+                                    <td><strong>{{type}}</strong></td>
+                                    <td><button class="action-button edit">Editar</button><button class="action-button remove">Remover</button></td>
+                                </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
