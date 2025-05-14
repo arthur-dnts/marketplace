@@ -2,6 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
 const path = require("path")
+const bcrypt = require("bcrypt")
 require("dotenv").config()
 
 const PORT = process.env.PORT || 3000
@@ -56,9 +57,11 @@ app.get("/cart", (req, res) => res.sendFile(path.join(__dirname, 'pages/cart.htm
 const User = require("./models/User")
 const { userInfo } = require("os")
 
-// Credenciais do MongoDB Atlas
+// Credenciais do MongoDB Atlas e secret
 const dbUser = process.env.DB_USER
 const dbPassword = process.env.DB_PASSWORD
+
+const secret = process.env.SECRET
 
 // Conexão com o MongoDB Atlas
 console.log("Index.js iniciado em http://localhost:3000/")
@@ -81,7 +84,6 @@ app.get("/", (req, res) => {
 
 // Rota privada
 app.get("/user/:id", checkToken, async (req, res) => {
-    
     const id = req.params.id
 
     // Verifica se o usuário existe no banco
@@ -92,12 +94,10 @@ app.get("/user/:id", checkToken, async (req, res) => {
     }
 
     res.status(200).json({ user })
-
 })
 
 // Função para verificação do token
 function checkToken(req, res, next) {
-
     const authHeader = req.headers["authorization"]
     const token = authHeader && authHeader.split(" ")[1]
 
@@ -106,8 +106,6 @@ function checkToken(req, res, next) {
     }
 
     try {
-        
-        const secret = process.env.SECRET
         const decoded = jwt.verify(token, secret)
         req.user = decoded
         next()
@@ -115,5 +113,73 @@ function checkToken(req, res, next) {
     } catch (error) {
         res.status(400).json({ msg: "Token inválido!" })
     }
-
 }
+
+const jwt = require("jsonwebtoken")
+
+// Rota de login
+app.post("/auth/login", async (req, res) => {
+    const { email, password } = req.body;
+
+    // Verifica se o email e senha foram fornecidos
+    if (!email || !password) {
+        return res.status(400).json({ msg: "Email e senha são obrigatórios!" });
+    }
+    
+    // Verifica se o usuário existe no banco
+    const user = await User.findOne({ email });
+    if (!user) {
+        return res.status(404).json({ msg: "Usuário não encontrado." });
+    }
+
+    // Verifica se a senha está correta
+    const checkPassword = await bcrypt.compare(password, user.password);
+    if (!checkPassword) {
+        return res.status(401).json({ msg: "Senha incorreta." });
+    }
+
+    // Gera o token de acesso
+    const token = jwt.sign({ id: user._id }, secret, { expiresIn: "1h" });
+    const refreshToken = jwt.sign({ id: user._id }, secret, { expiresIn: "7d" });
+
+    res.status(200).json({
+        msg: "Login bem-sucedido.",
+        token,
+        refreshToken
+    });
+})
+
+// Rota de registro
+app.post("/auth/register", async (req, res) => {
+    const { name, surname, email, telefone, password, confirmPassword } = req.body;
+
+    if (!name || !surname || !email || !telefone || !password || !confirmPassword ) {
+        return res.status(422).json({ msg: "Todos os campos são obrigatórios!" });
+    }
+
+    // Verifica se o usuário já existe no banco
+    const userExists = await User.findOne({ email });
+    if (userExists) {
+        return res.status(422).json({ msg: "Email já cadastrado." })
+    }
+
+    // Ofuscação da senha do usuário
+    const salt = await bcrypt.genSalt(12);
+    const passwordHash = await bcrypt.hash(password, salt);
+
+    // Cria um novo usuário
+    const user = new User({
+        name,
+        surname,
+        email,
+        telefone,
+        password: passwordHash
+    })
+
+    try {
+        await user.save();
+        res.status(201).json({ msg: "Usuário criado com sucesso!" });
+    } catch (error) {
+        res.status(500).json({ msg: "Erro no servidor. Tente novamente mais tarde." });
+    }
+})

@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('refreshToken', result.refreshToken);
                 alert('Login bem-sucedido!');
                 // Redirecionar para uma página protegida (ex.: página inicial)
-                window.location.href = '../index.html';
+                window.location.href = '/';
             } else {
                 alert(`Erro ao fazer login: ${result.msg}`);
             }
