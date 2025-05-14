@@ -42,6 +42,19 @@ function renderUsersChart() {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        animations: {
+          y: {
+            easing: "easeInOutElastic",
+            from: (ctx) => {
+              if (ctx.type === "data" ) {
+                if (ctx.mode === "default" && !ctx.dropped) {
+                  ctx.dropped = true;
+                  return 0;
+                }
+              }
+            }
+          }
+        }
       },
     });
   } catch (error) {
