@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
     return res.status(405).json({ msg: "Método não permitido" });
   }
 
-  const { name, surname, email, telefone, password, confirmpassword } = req.body;
+  const { name, surname, email, telefone, password, confirmPassword } = req.body;
 
   // Validação do nome do usuário
   console.log("Iniciando validações...");
@@ -62,7 +62,7 @@ module.exports = async (req, res) => {
   if (!password) return res.status(422).json({ msg: "A senha é obrigatória!" });
   if (password.length > 128) return res.status(422).json({ msg: "Senha muito longa (Máx. 128 caracteres)." });
   if (password.length < 8) return res.status(422).json({ msg: "Senha muito curta (Mín. 8 caracteres)." });
-  if (password !== confirmpassword) return res.status(422).json({ msg: "As senhas devem ser iguais!" });
+  if (password !== confirmPassword) return res.status(422).json({ msg: "As senhas devem ser iguais!" });
 
   try {
     // Conectar ao MongoDB
