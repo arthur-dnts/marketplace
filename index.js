@@ -151,10 +151,10 @@ app.post("/auth/login", async (req, res) => {
 
 // Rota de registro
 app.post("/auth/register", async (req, res) => {
-    const { name, surname, email, telefone, password, confirmPassword } = req.body;
-
-    if (!name || !surname || !email || !telefone || !password || !confirmPassword ) {
-        return res.status(422).json({ msg: "Todos os campos são obrigatórios!" });
+    const { name, surname, email, telefone, password, confirmpassword } = req.body;
+    
+    if (!name || !surname || !email || !telefone || !password || !confirmpassword) {
+    return res.status(422).json({ msg: "Todos os campos são obrigatórios!" });
     }
 
     // Verifica se o usuário já existe no banco
