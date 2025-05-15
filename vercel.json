@@ -2,10 +2,6 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.js",
-      "use": "@vercel/node"
-    },
-    {
       "src": "api/auth/register.js",
       "use": "@vercel/node"
     },
@@ -39,59 +35,60 @@
     }
   ],
   "routes": [
-    { 
+    {
       "src": "/cursos",
       "dest": "/pages/courses.html",
-      "status": 200
+      "methods": ["GET"]
     },
     {
       "src": "/ebooks",
-      "dest": "index.html",
-      "status": 200
+      "dest": "/index.html",
+      "methods": ["GET"]
     },
     {
       "src": "/produtos",
       "dest": "/pages/products.html",
-      "status": 200
-    },
-    {
-      "src": "/log-in",
-      "dest": "/api/auth/login",
-      "methods": ["POST"], 
-      "status": 200
-    },
-    {
-      "src": "/sign-in",
-      "dest": "/api/auth/register",
-      "methods": ["POST"], 
-      "status": 200
+      "methods": ["GET"]
     },
     {
       "src": "/log-in",
       "dest": "/pages/log-in.html",
-      "methods": ["GET"],
-      "status": 200
+      "methods": ["GET"]
     },
     {
       "src": "/sign-in",
       "dest": "/pages/sign-in.html",
-      "methods": ["GET"],
-      "status": 200
+      "methods": ["GET"]
+    },
+    {
+      "src": "/auth/register",
+      "dest": "/api/auth/register.js",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/auth/login",
+      "dest": "/api/auth/login.js",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/user/(.*)",
+      "dest": "/api/user/[id].js",
+      "methods": ["GET"]
     },
     {
       "src": "/perfil",
       "dest": "/pages/profile.html",
-      "status": 200
+      "methods": ["GET"]
     },
     {
       "src": "/carrinho",
       "dest": "/pages/cart.html",
-      "status": 200
+      "methods": ["GET"]
     },
     {
       "src": "/dashboard",
-      "dest": "pages/dashboard.html",
-      "status": 200
+      "dest": "/pages/dashboard.html",
+      "methods": ["GET"]
     }
   ]
 }
