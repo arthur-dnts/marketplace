@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
   const { name, surname, email, telefone, password, confirmPassword } = req.body;
 
   // Validação do nome do usuário
-  console.log("Iniciando validações...");
+
   if (!name) return res.status(422).json({ msg: "O nome é obrigatório!" });
   if (name.length > 50) return res.status(422).json({ msg: "Nome muito longo (Máx. 50 caracteres)." });
   if (name.length < 2) return res.status(422).json({ msg: "Nome muito curto (Mín. 2 caracteres)." });
@@ -69,18 +69,14 @@ module.exports = async (req, res) => {
     await connectDB();
 
     // Verifica se o usuário já existe no banco
-    console.log("Iniciando verificação do usuário no banco...");
     const userExists = await User.findOne({ email: email });
-    console.log("Resultado da busca: ", userExists);
     if (userExists) return res.status(422).json({ msg: "E-mail já cadastrado. Tente outro e-mail válido." });
 
     // Ofuscação da senha do usuário
-    console.log("Ofuscando a senha...");
     const salt = await bcrypt.genSalt(12);
     const passwordHash = await bcrypt.hash(password, salt);
 
     // Criação do usuário no banco
-    console.log("Criando usuário no banco de dados...");
     const user = new User({
       name,
       surname,
