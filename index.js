@@ -10,9 +10,9 @@ const app = express()
 
 // Lista de origens permitidas para o CORS (Desenvolvimento local)
 const allowedOrigins = [
-    "http://localhost:5500",               // Live Server (desenvolvimento)
-    "http://127.0.0.1:5500",              // Live Server (desenvolvimento, variação com IP)
-    "http://localhost:3000",             // Express servindo o front-end localmente
+    "http://localhost:5500",  // Live Server (desenvolvimento)
+    "http://127.0.0.1:5500",  // Live Server (desenvolvimento, variação com IP)
+    "http://localhost:3000",  // Express servindo o front-end localmente
 ]
 
 // Configurar CORS

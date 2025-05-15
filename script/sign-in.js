@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = form.querySelector('input[placeholder="Email"]').value;
         const telefone = form.querySelector('#telefone-input').value;
         const password = form.querySelector('#password').value;
-        const confirmpassword = form.querySelector('#confirm-password').value;
+        const confirmPassword = form.querySelector('#confirm-password').value;
 
         // Criar o objeto com os dados
         const dados = {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             email,
             telefone,
             password,
-            confirmpassword
+            confirmPassword
         };
 
         try {
