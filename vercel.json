@@ -2,15 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/auth/register.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "api/auth/login.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "api/user/[id].js",
+      "src": "index.js",
       "use": "@vercel/node"
     },
     {
@@ -61,21 +53,6 @@
       "methods": ["GET"]
     },
     {
-      "src": "/auth/register",
-      "dest": "/api/auth/register.js",
-      "methods": ["POST"]
-    },
-    {
-      "src": "/auth/login",
-      "dest": "/api/auth/login.js",
-      "methods": ["POST"]
-    },
-    {
-      "src": "/user/(.*)",
-      "dest": "/api/user/[id].js",
-      "methods": ["GET"]
-    },
-    {
       "src": "/perfil",
       "dest": "/pages/profile.html",
       "methods": ["GET"]
@@ -88,6 +65,21 @@
     {
       "src": "/dashboard",
       "dest": "/pages/dashboard.html",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/auth/register",
+      "dest": "/index.js",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/auth/login",
+      "dest": "/index.js",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/user/(.*)",
+      "dest": "/index.js",
       "methods": ["GET"]
     }
   ]
