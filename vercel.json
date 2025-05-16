@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.js",
+      "src": "server.js",
       "use": "@vercel/node"
     },
     {
@@ -68,18 +68,18 @@
       "methods": ["GET"]
     },
     {
-      "src": "/auth/register",
-      "dest": "/index.js",
+      "src": "/register",
+      "dest": "/server.js",
       "methods": ["POST"]
     },
     {
-      "src": "/auth/login",
-      "dest": "/index.js",
+      "src": "/login",
+      "dest": "/server.js",
       "methods": ["POST"]
     },
     {
       "src": "/user/(.*)",
-      "dest": "/index.js",
+      "dest": "/server.js",
       "methods": ["GET"]
     }
   ]

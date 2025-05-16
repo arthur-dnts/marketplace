@@ -24,21 +24,21 @@ app.use(cors({
 
 // Middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '.')));
-app.use(express.static('css'));
-app.use(express.static('script'));
-app.use(express.static('assets'));
-app.use(express.static('pages'));
+app.use(express.static(path.join(__dirname, ".")));
+app.use(express.static("css"));
+app.use(express.static("script"));
+app.use(express.static("assets"));
+app.use(express.static("pages"));
 
 // Rotas estáticas
-app.get("/", (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
-app.get("/cursos", (req, res) => res.sendFile(path.join(__dirname, 'pages/courses.html')));
-app.get("/produtos", (req, res) => res.sendFile(path.join(__dirname, 'pages/products.html')));
-app.get("/log-in", (req, res) => res.sendFile(path.join(__dirname, 'pages/log-in.html')));
-app.get("/sign-in", (req, res) => res.sendFile(path.join(__dirname, 'pages/sign-in.html')));
-app.get("/cart", (req, res) => res.sendFile(path.join(__dirname, 'pages/cart.html')));
-app.get("/perfil", (req, res) => res.sendFile(path.join(__dirname, 'pages/profile.html')));
-app.get("/dashboard", (req, res) => res.sendFile(path.join(__dirname, 'pages/dashboard.html')));
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
+app.get("/cursos", (req, res) => res.sendFile(path.join(__dirname, "pages/courses.html")));
+app.get("/produtos", (req, res) => res.sendFile(path.join(__dirname, "pages/products.html")));
+app.get("/log-in", (req, res) => res.sendFile(path.join(__dirname, "pages/log-in.html")));
+app.get("/sign-in", (req, res) => res.sendFile(path.join(__dirname, "pages/sign-in.html")));
+app.get("/cart", (req, res) => res.sendFile(path.join(__dirname, "pages/cart.html")));
+app.get("/perfil", (req, res) => res.sendFile(path.join(__dirname, "pages/profile.html")));
+app.get("/dashboard", (req, res) => res.sendFile(path.join(__dirname, "pages/dashboard.html")));
 
 // Modelos
 const User = require("./models/User");
@@ -52,11 +52,11 @@ mongoose
     useUnifiedTopology: true
   })
   .then(() => {
-    console.log('Conexão ao MongoDB Atlas bem-sucedida.');
+    console.log("Conexão ao MongoDB Atlas bem-sucedida.");
     app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
   })
   .catch((err) => {
-    console.error('Erro ao conectar ao MongoDB Atlas:', err);
+    console.error("Erro ao conectar ao MongoDB Atlas:", err);
     process.exit(1);
   });
 
