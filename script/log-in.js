@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Armazenar o token e o refresh token no localStorage
                 localStorage.setItem('token', result.token);
                 localStorage.setItem('refreshToken', result.refreshToken);
-                alert('Login bem-sucedido!');
                 // Redirecionar para uma página protegida (ex.: página inicial)
                 window.location.href = '/';
             } else {

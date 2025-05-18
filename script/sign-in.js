@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 alert("Cadastro realizado com sucesso!");
                 // Redirecionar para a página de login
-                window.location.href = "/login";
+                window.location.href = "/log-in";
             } else {
                 alert(`Erro ao cadastrar: ${result.msg}`);
             }

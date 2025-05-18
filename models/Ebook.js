@@ -2,10 +2,10 @@
 
 const mongoose = require("mongoose");
 
-const Ebook = mongoose.model("Ebook", {
+const EbookSchema = new mongoose.Schema({
     title: String,
     category: String,
     price: String
-})
+}, { collection: "Ebooks" });
 
-module.exports = Ebook
+module.exports = mongoose.model("Ebooks", EbookSchema);

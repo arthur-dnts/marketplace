@@ -48,9 +48,9 @@ const Ebook = require("./models/Ebook");
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
 mongoose
-  .connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.tbfjbrc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`, {
+  .connect(`mongodb+srv://${dbUser}:${dbPassword}@fusiondata.znak36d.mongodb.net/?retryWrites=true&w=majority&appName=FusionData`, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true  
   })
   .then(() => {
     console.log("Conexão ao MongoDB Atlas bem-sucedida.");
