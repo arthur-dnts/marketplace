@@ -42,6 +42,7 @@ app.get("/dashboard", (req, res) => res.sendFile(path.join(__dirname, "pages/das
 
 // Modelos
 const User = require("./models/User");
+const Ebook = require("./models/Ebook");
 
 // Conexão com MongoDB
 const dbUser = process.env.DB_USER;
@@ -157,5 +158,24 @@ app.get("/user/:id", async (req, res) => {
     res.status(200).json({ user });
   } catch (error) {
     res.status(400).json({ msg: "Token inválido!" });
+  }
+});
+
+// Rota de adição de ebooks ao banco
+app.post("/insert", async (req, res) => {
+  const { title, category, price } = req.body;
+
+  try {
+    const ebook = new Ebook({
+      title,
+      category,
+      price
+    });
+  
+    await ebook.save();
+    res.status(201).json({ msg: "Ebook criado com sucesso!" });
+  } catch (error) {
+    console.error("Erro ao processar /insert:", error);
+    res.status(500).json({ msg: "Ocorreu um erro com o servidor, tente novamente mais tarde." });
   }
 });

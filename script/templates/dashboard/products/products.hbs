@@ -10,7 +10,7 @@
                         <h2><strong>{{value}}</strong></h2>
                         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                             {{#if condition}}
-                                <button class="adm-btn">Adicionar</button>
+                                <button class="adm-btn add-btn">Adicionar</button>
                                 <button class="adm-btn">Remover</button>
                             {{/if}}
                         </div>
@@ -22,7 +22,6 @@
             </div>
 
             <div class="bottom-cards">
-
                 <div class="card-bottom-medium">
                     <div class="header">
                         <h1>Top 5 Produtos - Semestre 2025</h1>
@@ -40,7 +39,28 @@
                     <hr>
                     <canvas id="salesProducts"></canvas>
                 </div>
+            </div>
 
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1>Adicionar Produto</h1>
+                    <form class="form">
+                        <input id="title" class="form-input" type="text" placeholder="Título">
+                        <select id="category" class="form-input" name="category">
+                            <option value="" disabled selected>Categoria</option>
+                            <option value="mindset">Mindset</option>
+                            <option value="finance">Finanças</option>
+                            <option value="idioms">Idiomas</option>
+                            <option value="tech">Tecnologia</option>
+                        </select>
+                        <input id="price" class="form-input" type="text" placeholder="Preço">
+                        <input id="fileInput" class="form-input" type="file" accept="image/*" style="display: none;">
+                        <label for="fileInput" class="custom-file-label">Selecionar Capa</label>
+                        <span id="fileName" class="file-name">Nenhuma capa selecionada</span>
+                    </form>
+                    <button class="form-button" type="submit">Adicionar</button>
+                </div>
             </div>
 
         </div>

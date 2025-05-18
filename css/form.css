@@ -198,7 +198,7 @@ hr {
     text-indent: 8px;
 }
 
-.form-input:hover {
+.form-input:hover, .form-input:focus {
     border-color: var(--color3);
 }
 
