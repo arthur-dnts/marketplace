@@ -43,12 +43,13 @@ app.get("/dashboard", (req, res) => res.sendFile(path.join(__dirname, "pages/das
 // Modelos
 const User = require("./models/User");
 const Ebook = require("./models/Ebook");
+const Products = require("./models/Products");
 
 // Conexão com MongoDB
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
 mongoose
-  .connect(`mongodb+srv://${dbUser}:${dbPassword}@fusiondata.znak36d.mongodb.net/?retryWrites=true&w=majority&appName=FusionData`, {
+  .connect(`mongodb+srv://${dbUser}:${dbPassword}@fusiondata.znak36d.mongodb.net/FusionData?retryWrites=true&w=majority&appName=FusionData`, {
     useNewUrlParser: true,
     useUnifiedTopology: true  
   })
