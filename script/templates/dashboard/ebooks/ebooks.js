@@ -10,17 +10,19 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault(); // Impede o comportamento padrão do formulário
 
   // Obtém os dados do formulário
-  const title = form.querySelector("input[placeholder='Título']").value;
-  const category = form.querySelector("select[name='category']").value;
-  const price = form.querySelector("input[placeholder='Preço']").value;
+  const title = document.getElementById("title").value;
+  const category = document.getElementById("category").value;
+  const price = document.getElementById("price").value;
 
   const dados = {
     title,
     category,
     price,
+    type: "ebook"
   };
 
   try {
+    // Faz o envio dos dados para o Render
     const response = await fetch("https://marketplace-rpch.onrender.com/insert", {
       method: "POST",
       headers: {

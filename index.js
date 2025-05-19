@@ -43,7 +43,7 @@ app.get("/dashboard", (req, res) => res.sendFile(path.join(__dirname, "pages/das
 // Modelos
 const User = require("./models/User");
 const Ebook = require("./models/Ebook");
-const Products = require("./models/Products");
+const Product = require("./models/Product");
 
 // Conexão com MongoDB
 const dbUser = process.env.DB_USER;
@@ -57,8 +57,8 @@ mongoose
     console.log("Conexão ao MongoDB Atlas bem-sucedida.");
     app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
   })
-  .catch((err) => {
-    console.error("Erro ao conectar ao MongoDB Atlas:", err);
+  .catch((error) => {
+    console.error("Erro ao conectar ao MongoDB Atlas:", error);
     process.exit(1);
   });
 
@@ -162,21 +162,59 @@ app.get("/user/:id", async (req, res) => {
   }
 });
 
-// Rota de adição de ebooks ao banco
+// Rota para adicionar novos ebooks ou produtos ao banco
 app.post("/insert", async (req, res) => {
-  const { title, category, price } = req.body;
+  const { title, name, category, price, type } = req.body;
+
+  // Validações básicas
+  if (!type) {
+    return res.status(422).json({ msg: "O campo 'type' é obrigatório!" });
+  }
+  const itemType = type.toLowerCase();
+  if (!["ebook", "product"].includes(itemType)) {
+    return res.status(422).json({ msg: "Tipo inválido! Use 'ebook' ou 'product'." });
+  }
+  if (itemType === "ebook" && !title) {
+    return res.status(422).json({ msg: "O campo 'title' é obrigatório para Ebooks!" });
+  }
+  if (itemType === "product" && !name) {
+    return res.status(422).json({ msg: "O campo 'name' é obrigatório para Products!" });
+  }
+  if (!category) {
+    return res.status(422).json({ msg: "O campo 'category' é obrigatório!" });
+  }
+  if (!price) {
+    return res.status(422).json({ msg: "O campo 'price' é obrigatório!" });
+  }
+
+  // Normaliza o preço
+  let normalizedPrice;
+  try {
+    normalizedPrice = parseFloat(price.toString().replace(",", ".").replace(/[^\d.]/g, ""));
+    if (isNaN(normalizedPrice) || normalizedPrice < 0) {
+      return res.status(422).json({ msg: "Preço inválido! Use um número positivo." });
+    }
+  } catch (error) {
+    return res.status(422).json({ msg: "Erro ao processar o preço!" });
+  }
 
   try {
-    const ebook = new Ebook({
-      title,
+    let item;
+    const Model = itemType === "ebook" ? Ebook : Products;
+    const typeLabel = itemType === "ebook" ? "Ebook" : "Produto";
+
+    const data = {
+      title: itemType === "ebook" ? title : undefined,
+      name: itemType === "product" ? name : undefined,
       category,
-      price
-    });
-  
-    await ebook.save();
-    res.status(201).json({ msg: "Ebook criado com sucesso!" });
+      price: normalizedPrice,
+    };
+
+    item = new Model(data);
+    await item.save();
+    res.status(201).json({ msg: `${typeLabel} criado com sucesso!` });
   } catch (error) {
-    console.error("Erro ao processar /insert:", error);
+    console.error(`Erro ao processar /insert (${itemType}):`, error);
     res.status(500).json({ msg: "Ocorreu um erro com o servidor, tente novamente mais tarde." });
   }
 });

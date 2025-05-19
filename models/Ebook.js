@@ -1,11 +1,10 @@
 // Ebook.js
-
 const mongoose = require("mongoose");
 
 const EbookSchema = new mongoose.Schema({
-    title: String,
-    category: String,
-    price: String
+    title: { type: String, required: true },
+    category: { type: String, required: true },
+    price: { type: Number, required: true }
 }, { collection: "Ebooks" });
 
-module.exports = mongoose.model("Ebooks", EbookSchema);
+module.exports = mongoose.model("Ebook", EbookSchema);
