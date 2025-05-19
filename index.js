@@ -200,12 +200,11 @@ app.post("/insert", async (req, res) => {
 
   try {
     let item;
-    const Model = itemType === "ebook" ? Ebook : Products;
+    const Model = itemType === "ebook" ? Ebook : Product;
     const typeLabel = itemType === "ebook" ? "Ebook" : "Produto";
 
     const data = {
-      title: itemType === "ebook" ? title : undefined,
-      name: itemType === "product" ? name : undefined,
+      title,
       category,
       price: normalizedPrice,
     };
