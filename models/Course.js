@@ -7,4 +7,4 @@ const CourseSchema = new mongoose.Schema({
     price: { type: Number, required: true }
 }, { collection: "Course" });
 
-module.exports = mongoose.model("Course", CourseSchema);
+module.exports = mongoose.model("Courses", CourseSchema);
