@@ -5,6 +5,6 @@ const CourseSchema = new mongoose.Schema({
     title: { type: String, required: true },
     category: { type: String, required: true },
     price: { type: Number, required: true }
-}, { collection: "Course" });
+}, { collection: "Courses" });
 
-module.exports = mongoose.model("Courses", CourseSchema);
+module.exports = mongoose.model("Course", CourseSchema);
