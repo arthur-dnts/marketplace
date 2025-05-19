@@ -44,6 +44,7 @@ app.get("/dashboard", (req, res) => res.sendFile(path.join(__dirname, "pages/das
 const User = require("./models/User");
 const Ebook = require("./models/Ebook");
 const Product = require("./models/Product");
+const Course = require("./models/Course");
 
 // Conexão com MongoDB
 const dbUser = process.env.DB_USER;
@@ -162,14 +163,14 @@ app.get("/user/:id", async (req, res) => {
   }
 });
 
-// Rota para adicionar novos ebooks ou produtos ao banco
+// Rota para adicionar novos ebooks, produtos ou cursos ao banco
 app.post("/insert", async (req, res) => {
   const { title, category, price, type } = req.body;
 
   // Validações dos campos
   const itemType = type.toLowerCase();
-  if (!["ebook", "product"].includes(itemType)) {
-    return res.status(422).json({ msg: "Tipo inválido! Use 'ebook' ou 'product'." });
+  if (!["ebook", "product", "course"].includes(itemType)) {
+    return res.status(422).json({ msg: "Tipo inválido! Use 'ebook', 'product' ou 'course'." });
   }
   if (!title) {
     return res.status(422).json({ msg: "O campo 'Título' é obrigatório para Ebooks!" });
@@ -194,8 +195,8 @@ app.post("/insert", async (req, res) => {
 
   try {
     let item;
-    const Model = itemType === "ebook" ? Ebook : Product;
-    const typeLabel = itemType === "ebook" ? "Ebook" : "Produto";
+    const Model = itemType === "ebook" ? Ebook : itemType === "course" ? Course : Product;
+    const typeLabel = itemType === "ebook" ? Ebook : itemType === "course" ? Course : Product;
 
     const data = {
       title,

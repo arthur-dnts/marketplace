@@ -3,6 +3,7 @@ const routes = {
   main: { template: "main.hbs", script: "main.js", init: "initMain" },
   ebooks: { template: "ebooks.hbs", script: "ebooks.js", init: "initEbooks" },
   products: { template: "products.hbs", script: "products.js", init: "initProducts" },
+  courses: { template: "courses.hbs", script: "courses.js", init: "initCourses" },
   users: { template: "users.hbs", script: "users.js", init: "initUsers" },
   dev: { template: "dev.hbs" }
 };
@@ -63,14 +64,15 @@ function getRouteData(route) {
         year: 2025,
         menuItems: [
           { href: "#", icon: "../assets/svg/static/dashboard/dashboard.svg", alt: "dashboard", label: "Painel Geral" },
-          { href: "#", icon: "../assets/svg/static/dashboard/e-book.svg", alt: "book", label: "E-books" },
+          { href: "#", icon: "../assets/svg/static/dashboard/e-book.svg", alt: "ebook", label: "E-books" },
           { href: "#", icon: "../assets/svg/static/dashboard/products.svg", alt: "product", label: "Produtos" },
+          { href: "#", icon: "../assets/svg/static/dashboard/graduation.svg", alt: "courses", label: "Cursos" },
           { href: "#", icon: "../assets/svg/static/dashboard/user.svg", alt: "user", label: "Usuários" },
           { href: "#", icon: "../assets/svg/static/dashboard/dev.svg", alt: "dev", label: "Dev" },
         ],
         topCards: [
-          { title: "Alunos", value: "1247", icon: "../assets/svg/static/dashboard/students.png", alt: "students" },
-          { title: "E-books", value: "35", icon: "../assets/svg/static/dashboard/courses.png", alt: "courses" },
+          { title: "Cursos", value: "14", icon: "../assets/svg/static/dashboard/courses.png", alt: "students" },
+          { title: "E-books", value: "35", icon: "../assets/svg/static/dashboard/e-book.png", alt: "courses" },
           { title: "Produtos", value: "27", icon: "../assets/svg/static/dashboard/box.png", alt: "box" },
           { title: "Rendimento", value: "5.000 a.m.", icon: "../assets/svg/static/dashboard/performance.png", alt: "performance" },
         ],
@@ -97,6 +99,15 @@ function getRouteData(route) {
           { title: "Produtos", value: 27, imgSrc: "../assets/svg/static/dashboard/box.png", alt: "products" },
           { title: "Média Diária", value: 10, imgSrc: "../assets/svg/static/dashboard/performance.png", alt: "performance" },
           { title: "Clientes", value: 312, imgSrc: "../assets/svg/static/dashboard/students.png", alt: "students" },
+          { title: "Gerenciar", condition: true, imgSrc: "../assets/svg/static/dashboard/adm.png", alt: "adm" }
+        ],
+      };
+    case "courses":
+      return {
+        topCards: [
+          { title: "Cursos", value: 14, imgSrc: "../assets/svg/static/dashboard/courses.png", alt: "e-book" },
+          { title: "Média Diária", value: 12, imgSrc: "../assets/svg/static/dashboard/performance.png", alt: "performance" },
+          { title: "Clientes", value: 215, imgSrc: "../assets/svg/static/dashboard/students.png", alt: "students" },
           { title: "Gerenciar", condition: true, imgSrc: "../assets/svg/static/dashboard/adm.png", alt: "adm" }
         ],
       };

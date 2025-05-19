@@ -27,7 +27,7 @@ function renderTopChart() {
       datasets: [{
         label: "Top 5 Produtos",
         data: [120, 200, 125, 314, 150],
-        backgroundColor: ["#f94144", "#f3722c", "#f8961e", "#f9c74f", "#90be6d"],
+        backgroundColor: ["#016FB9", "#00695C", "#8E24AA", "#00BFA5", "#0599FF"],
       }],
     },
     options: {

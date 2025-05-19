@@ -540,12 +540,12 @@ input:focus {
     max-height: 360px;
 }
 
-#topEbooks, #topProducts {
+#topEbooks, #topProducts, #topCourses {
     max-width: 750px;
     max-height: 350px;
 }
 
-#salesEbooks, #salesProducts {
+#salesEbooks, #salesProducts, #salesCourses {
     max-width: 750px;
     max-height: 370px;
 }

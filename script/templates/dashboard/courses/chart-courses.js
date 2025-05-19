@@ -2,13 +2,13 @@
 let chartTop = null;
 let chartSales = null;
 
-export function renderEbookCharts() {
+export function renderCoursesCharts() {
   renderTopChart();
   renderSalesChart();
 }
 
 function renderTopChart() {
-  const canvas = document.getElementById("topEbooks");
+  const canvas = document.getElementById("topCourses");
   if (!canvas) {
     setTimeout(renderTopChart, 100);
     return;
@@ -38,7 +38,7 @@ function renderTopChart() {
 }
 
 function renderSalesChart() {
-  const canvas = document.getElementById("salesEbooks");
+  const canvas = document.getElementById("salesCourses");
   if (!canvas) {
     setTimeout(renderSalesChart, 100);
     return;
