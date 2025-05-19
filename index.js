@@ -164,27 +164,21 @@ app.get("/user/:id", async (req, res) => {
 
 // Rota para adicionar novos ebooks ou produtos ao banco
 app.post("/insert", async (req, res) => {
-  const { title, name, category, price, type } = req.body;
+  const { title, category, price, type } = req.body;
 
-  // Validações básicas
-  if (!type) {
-    return res.status(422).json({ msg: "O campo 'type' é obrigatório!" });
-  }
+  // Validações dos campos
   const itemType = type.toLowerCase();
   if (!["ebook", "product"].includes(itemType)) {
     return res.status(422).json({ msg: "Tipo inválido! Use 'ebook' ou 'product'." });
   }
-  if (itemType === "ebook" && !title) {
-    return res.status(422).json({ msg: "O campo 'title' é obrigatório para Ebooks!" });
-  }
-  if (itemType === "product" && !name) {
-    return res.status(422).json({ msg: "O campo 'name' é obrigatório para Products!" });
+  if (!title) {
+    return res.status(422).json({ msg: "O campo 'Título' é obrigatório para Ebooks!" });
   }
   if (!category) {
-    return res.status(422).json({ msg: "O campo 'category' é obrigatório!" });
+    return res.status(422).json({ msg: "O campo 'Categoria' é obrigatório!" });
   }
   if (!price) {
-    return res.status(422).json({ msg: "O campo 'price' é obrigatório!" });
+    return res.status(422).json({ msg: "O campo 'Preço' é obrigatório!" });
   }
 
   // Normaliza o preço
