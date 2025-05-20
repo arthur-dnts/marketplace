@@ -112,16 +112,13 @@ function getRouteData(route) {
         ],
       };
     case "users":
-      return {
-        users: [
-          { id: "#0000", name: "Lorem Ipsum", avatar: "../assets/svg/static/dashboard/user.svg", status: "Ativo", statusClass: "active", type: "Usuário" },
-          { id: "#0001", name: "Lorem Ipsum", avatar: "../assets/svg/static/dashboard/user.svg", status: "Inativo", statusClass: "deactive", type: "Usuário" },
-          { id: "#0002", name: "Lorem Ipsum", avatar: "../assets/svg/static/dashboard/user.svg", status: "Ativo", statusClass: "active", type: "Admin" },
-          { id: "#0003", name: "Lorem Ipsum", avatar: "../assets/svg/static/dashboard/user.svg", status: "Pendente", statusClass: "pending", type: "Usuário" },
-          { id: "#0004", name: "Lorem Ipsum", avatar: "../assets/svg/static/dashboard/user.svg", status: "Ativo", statusClass: "active", type: "Usuário" },
-          { id: "#0005", name: "Lorem Ipsum", avatar: "../assets/svg/static/dashboard/user.svg", status: "Inativo", statusClass: "deactive", type: "Admin" },
-        ]
-      };
+      return fetch("/api/users")
+        .then(res => res.json())
+        .then(users => ({ users }))
+        .catch(error => {
+          console.error("Erro ao carregar usuários:", error);
+          return { users: [] };
+        })
     case "dev":
       return {
         devCards: [

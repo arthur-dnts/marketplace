@@ -212,3 +212,13 @@ app.post("/insert", async (req, res) => {
     res.status(500).json({ msg: "Ocorreu um erro com o servidor, tente novamente mais tarde." });
   }
 });
+
+// Rota para carregar usuários cadastrados
+app.get("/api/users ", async (req, res) => {
+  try {
+    const users = await User.find();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ msg: "Erro ao buscar usuários:", error });
+  }
+})
