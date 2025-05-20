@@ -123,10 +123,11 @@ function getRouteData(route) {
           data.forEach(user => {
             const tr = document.createElement("tr");
             tr.innerHTML = `
-              <td>${user._id}</td>
+              <td><strong>${user._id}</strong></td>
               <td>${user.name} ${user.surname}</td>
-              <td>Ativo</td>
-              <td><button>Editar</button> <button>Remover</button></td>
+              <td><span class="status {{statusClass}}">${user.status}</span></td>
+              <td><strong>${user.role}</strong></td>
+              <td><button class="action-button edit">Editar</button><button class="action-button remove">Remover</button></td>
             `;
             tbody.appendChild(tr);
           });
