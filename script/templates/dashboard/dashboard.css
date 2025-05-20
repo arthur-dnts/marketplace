@@ -374,12 +374,6 @@ input:focus {
     vertical-align: middle;
 }
 
-.custom-table td:nth-child(2) {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
 .status {
     display: inline-flex;
     align-items: center;
@@ -392,15 +386,15 @@ input:focus {
     font-size: 14px;
 }
 
-.status.active {
+.status.ativo {
     color: #52c41a;
 }
 
-.status.deactive {
+.status.inativo {
     color: #ff4d4f;
 }
 
-.status.pending {
+.status.pendente {
     color: #8c8c8c;
 }
 

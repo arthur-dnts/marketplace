@@ -5,13 +5,13 @@ export function initUsers() {
   // Renderizar o gráfico
   renderUsersCharts();
 
-  // Preencher a tabela de usuários
+  // Preencher a tabela de usuários dinamicamente
   fetch('https://marketplace-rpch.onrender.com/api/users')
     .then(res => res.json())
     .then(data => {
       const tbody = document.querySelector('.custom-table tbody');
       if (tbody) {
-        tbody.innerHTML = ''; // Limpar a tabela
+        tbody.innerHTML = ''; // Limpa a tabela
         data.forEach(user => {
           const tr = document.createElement('tr');
           tr.innerHTML = `

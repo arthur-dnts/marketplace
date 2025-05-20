@@ -10,7 +10,8 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   role: { type: String, required: true },
   status: { type: String, required: true },
-  refreshToken: { type: String, required: false }
+  refreshToken: { type: String, required: false },
+  createdAt: { type: Date, default: Date.now }
 }, { collection: "Users" });
 
 module.exports = mongoose.model("User", UserSchema);
