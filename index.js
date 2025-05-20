@@ -67,25 +67,30 @@ mongoose
 app.post("/auth/register", async (req, res) => {
   const { name, surname, email, telefone, password, confirmPassword } = req.body;
 
+  // Valida o campo de nome
   if (!name) return res.status(422).json({ msg: "O nome é obrigatório!" });
   if (name.length > 50) return res.status(422).json({ msg: "Nome muito longo (Máx. 50 caracteres)." });
   if (name.length < 2) return res.status(422).json({ msg: "Nome muito curto (Mín. 2 caracteres)." });
 
+  // Valida o campo de sobrenome
   if (!surname) return res.status(422).json({ msg: "O sobrenome é obrigatório!" });
   if (surname.length > 50) return res.status(422).json({ msg: "Sobrenome muito longo (Máx. 50 caracteres)." });
   if (surname.length < 2) return res.status(422).json({ msg: "Sobrenome muito curto (Mín. 2 caracteres)." });
 
+  // Valida o campo de email
   if (!email) return res.status(422).json({ msg: "O e-mail é obrigatório!" });
   if (email.length > 100) return res.status(422).json({ msg: "E-mail muito longo (Máx. 100 caracteres)." });
   if (email.length < 6) return res.status(422).json({ msg: "E-mail muito curto (Mín. 6 caracteres)." });
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) return res.status(422).json({ msg: "E-mail inválido!" });
 
+  // Valida o campo de telefone
   if (!telefone) return res.status(422).json({ msg: "O telefone é obrigatório!" });
   if (telefone.length !== 15) return res.status(422).json({ msg: "Número de telefone inválido (Padrão (99) 91234-5678)." });
   const telefoneRegex = /^\(\d{2}\) \d{5}-\d{4}$/;
   if (!telefoneRegex.test(telefone)) return res.status(422).json({ msg: "Formato de telefone inválido! Use (99) 91234-5678." });
 
+  // Valida o campo de senha
   if (!password) return res.status(422).json({ msg: "A senha é obrigatória!" });
   if (password.length > 128) return res.status(422).json({ msg: "Senha muito longa (Máx. 128 caracteres)." });
   if (password.length < 8) return res.status(422).json({ msg: "Senha muito curta (Mín. 8 caracteres)." });
@@ -97,6 +102,9 @@ app.post("/auth/register", async (req, res) => {
 
     const salt = await bcrypt.genSalt(12);
     const passwordHash = await bcrypt.hash(password, salt);
+    
+    const role = "Usuário" // Adicionado por padrão
+    const status = "Ativo" // Adicionado por padrão
 
     const user = new User({
       name,
@@ -104,8 +112,8 @@ app.post("/auth/register", async (req, res) => {
       email,
       telefone,
       password: passwordHash,
-      role: "Usuário",
-      status: "Ativo"
+      role,
+      status
     });
 
     await user.save();
