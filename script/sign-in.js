@@ -51,8 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const telefone = form.querySelector("#telefone-input").value;
         const password = form.querySelector("#password").value;
         const confirmPassword = form.querySelector("#confirm-password").value;
-        const role = "User"
-        const status = "Ativo"
 
         // Cria o objeto com os dados
         const dados = {
@@ -62,8 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
             telefone,
             password,
             confirmPassword,
-            role,
-            status
         };
 
         try {

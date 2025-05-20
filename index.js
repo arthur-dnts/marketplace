@@ -104,6 +104,8 @@ app.post("/auth/register", async (req, res) => {
       email,
       telefone,
       password: passwordHash,
+      role: "Usuário",
+      status: "Ativo"
     });
 
     await user.save();
