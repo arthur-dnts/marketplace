@@ -102,7 +102,7 @@ app.post("/auth/register", async (req, res) => {
 
     const salt = await bcrypt.genSalt(12);
     const passwordHash = await bcrypt.hash(password, salt);
-    
+
     const role = "Usuário" // Adicionado por padrão
     const status = "Ativo" // Adicionado por padrão
 
@@ -224,7 +224,7 @@ app.post("/insert", async (req, res) => {
 });
 
 // Rota para carregar usuários cadastrados
-app.get("/api/users ", async (req, res) => {
+app.get("/api/users", async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
