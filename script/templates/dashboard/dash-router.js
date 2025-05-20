@@ -112,12 +112,27 @@ function getRouteData(route) {
         ],
       };
     case "users":
-      return fetch("/api/users")
+      return fetch("https://marketplace-rpch.onrender.com/api/users")
         .then(res => res.json())
-        .then(users => ({ users }))
+        .then(data => {
+          console.log("Usuários:", data)
+          const tbody = document.querySelector(".custom-table tbody");
+          tbody.innerHTML = ""; // Limpar
+
+          // Carrega os usuários dinamicamente
+          data.forEach(user => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${user._id}</td>
+              <td>${user.name} ${user.surname}</td>
+              <td>Ativo</td>
+              <td><button>Editar</button> <button>Remover</button></td>
+            `;
+            tbody.appendChild(tr);
+          });
+        })
         .catch(error => {
-          console.error("Erro ao carregar usuários:", error);
-          return { users: [] };
+          console.error("Erro ao carregar usuários:", error)
         })
     case "dev":
       return {
