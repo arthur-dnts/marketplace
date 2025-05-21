@@ -28,6 +28,11 @@
   ],
   "routes": [
     {
+      "src": "/404",
+      "dest": "/pages/404",
+      "methods": ["GET"]
+    },
+    {
       "src": "/cursos",
       "dest": "/pages/courses.html",
       "methods": ["GET"]
@@ -60,11 +65,6 @@
     {
       "src": "/carrinho",
       "dest": "/pages/cart.html",
-      "methods": ["GET"]
-    },
-    {
-      "src": "/dashboard",
-      "dest": "/pages/dashboard.html",
       "methods": ["GET"]
     },
     {

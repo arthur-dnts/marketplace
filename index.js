@@ -161,26 +161,43 @@ app.post("/auth/login", async (req, res) => {
   }
 });
 
-// Rota privada (/user/:id)
-app.get("/user/:id", async (req, res) => {
+// Rota privada para validar acesso ao dashboard
+app.get("/user/:id/dashboard", async (req, res) => {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
 
   if (!token) {
-    return res.status(401).json({ msg: "Acesso negado!" });
+    return res.status(401).json({ msg: "Acesso negado! Token não fornecido." });
   }
 
   try {
     const secret = process.env.SECRET;
     const decoded = jwt.verify(token, secret);
     const id = req.params.id;
-
     const user = await User.findById(id, "-password");
+
     if (!user) {
       return res.status(404).json({ msg: "Usuário não encontrado!" });
     }
 
-    res.status(200).json({ user });
+    // Verifica se o ID da URL corresponde ao ID do token
+    if (decoded.id !== id) {
+      return res.redirect("/404");
+    }
+
+    // Busca o usuário no banco de dados
+    const allowedAdminsIds = process.env.ALLOWED_ADMIN_IDS
+      ? process.env.ALLOWED_ADMIN_IDS.split(",")
+      : [];
+
+    // Verifica se o ID está na lista de administradores
+    if (!allowedAdminsIds.includes(id)) {
+      return res.redirect("/404");
+    }
+
+    // Libera o acesso ao dashboard
+    res.status(200).json({ msg: "Acesso ao dashboard liberado.", user })
+
   } catch (error) {
     res.status(400).json({ msg: "Token inválido!" });
   }
