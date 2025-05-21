@@ -6,7 +6,6 @@ function initializeModal() {
 
   if (!modal) return;
 
-  // Limpar ouvintes anteriores dos botões -> Evita duplicatas
   buttons.forEach(btn => {
     const newBtn = btn.cloneNode(true);
     btn.parentNode.replaceChild(newBtn, btn);
@@ -19,7 +18,6 @@ function initializeModal() {
     newSpan.onclick = () => modal.style.display = "none";
   }
 
-  // Remover ouvinte anterior do window
   window.removeEventListener("click", closeModalOnClickOutside);
   window.addEventListener("click", closeModalOnClickOutside);
 
@@ -32,7 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeModal();
   const contentDiv = document.getElementById("content");
   if (contentDiv) {
-    const observer = new MutationObserver(() => initializeModal());
+    let isObserving = false;
+    const observer = new MutationObserver(() => {
+      if (!isObserving) {
+        isObserving = true;
+        console.log("MutationObserver disparado: reinicializando modal");
+        initializeModal();
+        setTimeout(() => { isObserving = false; }, 100); // Debounce
+      }
+    });
     observer.observe(contentDiv, { childList: true, subtree: true });
   }
 });

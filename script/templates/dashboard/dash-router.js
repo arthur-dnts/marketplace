@@ -8,12 +8,20 @@ const routes = {
   dev: { template: "dev.hbs" }
 };
 
-async function loadPage(route) {
-  const routeInfo = routes[route];
+let isNavigating = false; // Flag para evitar navegações simultâneas
 
+async function loadPage(route) {
+  if (isNavigating) {
+    console.log(`Navegação bloqueada: já em andamento para ${route}`);
+    return;
+  }
+  isNavigating = true;
+
+  const routeInfo = routes[route];
   if (!routeInfo) {
     console.error(`Rota "${route}" não encontrada.`);
     document.getElementById("content").innerHTML = "<p>Rota não encontrada.</p>";
+    isNavigating = false;
     return;
   }
 
@@ -21,54 +29,66 @@ async function loadPage(route) {
   const dir = template.replace(".hbs", "");
 
   try {
-    // Carrega e renderiza o template
+    console.log(`Carregando template: /script/templates/dashboard/${dir}/${template}`);
     const res = await fetch(`/script/templates/dashboard/${dir}/${template}`);
+    if (!res.ok) {
+      throw new Error(`Erro ao carregar template: ${res.status} ${res.statusText}`);
+    }
     const templateText = await res.text();
     const compiled = Handlebars.compile(templateText);
-    const html = compiled(getRouteData(route)); // Passa os dados específicos da rota
+    const html = compiled(getRouteData(route));
     document.getElementById("content").innerHTML = html;
 
     // Remove scripts dinâmicos anteriores
     document.querySelectorAll("script[data-dynamic]").forEach((s) => s.remove());
 
-    // Adiciona o script correspondente da rota atual
+    // Adiciona o script correspondente
     if (script) {
+      console.log(`Carregando script: /script/templates/dashboard/${dir}/${script}`);
       const scriptEl = document.createElement("script");
       scriptEl.src = `/script/templates/dashboard/${dir}/${script}?v=${Date.now()}`;
       scriptEl.type = "module";
       scriptEl.setAttribute("data-dynamic", "true");
       scriptEl.onload = async () => {
-        // Chama a função de inicialização, se definida
-        if (init) {
-          const module = await import(`/script/templates/dashboard/${dir}/${script}?v=${Date.now()}`);
-          if (module[init]) {
-            module[init]();
-          } else {
-            console.warn(`Função de inicialização "${init}" não encontrada em ${script}`);
+        try {
+          if (init) {
+            const module = await import(`/script/templates/dashboard/${dir}/${script}?v=${Date.now()}`);
+            if (module[init]) {
+              console.log(`Executando ${init} para ${route}`);
+              module[init]();
+            } else {
+              console.warn(`Função "${init}" não encontrada em ${script}`);
+            }
           }
+        } catch (error) {
+          console.error(`Erro ao executar ${init}:`, error);
         }
+      };
+      scriptEl.onerror = () => {
+        console.error(`Erro ao carregar script ${script}`);
       };
       document.body.appendChild(scriptEl);
     }
   } catch (err) {
     console.error(`Erro ao carregar a rota "${route}":`, err);
-    document.getElementById("content").innerHTML = "<p>Erro ao carregar a página.</p>";
+    document.getElementById("content").innerHTML = "<p>Erro ao carregar a página. Tente novamente.</p>";
+  } finally {
+    isNavigating = false;
   }
 }
 
-// Fornece os dados para cada rota
 function getRouteData(route) {
   switch (route) {
     case "main":
       return {
         year: 2025,
         menuItems: [
-          { href: "#", icon: "../assets/svg/static/dashboard/dashboard.svg", alt: "dashboard", label: "Painel Geral" },
-          { href: "#", icon: "../assets/svg/static/dashboard/e-book.svg", alt: "ebook", label: "E-books" },
-          { href: "#", icon: "../assets/svg/static/dashboard/products.svg", alt: "product", label: "Produtos" },
-          { href: "#", icon: "../assets/svg/static/dashboard/graduation.svg", alt: "courses", label: "Cursos" },
-          { href: "#", icon: "../assets/svg/static/dashboard/user.svg", alt: "user", label: "Usuários" },
-          { href: "#", icon: "../assets/svg/static/dashboard/dev.svg", alt: "dev", label: "Dev" },
+          { href: "#", icon: "../assets/svg/static/dashboard/dashboard.svg", alt: "dashboard", label: "Painel Geral", route: "main" },
+          { href: "#", icon: "../assets/svg/static/dashboard/e-book.svg", alt: "ebook", label: "E-books", route: "ebooks" },
+          { href: "#", icon: "../assets/svg/static/dashboard/products.svg", alt: "product", label: "Produtos", route: "products" },
+          { href: "#", icon: "../assets/svg/static/dashboard/graduation.svg", alt: "courses", label: "Cursos", route: "courses" },
+          { href: "#", icon: "../assets/svg/static/dashboard/user.svg", alt: "user", label: "Usuários", route: "users" },
+          { href: "#", icon: "../assets/svg/static/dashboard/dev.svg", alt: "dev", label: "Dev", route: "dev" },
         ],
         topCards: [
           { title: "Cursos", value: "", icon: "../assets/svg/static/dashboard/courses.png", alt: "students" },
@@ -120,7 +140,7 @@ function getRouteData(route) {
           { title: "Notificações", test: true, imgSrc: "../assets/svg/static/dashboard/notification.png", alt: "notification" },
           { title: "Servidores", test: true, imgSrc: "../assets/svg/static/dashboard/server.png", alt: "server" },
         ]
-      }
+      };
     default:
       return {};
   }
@@ -129,15 +149,24 @@ function getRouteData(route) {
 function setupSidebarNavigation() {
   const links = document.querySelectorAll(".sidebar-menu a");
   links.forEach((link) => {
-    link.addEventListener("click", (e) => {
+    // Clonar o link para remover ouvintes anteriores
+    const newLink = link.cloneNode(true);
+    link.parentNode.replaceChild(newLink, link);
+    newLink.addEventListener("click", (e) => {
       e.preventDefault();
-      const routeName = link.dataset.routes;
-      loadPage(routeName);
+      const routeName = newLink.dataset.routes;
+      console.log(`Clicado no sidebar: ${routeName}`);
+      if (routeName && routes[routeName]) {
+        loadPage(routeName);
+      } else {
+        console.error(`Rota inválida: ${routeName}`);
+      }
     });
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("Inicializando sidebar e carregando rota main");
   setupSidebarNavigation();
   loadPage("main");
 });

@@ -45,7 +45,7 @@ export function initCourses() {
     formData.append("title", title);
     formData.append("category", category);
     formData.append("price", price);
-    formData.append("type", "ebook");
+    formData.append("type", "course");
     if (file) {
       formData.append("cover", file); // Adiciona a capa, se selecionada
     }

@@ -2,7 +2,7 @@
 let chartTop = null;
 let chartSales = null;
 
-export function renderCoursesCharts() {
+export function renderCourseCharts() {
   renderTopChart();
   renderSalesChart();
 }

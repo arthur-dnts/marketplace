@@ -45,7 +45,7 @@ export function initEbooks() {
     formData.append("title", title);
     formData.append("category", category);
     formData.append("price", price);
-    formData.append("type", "product");
+    formData.append("type", "ebook");
     if (file) {
       formData.append("cover", file); // Adiciona a capa, se selecionada
     }
