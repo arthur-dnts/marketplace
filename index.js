@@ -11,12 +11,6 @@ require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-// Criar pasta uploads se não existir
-const uploadDir = path.join(__dirname, "uploads");
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
-
 // Configura o multer para upload de arquivos
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -47,6 +41,7 @@ app.use(express.static("css"));
 app.use(express.static("script"));
 app.use(express.static("assets"));
 app.use(express.static("pages"));
+app.use("/uploads", express.static("uploads"));
 
 // Rotas estáticas
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
