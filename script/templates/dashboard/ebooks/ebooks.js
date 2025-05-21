@@ -1,58 +1,96 @@
+// ebooks.js
 import { renderEbookCharts } from "./chart-ebooks.js";
 
 export function initEbooks() {
   renderEbookCharts();
-}
 
-const form = document.getElementById("ebook-form");
+  const form = document.getElementById("ebook-form");
+  if (!form) return;
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault(); // Impede o comportamento padrão do formulário
+  // Clonar o formulário para remover ouvintes anteriores
+  const newForm = form.cloneNode(true);
+  form.parentNode.replaceChild(newForm, form);
 
-  // Obtém os dados do formulário
-  const title = document.getElementById("title").value;
-  const category = document.getElementById("category").value;
-  const price = document.getElementById("price").value;
+  newForm.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Impede o comportamento padrão do formulário
 
-  const dados = {
-    title,
-    category,
-    price,
-    type: "ebook"
-  };
+    const submitButton = newForm.querySelector(".form-button");
+    submitButton.disabled = true; // Desativa o botão para evitar cliques múltiplos
 
-  try {
-    // Faz o envio dos dados para o Render
-    const response = await fetch("https://marketplace-rpch.onrender.com/insert", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(dados)
-    });
+    // Obtém os dados do formulário
+    const title = newForm.querySelector("#title").value.trim();
+    const category = newForm.querySelector("#category").value;
+    const price = newForm.querySelector("#price").value.trim();
+    const fileInput = newForm.querySelector("#fileInput");
+    const file = fileInput.files[0];
 
-    const contentType = response.headers.get("content-type");
+    // Validações no cliente
+    if (!title) {
+      alert("O título é obrigatório!");
+      submitButton.disabled = false;
+      return;
+    }
+    if (!category) {
+      alert("A categoria é obrigatória!");
+      submitButton.disabled = false;
+      return;
+    }
+    if (!price || isNaN(parseFloat(price.replace(",", ".")))) {
+      alert("O preço deve ser um número válido!");
+      submitButton.disabled = false;
+      return;
+    }
 
-    if (contentType && contentType.includes("application/json")) {
-      const result = await response.json();
+    // Preparar dados para envio
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("category", category);
+    formData.append("price", price);
+    formData.append("type", "ebook");
+    if (file) {
+      formData.append("cover", file); // Adiciona a capa, se selecionada
+    }
+
+    try {
+      const response = await fetch("https://marketplace-rpch.onrender.com/insert", {
+        method: "POST",
+        body: formData, // Usa FormData para suportar arquivo
+      });
+
+      const contentType = response.headers.get("content-type");
+      let result;
+      if (contentType && contentType.includes("application/json")) {
+        result = await response.json();
+      } else {
+        const text = await response.text();
+        console.error("Resposta inesperada do servidor:", text);
+        alert("Erro inesperado ao processar a resposta do servidor.");
+        submitButton.disabled = false;
+        return;
+      }
 
       if (response.ok) {
-        alert("Ebook criado com sucesso!");
-        form.reset();
-        document.getElementById("fileName").textContent = "Nenhuma capa selecionada";
+        alert(result.msg);
+        newForm.reset();
+        newForm.querySelector("#fileName").textContent = "Nenhuma capa selecionada";
         document.getElementById("myModal").style.display = "none";
-
       } else {
         alert(`Erro ao cadastrar novo ebook: ${result.msg || "Erro desconhecido."}`);
       }
-    } else {
-      const text = await response.text();
-      console.error("Resposta inesperada do servidor:", text);
-      alert("Erro inesperado ao processar a resposta do servidor.");
+    } catch (error) {
+      console.error("Erro ao enviar formulário:", error);
+      alert("Erro ao conectar ao servidor, tente novamente mais tarde.");
+    } finally {
+      submitButton.disabled = false; // Reativa o botão
     }
+  });
 
-  } catch (error) {
-    console.error("Erro ao enviar formulário:", error);
-    alert("Erro ao conectar ao servidor, tente novamente mais tarde.");
+  // Atualizar nome do arquivo selecionado
+  const fileInput = newForm.querySelector("#fileInput");
+  const fileNameSpan = newForm.querySelector("#fileName");
+  if (fileInput && fileNameSpan) {
+    fileInput.addEventListener("change", () => {
+      fileNameSpan.textContent = fileInput.files[0]?.name || "Nenhuma capa selecionada";
+    });
   }
-});
+}

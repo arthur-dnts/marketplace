@@ -5,6 +5,7 @@ const cors = require("cors");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const multer = require("multer");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
@@ -174,17 +175,16 @@ app.get("/user/:id", async (req, res) => {
 });
 
 // Rota para adicionar novos ebooks, produtos ou cursos ao banco
-app.post("/insert", async (req, res) => {
+app.post("/insert", upload.single("cover"), async (req, res) => {
   const { title, category, price, type } = req.body;
   console.log(`Nova requisição recebida: ${JSON.stringify(req.body)}`);
 
-  // Validações dos campos
   const itemType = type.toLowerCase();
   if (!["ebook", "product", "course"].includes(itemType)) {
     return res.status(422).json({ msg: "Tipo inválido! Use 'ebook', 'product' ou 'course'." });
   }
   if (!title) {
-    return res.status(422).json({ msg: "O campo 'Título' é obrigatório para Ebooks!" });
+    return res.status(422).json({ msg: "O campo 'Título' é obrigatório!" });
   }
   if (!category) {
     return res.status(422).json({ msg: "O campo 'Categoria' é obrigatório!" });
@@ -193,7 +193,6 @@ app.post("/insert", async (req, res) => {
     return res.status(422).json({ msg: "O campo 'Preço' é obrigatório!" });
   }
 
-  // Normaliza o preço
   let normalizedPrice;
   try {
     normalizedPrice = parseFloat(price.toString().replace(",", ".").replace(/[^\d.]/g, ""));
@@ -205,17 +204,17 @@ app.post("/insert", async (req, res) => {
   }
 
   try {
-    let item;
     const Model = itemType === "ebook" ? Ebook : itemType === "course" ? Course : Product;
-    const typeLabel = itemType === "ebook" ? Ebook : itemType === "course" ? Course : Product;
+    const typeLabel = itemType === "ebook" ? "Ebook" : itemType === "course" ? "Curso" : "Produto";
 
     const data = {
       title,
       category,
       price: normalizedPrice,
+      cover: req.file ? `/uploads/${req.file.filename}` : undefined,
     };
 
-    item = new Model(data);
+    const item = new Model(data);
     await item.save();
     res.status(201).json({ msg: `${typeLabel} criado com sucesso!` });
   } catch (error) {

@@ -6,20 +6,28 @@ export function initMain() {
   renderMainChart();
 
   Promise.all([
-    fetch("https://marketplace-rpch.onrender.com/api/courses/count"),
-    fetch("https://marketplace-rpch.onrender.com/api/ebooks/count"),
-    fetch("https://marketplace-rpch.onrender.com/api/products/count"),
-    fetch("https://marketplace-rpch.onrender.com/api/revenue/monthly")
+    fetch("https://marketplace-rpch.onrender.com/api/courses/count").then(res => res.json()),
+    fetch("https://marketplace-rpch.onrender.com/api/ebooks/count").then(res => res.json()),
+    fetch("https://marketplace-rpch.onrender.com/api/products/count").then(res => res.json()),
+    fetch("https://marketplace-rpch.onrender.com/api/revenue/monthly").then(res => res.json())
   ])
     .then(([coursesData, ebooksData, productsData, revenueData]) => {
-      const topCards = document.querySelectorAll(".top-cards .card-big");
-      topCards.entries.forEach(card => {
-        const title = card.querySelector("h1")?.textContent;
-        const value = card.querySelector(".value")
-        if (title === "Cursos" && value) value.textContent = coursesData.count;
-        else if (title === "E-books" && value) value.textContent = ebooksData.count;
-        else if (title === "Produtos" && value) value.textContent = productsData.count;
-        else if (title === "Rendimento" && value) value.textContent = `${revenueData.revenue} a.m.`;
+      const topCards = document.querySelectorAll(".top-cards .card-top-small");
+      topCards.forEach(card => {
+        const titleElement = card.querySelector("h1");
+        const valueElement = card.querySelector("h2.value");
+        if (!titleElement || !valueElement) return;
+
+        const title = titleElement.textContent;
+        if (title === "Cursos") {
+          valueElement.textContent = coursesData.count || 0;
+        } else if (title === "E-books") {
+          valueElement.textContent = ebooksData.count || 0;
+        } else if (title === "Produtos") {
+          valueElement.textContent = productsData.count || 0;
+        } else if (title === "Rendimento") {
+          valueElement.textContent = `${revenueData.revenue || 0} a.m.`;
+        }
       });
     })
     .catch(error => {
