@@ -4,7 +4,7 @@ import { renderProductCharts } from "./chart-products.js";
 export function initProducts() {
   renderProductCharts();
 
-  const form = document.getElementById("products-form");
+  const form = document.getElementById("product-form");
   if (!form) return;
 
   // Clonar o formulário para remover ouvintes anteriores

@@ -1,4 +1,3 @@
-// ebooks.js
 import { renderEbookCharts } from "./chart-ebooks.js";
 
 export function initEbooks() {
@@ -46,7 +45,7 @@ export function initEbooks() {
     formData.append("title", title);
     formData.append("category", category);
     formData.append("price", price);
-    formData.append("type", "ebook");
+    formData.append("type", "product");
     if (file) {
       formData.append("cover", file); // Adiciona a capa, se selecionada
     }
@@ -75,7 +74,7 @@ export function initEbooks() {
         newForm.querySelector("#fileName").textContent = "Nenhuma capa selecionada";
         document.getElementById("myModal").style.display = "none";
       } else {
-        alert(`Erro ao cadastrar novo ebook: ${result.msg || "Erro desconhecido."}`);
+        alert(`Erro ao cadastrar novo e-book: ${result.msg || "Erro desconhecido."}`);
       }
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
