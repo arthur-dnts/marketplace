@@ -11,6 +11,23 @@ require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+// Criar pasta uploads se não existir
+const uploadDir = path.join(__dirname, "uploads");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
+// Configura o multer para upload de arquivos
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/"); // Pasta para salvar capas
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname)); // Nome único
+  },
+});
+const upload = multer({ storage }); // Definir upload
+
 // Configurar CORS
 app.use(cors({
   origin: [
