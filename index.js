@@ -234,17 +234,17 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
-// Rota para contar cursos no banco
+// Rota para contar cursos
 app.get("/api/courses/count", async (req, res) => {
   try {
     const count = await Course.countDocuments();
     res.json({ count });
   } catch (error) {
     res.status(500).json({ msg: "Erro ao contar cursos:", error });
-  } 
+  }
 });
 
-// Rota para contar e-books no banco
+// Rota para contar e-books
 app.get("/api/ebooks/count", async (req, res) => {
   try {
     const count = await Ebook.countDocuments();
@@ -254,7 +254,7 @@ app.get("/api/ebooks/count", async (req, res) => {
   }
 });
 
-// Rota para contar produtos no banco
+// Rota para contar produtos
 app.get("/api/products/count", async (req, res) => {
   try {
     const count = await Product.countDocuments();
@@ -267,12 +267,27 @@ app.get("/api/products/count", async (req, res) => {
 // Rota para calcular rendimento mensal
 app.get("/api/revenue/monthly", async (req, res) => {
   try {
-    const courses = await Course.find();
-    const ebooks = await Ebook.find();
-    const products = await Product.find();
-    const totalRevenue = [...courses, ...ebooks, ...products].reduce((sum, item) => sum + item.price, 0);
+    const now = new Date();
+    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59, 999);
+
+    const courses = await Course.find({
+      createdAt: { $gte: startOfMonth, $lte: endOfMonth }
+    });
+    const ebooks = await Ebook.find({
+      createdAt: { $gte: startOfMonth, $lte: endOfMonth }
+    });
+    const products = await Product.find({
+      createdAt: { $gte: startOfMonth, $lte: endOfMonth }
+    });
+
+    const totalRevenue = [...courses, ...ebooks, ...products].reduce(
+      (sum, item) => sum + item.price,
+      0
+    );
+
     res.json({ revenue: totalRevenue.toFixed(2) });
   } catch (error) {
-    res.status(500).json({ msg: "Erro ao calcular rendimento:", error });
+    res.status(500).json({ msg: "Erro ao calcular rendimento mensal:", error });
   }
 });
