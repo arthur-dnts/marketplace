@@ -1,13 +1,21 @@
+// chart-users.js
 let usersData = null;
 
 export function renderUsersCharts() {
-  renderUsersChart();
+  fetch('https://marketplace-rpch.onrender.com/api/users')
+    .then(res => res.json())
+    .then(data => {
+      renderUsersChart(data);
+    })
+    .catch(error => {
+      console.error('Erro ao buscar dados para o gráfico:', error);
+    });
 }
 
-function renderUsersChart() {
+function renderUsersChart(users) {
   const canvas = document.getElementById("usersData");
   if (!canvas) {
-    setTimeout(renderUsersChart, 100);
+    setTimeout(() => renderUsersChart(users), 100);
     return;
   }
 
@@ -17,22 +25,41 @@ function renderUsersChart() {
     usersData.destroy();
   }
 
+  // Contar usuários por mês
+  const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+  const currentYear = new Date().getFullYear();
+  const lastYear = currentYear - 1;
+
+  const currentYearData = new Array(12).fill(0);
+  const lastYearData = new Array(12).fill(0);
+
+  users.forEach(user => {
+    const createdAt = new Date(user.createdAt);
+    const year = createdAt.getFullYear();
+    const month = createdAt.getMonth();
+    if (year === currentYear) {
+      currentYearData[month]++;
+    } else if (year === lastYear) {
+      lastYearData[month]++;
+    }
+  });
+
   try {
     usersData = new Chart(ctx, {
       type: "line",
       data: {
-        labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        labels: months,
         datasets: [
           {
-            label: "Ano Atual",
-            data: [20, 35, 54, 37, 12, 25, 34, 29, 42, 87, 95, 10],
+            label: `Ano Atual (${currentYear})`,
+            data: currentYearData,
             borderColor: "#016fb9",
             backgroundColor: "#016fb99F",
             fill: false,
           },
           {
-            label: "Ano Anterior",
-            data: [15, 30, 45, 32, 10, 20, 30, 25, 38, 80, 90, 8],
+            label: `Ano Anterior (${lastYear})`,
+            data: lastYearData,
             borderColor: "#ff0000",
             backgroundColor: "#ff00009F",
             fill: false,
@@ -46,17 +73,18 @@ function renderUsersChart() {
           y: {
             easing: "easeInOutElastic",
             from: (ctx) => {
-              if (ctx.type === "data" ) {
+              if (ctx.type === "data") {
                 if (ctx.mode === "default" && !ctx.dropped) {
                   ctx.dropped = true;
                   return 0;
                 }
               }
-            }
-          }
-        }
+            },
+          },
+        },
       },
     });
   } catch (error) {
+    console.error('Erro ao renderizar o gráfico:', error);
   }
 }

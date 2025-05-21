@@ -71,10 +71,10 @@ function getRouteData(route) {
           { href: "#", icon: "../assets/svg/static/dashboard/dev.svg", alt: "dev", label: "Dev" },
         ],
         topCards: [
-          { title: "Cursos", value: "14", icon: "../assets/svg/static/dashboard/courses.png", alt: "students" },
-          { title: "E-books", value: "35", icon: "../assets/svg/static/dashboard/e-book.png", alt: "courses" },
-          { title: "Produtos", value: "27", icon: "../assets/svg/static/dashboard/box.png", alt: "box" },
-          { title: "Rendimento", value: "5.000 a.m.", icon: "../assets/svg/static/dashboard/performance.png", alt: "performance" },
+          { title: "Cursos", value: "", icon: "../assets/svg/static/dashboard/courses.png", alt: "students" },
+          { title: "E-books", value: "", icon: "../assets/svg/static/dashboard/e-book.png", alt: "courses" },
+          { title: "Produtos", value: "", icon: "../assets/svg/static/dashboard/box.png", alt: "box" },
+          { title: "Rendimento", value: "0 a.m.", icon: "../assets/svg/static/dashboard/performance.png", alt: "performance" },
         ],
         recentUsers: [
           { name: "Lorem Ipsum", profileIcon: "../assets/svg/static/dashboard/user.svg", settingsIcon: "../assets/svg/static/dashboard/settings.svg" },

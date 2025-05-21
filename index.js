@@ -176,6 +176,7 @@ app.get("/user/:id", async (req, res) => {
 // Rota para adicionar novos ebooks, produtos ou cursos ao banco
 app.post("/insert", async (req, res) => {
   const { title, category, price, type } = req.body;
+  console.log(`Nova requisição recebida: ${JSON.stringify(req.body)}`);
 
   // Validações dos campos
   const itemType = type.toLowerCase();
@@ -231,4 +232,47 @@ app.get("/api/users", async (req, res) => {
   } catch (error) {
     res.status(500).json({ msg: "Erro ao buscar usuários:", error });
   }
-})
+});
+
+// Rota para contar cursos no banco
+app.get("/api/courses/count", async (req, res) => {
+  try {
+    const count = await Course.countDocuments();
+    res.json({ count });
+  } catch (error) {
+    res.status(500).json({ msg: "Erro ao contar cursos:", error });
+  } 
+});
+
+// Rota para contar e-books no banco
+app.get("/api/ebooks/count", async (req, res) => {
+  try {
+    const count = await Ebook.countDocuments();
+    res.json({ count });
+  } catch (error) {
+    res.status(500).json({ msg: "Erro ao contar e-books:", error });
+  }
+});
+
+// Rota para contar produtos no banco
+app.get("/api/products/count", async (req, res) => {
+  try {
+    const count = await Product.countDocuments();
+    res.json({ count });
+  } catch (error) {
+    res.status(500).json({ msg: "Erro ao contar produtos:", error });
+  }
+});
+
+// Rota para calcular rendimento mensal
+app.get("/api/revenue/monthly", async (req, res) => {
+  try {
+    const courses = await Course.find();
+    const ebooks = await Ebook.find();
+    const products = await Product.find();
+    const totalRevenue = [...courses, ...ebooks, ...products].reduce((sum, item) => sum + item.price, 0);
+    res.json({ revenue: totalRevenue.toFixed(2) });
+  } catch (error) {
+    res.status(500).json({ msg: "Erro ao calcular rendimento:", error });
+  }
+});
