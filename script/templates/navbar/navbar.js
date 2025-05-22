@@ -55,6 +55,4 @@ async function renderNavbar() {
     }
 }
 
-export { renderNavbar };
-
 document.addEventListener("DOMContentLoaded", renderNavbar);

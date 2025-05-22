@@ -1,6 +1,4 @@
 // log-in.js
-import { renderNavbar } from "./templates/navbar/navbar.js"
-
 document.addEventListener("DOMContentLoaded", () => {
     // Mostrar/esconder senha
     const iconesSenha = document.querySelectorAll(".show-password");
@@ -52,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Armazenar o token e o refresh token no localStorage
                 localStorage.setItem("authToken", result.token);
                 localStorage.setItem("refreshToken", result.refreshToken);
-                await renderNavbar(); // Atualiza o navbar imediatamente
                 window.location.href = "/" // Redireciona para a página inicial
             } else {
                 alert(`Erro ao fazer login: ${result.msg}`);

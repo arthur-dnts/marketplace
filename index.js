@@ -154,7 +154,7 @@ app.post("/auth/login", async (req, res) => {
 
     const secret = process.env.SECRET;
     const token = jwt.sign({ id: user._id }, secret);
-    const refreshToken = jwt.sign({ id: user._id }, secret + "refresh", { expriresIn: "7d" }); // refreshToken expira em 7 dias
+    const refreshToken = jwt.sign({ id: user._id }, secret + "refresh", { expiresIn: "7d" }); // refreshToken expira em 7 dias
 
     res.status(200).json({ msg: "Autenticação realizada com sucesso!", token, refreshToken });
   } catch (error) {
