@@ -95,17 +95,33 @@ hr {
     justify-content: center;
     background-color: var(--color4);
     border-radius: 10px;
+    margin: 0 10px 0 10px;
     border: none;
     cursor: pointer;
     bottom: 5px;
     h1 {
         color: var(--color1);
         padding-top: 5%;
+        font-size: 1.2rem;
+        font-weight: 400;
     }
 }
 
 .nav-profile {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    img {
+        width: 55px;
+        height: 55px;
+        border-radius: 100%;
+    }
+    h1 {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
 }
 
 .nav-button::before {

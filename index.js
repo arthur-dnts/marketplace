@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage }); // Definir upload
 
-// Configurar CORS
+// Configuração do CORS
 app.use(cors({
   origin: [
     "https://fusionx-digitalstudio.vercel.app",
@@ -59,7 +59,7 @@ const Ebook = require("./models/Ebook");
 const Product = require("./models/Product");
 const Course = require("./models/Course");
 
-// Conexão com MongoDB
+// Conexão ao MongoDB Atlas
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
 mongoose
@@ -141,6 +141,7 @@ app.post("/auth/register", async (req, res) => {
 app.post("/auth/login", async (req, res) => {
   const { email, password } = req.body;
 
+  // Valida o email e a senha
   if (!email) return res.status(422).json({ msg: "O e-mail é obrigatório!" });
   if (!password) return res.status(422).json({ msg: "A senha é obrigatória!" });
 
@@ -153,13 +154,69 @@ app.post("/auth/login", async (req, res) => {
 
     const secret = process.env.SECRET;
     const token = jwt.sign({ id: user._id }, secret);
+    const refreshToken = jwt.sign({ id: user._id }, secret + "refresh", { expriresIn: "7d" }); // refreshToken expira em 7 dias
 
-    res.status(200).json({ msg: "Autenticação realizada com sucesso!", token });
+    res.status(200).json({ msg: "Autenticação realizada com sucesso!", token, refreshToken });
   } catch (error) {
     console.error("Erro ao processar /auth/login:", error);
     res.status(500).json({ msg: "Ocorreu um erro com o servidor, tente novamente mais tarde." });
   }
 });
+
+// Rota para renovar o token
+app.post("/auth/refresh", async (req, res) => {
+  const { refreshToken } = req.body;
+
+  if (!refreshToken) {
+    return res.status(401).json({ msg: "Refresh token não identificado." });
+  }
+
+  try  {
+    const secret = process.env.SECRET + "refresh";
+    const decoded = jwt.verify(refreshToken, secret);
+    const user = await User.findById(decoded.id);
+
+    if (!user) {
+      return res.status(404).json({ msg: "Usuário não encontrado." });
+    }
+
+    const newToken = jwt.sign({ id: user._id }, process.end.SECRET, { expriresIn: "1h" });
+    res.status(200).json({ token: newToken });
+    } catch (error) {
+      console.error("Erro ao renovar token:", error);
+      res.status(400).json({ msg: "Refresh token inválido!" });
+  }
+});
+
+// Rota para fornecer dados aos usuários logados
+app.get("/api/user", async (req, res) => {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+
+  if (!token) {
+    return res.status(401).json({ msg: "Acesso negado! Token não identificado." })
+  }
+
+  try {
+    const secret = process.env.SECRET;
+    const decoded = jwt.verify(token, secret);
+    const user = await User.findById(decoded.id, "-password");
+
+    if (!user) {
+      return res.status(404).json({ msg: "Usuário não encontrado." });
+    }
+
+    res.status(200).json({
+      username: `${user.name} ${user.surname}`,
+      userProfile: user.userProfile || "/assets/svg/static/profile/profile-default.svg" // Avatar padrão
+    })
+    
+  } catch (error) {
+    console.error("Erro ao processar /api/user:", error);
+    res.status(400).json({ msg: "Token inválido!" })
+  }
+
+})
 
 // Rota privada para validar acesso ao dashboard
 app.get("/user/:id/dashboard", async (req, res) => {
@@ -203,7 +260,7 @@ app.get("/user/:id/dashboard", async (req, res) => {
   }
 });
 
-// Rota para adicionar novos ebooks, produtos ou cursos ao banco
+// Rota para adicionar novos ebooks, produtos ou cursos ao banco (Dashboard)
 app.post("/insert", upload.single("cover"), async (req, res) => {
   const { title, category, price, type } = req.body;
   console.log(`Nova requisição recebida: ${JSON.stringify(req.body)}`);
@@ -252,7 +309,7 @@ app.post("/insert", upload.single("cover"), async (req, res) => {
   }
 });
 
-// Rota para carregar usuários cadastrados
+// Rota para carregar usuários cadastrados (Dashboard)
 app.get("/api/users", async (req, res) => {
   try {
     const users = await User.find();
@@ -262,7 +319,7 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
-// Rota para contar cursos
+// Rota para contar cursos (Dashboard)
 app.get("/api/courses/count", async (req, res) => {
   try {
     const count = await Course.countDocuments();
@@ -272,7 +329,7 @@ app.get("/api/courses/count", async (req, res) => {
   }
 });
 
-// Rota para contar e-books
+// Rota para contar e-books (Dashboard)
 app.get("/api/ebooks/count", async (req, res) => {
   try {
     const count = await Ebook.countDocuments();
@@ -282,7 +339,7 @@ app.get("/api/ebooks/count", async (req, res) => {
   }
 });
 
-// Rota para contar produtos
+// Rota para contar produtos (Dashboard)
 app.get("/api/products/count", async (req, res) => {
   try {
     const count = await Product.countDocuments();
@@ -292,7 +349,7 @@ app.get("/api/products/count", async (req, res) => {
   }
 });
 
-// Rota para calcular rendimento mensal
+// Rota para calcular rendimento mensal (Dashboard)
 app.get("/api/revenue/monthly", async (req, res) => {
   try {
     const now = new Date();

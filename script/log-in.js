@@ -1,32 +1,34 @@
 // log-in.js
-document.addEventListener('DOMContentLoaded', () => {
+import { renderNavbar } from "./templates/navbar/navbar"
+
+document.addEventListener("DOMContentLoaded", () => {
     // Mostrar/esconder senha
-    const iconesSenha = document.querySelectorAll('.show-password');
+    const iconesSenha = document.querySelectorAll(".show-password");
     iconesSenha.forEach(icone => {
-        const targetId = icone.getAttribute('data-target');
+        const targetId = icone.getAttribute("data-target");
         const inputSenha = document.getElementById(targetId);
         if (!targetId || !inputSenha) {
             return;
         }
-        icone.addEventListener('click', () => {
-            if (inputSenha.type === 'password') {
-                inputSenha.type = 'text';
-                icone.src = '../../assets/svg/static/form/eye-open.svg';
+        icone.addEventListener("click", () => {
+            if (inputSenha.type === "password") {
+                inputSenha.type = "text";
+                icone.src = "../../assets/svg/static/form/eye-open.svg";
             } else {
-                inputSenha.type = 'password';
-                icone.src = '../../assets/svg/static/form/eye-closed.svg';
+                inputSenha.type = "password";
+                icone.src = "../../assets/svg/static/form/eye-closed.svg";
             }
         });
     });
 
     // Enviar o formulário de login para o back-end
-    const form = document.getElementById('log-in-form');
-    form.addEventListener('submit', async (e) => {
+    const form = document.getElementById("log-in-form");
+    form.addEventListener("submit", async (e) => {
         e.preventDefault(); // Impede o comportamento padrão do formulário
 
         // Obter os dados do formulário
-        const email = form.querySelector('input[placeholder="Email"]').value;
-        const password = form.querySelector('#password').value;
+        const email = form.querySelector("input[placeholder='Email']").value;
+        const password = form.querySelector("#password").value;
 
         // Criar o objeto com os dados
         const dados = {
@@ -37,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Enviar os dados para o back-end
             const response = await fetch("https://marketplace-rpch.onrender.com/auth/login", {
-                method: 'POST',
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(dados)
             });
@@ -48,16 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 // Armazenar o token e o refresh token no localStorage
-                localStorage.setItem('token', result.token);
-                localStorage.setItem('refreshToken', result.refreshToken);
-                // Redirecionar para uma página protegida (ex.: página inicial)
-                window.location.href = '/';
+                localStorage.setItem("authToken", result.token);
+                localStorage.setItem("refreshToken", result.refreshToken);
+                await renderNavbar(); // Atualiza o navbar imediatamente
+                window.location.href = "/" // Redireciona para a página inicial
             } else {
                 alert(`Erro ao fazer login: ${result.msg}`);
             }
         } catch (error) {
-            console.error('Erro ao enviar o formulário:', error);
-            alert('Erro ao conectar ao servidor. Tente novamente mais tarde.');
+            console.error("Erro ao enviar o formulário:", error);
+            alert("Erro ao conectar ao servidor. Tente novamente mais tarde.");
         }
     });
 });

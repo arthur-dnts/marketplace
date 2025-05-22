@@ -15,6 +15,18 @@
                                     {{else}}
                                         <h1 class="nav-label" style="{{this.style}}">{{this.text}}</h1>
                                     {{/if}}
+                                    {{#if this.condition}}
+                                        <a class="nav-button" href="/log-in" target="_blank" style="color: #016FB9;">Login</a>
+                                        <a class="nav-account" href="/sign-in" target="_blank"><h1>Cadastre-se</h1></a>
+                                    {{/if}}
+                                    {{#if this.logged}}
+                                        <a class="nav-label" href="/perfil">
+                                            <div class="nav-profile">
+                                                <h1>{{this.usename}}</h1>
+                                                <img src="{{userProfile}}" alt="profile-image">
+                                            </div>
+                                        </a>
+                                    {{/if}}
                                 </a>
                             </li>
                         {{/each}}

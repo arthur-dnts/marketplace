@@ -34,4 +34,5 @@ async function renderProfile() {
         console.error("Erro ao renderizar profile:", error);
     }
 }
+
 document.addEventListener("DOMContentLoaded", renderProfile);

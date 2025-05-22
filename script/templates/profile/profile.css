@@ -79,11 +79,12 @@ hr {
 
 .left-column {
     width: 100%;
+    padding-top: 10%;
 }
   
 .right-column {
     width: 100%;
-    padding-top: 7%;
+    padding-top: 5%;
 }
 
 .header {
@@ -124,7 +125,11 @@ progress {
     border-radius: 10px;
 }
 
+/* Firefox */
 progress::-moz-progress-bar { background: var(--color4); }
+
+/* Google Chrome, Eddge, Safari */
+progress::-webkit-progress-value { background: var(--color4); }
 
 .dark-btn {
     margin: 15px 5px 0 0;
