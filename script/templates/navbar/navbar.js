@@ -33,7 +33,6 @@ async function renderNavbar() {
         // Define os dados do navbar
         const navbarData = {
             logoSrc: "/assets/svg/static/logo/logo-black.png",
-            titulo: "Marketplace",
             closeMenuSrc: "/assets/svg/static/navbar/close-menu.svg",
             openMenuSrc: "/assets/svg/static/navbar/open-menu.svg",
             links: [
@@ -55,5 +54,7 @@ async function renderNavbar() {
         console.error("Erro ao renderizar navbar:", error);
     }
 }
+
+export { renderNavbar };
 
 document.addEventListener("DOMContentLoaded", renderNavbar);

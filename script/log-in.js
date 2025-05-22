@@ -1,5 +1,5 @@
 // log-in.js
-import { renderNavbar } from "./templates/navbar/navbar"
+import { renderNavbar } from "./templates/navbar/navbar.js"
 
 document.addEventListener("DOMContentLoaded", () => {
     // Mostrar/esconder senha
