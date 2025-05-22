@@ -45,7 +45,8 @@ async function renderNavbar() {
                 { condition: !isAuthenticated }, // Exibe o navbar sem login
                 {
                     logged: isAuthenticated, 
-                    username: userData ? userData.username : "Usuário", userProfile: userData ? userData.userProfile : "/assets/svg/static/profile/profile-default.svg" 
+                    username: userData ? userData.username : "Usuário", 
+                    userProfile: userData ? userData.userProfile : "/assets/svg/static/profile/profile-default.svg",
                 } // Exibe o navbar após o login 
             ]
         };
