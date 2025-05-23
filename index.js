@@ -209,7 +209,7 @@ app.get("/api/user", async (req, res) => {
 
     res.status(200).json({
       username: `${user.name} ${user.surname}`,
-      userProfile: user.userProfile || "/assets/svg/static/profile/profile-default.svg" // Avatar padrão
+      userProfile: "/assets/svg/static/profile/profile-female.svg" // Avatar padrão
     })
     
   } catch (error) {

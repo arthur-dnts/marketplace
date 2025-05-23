@@ -1,4 +1,3 @@
-// navbar.js
 async function renderNavbar() {
     try {
         const response = await fetch("/script/templates/navbar/navbar.hbs");
@@ -7,7 +6,8 @@ async function renderNavbar() {
         const navbarTemplate = Handlebars.compile(templateText);
 
         // Verifica se há um usuário conectado
-        const isAuthenticated = localStorage.getItem("authToken") !== null;
+        const token = localStorage.getItem("authToken");
+        const isAuthenticated = token !== null;
         let userData = null;
 
         // Se autenticado, busca os dados do usuário
@@ -15,18 +15,18 @@ async function renderNavbar() {
             try {
                 const userResponse = await fetch("/api/user", {
                     headers: {
-                        Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+                        Authorization: `Bearer ${token}`,
                     }
                 });
                 if (userResponse.ok) {
-                    userData = await userResponse.json(); // Carrega o nome de usuário e a imagem de perfil
+                    userData = await userResponse.json();
                 } else {
                     console.error("Erro ao buscar dados do usuário:", await userResponse.json());
-                    localStorage.removeItem("authToken"); // Remove token inválido
+                    localStorage.removeItem("authToken");
                 }
             } catch (error) {
                 console.error("Erro ao buscar dados do usuário:", error);
-                localStorage.removeItem("authToken"); // Remove token em caso de erro
+                localStorage.removeItem("authToken");
             }
         }
 
@@ -41,15 +41,15 @@ async function renderNavbar() {
                 { class: "nav-button", href: "/ebooks", text: "E-books" },
                 { class: "nav-button", href: "/produtos", text: "Produtos" },
                 { class: "nav-button", href: "/trabalhe-conosco", text: "Trabalhe Conosco" },
-                { class: "nav-image-button", href: "/carrinho", src: "/assets/svg/static/navbar/bag.svg", alt: "cart-button" },
-                { condition: !isAuthenticated }, // Exibe o navbar sem login
-                {
-                    logged: isAuthenticated, 
-                    username: userData ? userData.username : "Usuário", 
-                    userProfile: userData ? userData.userProfile : "/assets/svg/static/profile/profile-male.svg",
-                } // Exibe o navbar após o login 
-            ]
+                { class: "nav-image-button", href: "/carrinho", src: "/assets/svg/static/navbar/bag.svg", alt: "cart-button" }
+            ],
+            user: {
+                isAuthenticated: isAuthenticated,
+                username: userData ? userData.username : "Usuário",
+                userProfile: userData ? userData.userProfile : "/assets/svg/static/profile/profile-female.svg"
+            }
         };
+
         document.getElementById("navbar").innerHTML = navbarTemplate(navbarData);
     } catch (error) {
         console.error("Erro ao renderizar navbar:", error);

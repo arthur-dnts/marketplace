@@ -61,15 +61,16 @@ hr {
 }
 
 .nav-bar {
-    background-color: var(--color1);
-    width: 100%;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
     position: fixed;
+    width: 100%;
+    background-color: var(--color1);
+    margin: 0;
     top: 0;
+    gap: 5%;
     z-index: 100;
     padding: 12px 20px;
 }
@@ -80,12 +81,12 @@ hr {
     color: var(--color3);
 }
 
-.nav-image-button {
-    top: 5px;
-}
-
 .nav-image {
     width: 32px;
+}
+
+.nav-image-button {
+    top: 5px;
 }
 
 .nav-account {
@@ -145,7 +146,7 @@ hr {
 
 .menu {
     display: flex;
-    margin-left: 22%;
+    max-width: 100%;
     li {
         padding-left: 30px;
     }

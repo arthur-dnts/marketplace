@@ -2,10 +2,16 @@
     <header>
         <nav>
             <ul class="nav-bar">
-                <a href="/"><div class="logo-container"><img src="{{logoSrc}}" alt="site-logo"></div></a>
-                <input type="checkbox" class="check" id="check"><a href="/" style="text-decoration: none;"></a>
+                <a href="/">
+                    <div class="logo-container">
+                        <img src="{{logoSrc}}" alt="site-logo">
+                    </div>
+                </a>
+                <input type="checkbox" class="check" id="check">
                 <span class="menu">
-                    <label for="check" class="close-menu"><img src="{{closeMenuSrc}}" alt="close-menu-button"></label>
+                    <label for="check" class="close-menu">
+                        <img src="{{closeMenuSrc}}" alt="close-menu-button">
+                    </label>
                     <ul>
                         {{#each links}}
                             <li>
@@ -15,24 +21,34 @@
                                     {{else}}
                                         <h1 class="nav-label" style="{{this.style}}">{{this.text}}</h1>
                                     {{/if}}
-                                    {{#if this.condition}}
-                                        <a class="nav-button" href="/log-in" style="color: #016FB9;">Login</a>
-                                        <a class="nav-account" href="/sign-in"><h1>Cadastre-se</h1></a>
-                                    {{/if}}
-                                    {{#if this.logged}}
-                                        <a class="nav-label" href="/perfil">
-                                            <div class="nav-profile">
-                                                <h1>{{this.usename}}</h1>
-                                                <img src="{{userProfile}}" alt="profile-image">
-                                            </div>
-                                        </a>
-                                    {{/if}}
                                 </a>
                             </li>
                         {{/each}}
+
+                        {{#if user.isAuthenticated}}
+                            <li>
+                                <a class="nav-label" href="/perfil">
+                                    <div class="nav-profile">
+                                        <h1>{{user.username}}</h1>
+                                        <img src="/assets/svg/static/profile/profile-male.svg" alt="profile-image">
+                                    </div>
+                                </a>
+                            </li>
+                        {{else}}
+                            <li>
+                                <a class="nav-button" href="/log-in" style="color: #016FB9;">Login</a>
+                            </li>
+                            <li>
+                                <a class="nav-account" href="/sign-in">
+                                    <h1>Cadastre-se</h1>
+                                </a>
+                            </li>
+                        {{/if}}
                     </ul>
                 </span>
-                <label for="check" class="open-menu"><img src="{{openMenuSrc}}" alt="open-menu-button"></label>
+                <label for="check" class="open-menu">
+                    <img src="{{openMenuSrc}}" alt="open-menu-button">
+                </label>
             </ul>
         </nav>
     </header>
