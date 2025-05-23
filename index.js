@@ -137,6 +137,7 @@ app.post("/auth/register", async (req, res) => {
   }
 });
 
+
 // Rota de login (/auth/login)
 app.post("/auth/login", async (req, res) => {
   const { email, password } = req.body;
@@ -180,7 +181,7 @@ app.post("/auth/refresh", async (req, res) => {
       return res.status(404).json({ msg: "Usuário não encontrado." });
     }
 
-    const newToken = jwt.sign({ id: user._id }, process.end.SECRET, { expriresIn: "1h" });
+    const newToken = jwt.sign({ id: user._id }, process.env.SECRET, { expiresIn: "1h" });
     res.status(200).json({ token: newToken });
     } catch (error) {
       console.error("Erro ao renovar token:", error);

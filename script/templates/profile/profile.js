@@ -35,4 +35,11 @@ async function renderProfile() {
     }
 }
 
+function logout() {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("refreshToken");
+    renderNavbar();
+    window.location.href = "/";
+}
+
 document.addEventListener("DOMContentLoaded", renderProfile);
