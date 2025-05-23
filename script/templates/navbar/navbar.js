@@ -13,7 +13,7 @@ async function renderNavbar() {
         // Se autenticado, busca os dados do usuário
         if (isAuthenticated) {
             try {
-                const userResponse = await fetch("/api/user", {
+                const userResponse = await fetch("/user", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     }
