@@ -7,19 +7,22 @@ async function renderNavbar() {
 
         // Verifica se há um usuário conectado
         const token = localStorage.getItem("authToken");
+        console.log("Token:", token);
         const isAuthenticated = token !== null;
+        console.log("isAuthenticated:", isAuthenticated);
         let userData = null;
 
         // Se autenticado, busca os dados do usuário
         if (isAuthenticated) {
             try {
-                const userResponse = await fetch("/user", {
+                const userResponse = await fetch("/api/user", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     }
                 });
                 if (userResponse.ok) {
                     userData = await userResponse.json();
+                    console.log("UserData:", userData);
                 } else {
                     console.error("Erro ao buscar dados do usuário:", await userResponse.json());
                     localStorage.removeItem("authToken");
