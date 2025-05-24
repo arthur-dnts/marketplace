@@ -116,14 +116,18 @@ app.post("/auth/register", async (req, res) => {
     const salt = await bcrypt.genSalt(12);
     const passwordHash = await bcrypt.hash(password, salt);
 
+    const gender = "Não informado" // Adicionado por padrão
+    const adress = "Não informado" // Adicionado por padrão
     const role = "Usuário" // Adicionado por padrão
     const status = "Ativo" // Adicionado por padrão
 
     const user = new User({
       name,
       surname,
+      gender,
       email,
       telefone,
+      adress,
       password: passwordHash,
       role,
       status
