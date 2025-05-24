@@ -1,3 +1,4 @@
+// navbar.js
 async function renderNavbar() {
     try {
         const response = await fetch("/script/templates/navbar/navbar.hbs");
@@ -48,7 +49,7 @@ async function renderNavbar() {
             ],
             user: {
                 isAuthenticated: isAuthenticated,
-                username: userData ? userData.username : "Usuário",
+                username: userData ? userData.userFullName : "Usuário",
                 userProfile: userData ? userData.userProfile : "/assets/svg/static/profile/profile-female.svg"
             }
         };

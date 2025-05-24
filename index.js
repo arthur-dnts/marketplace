@@ -208,16 +208,20 @@ app.get("/api/user", async (req, res) => {
     }
 
     res.status(200).json({
-      username: `${user.name} ${user.surname}`,
-      userProfile: "/assets/svg/static/profile/profile-female.svg" // Avatar padrão
-    })
+      userFirstName: `${user.name}`,
+      userFullName: `${user.name} ${user.surname}`,
+      userProfile: "/assets/svg/static/profile/profile-female.svg",
+      userEmail: `${user.email}`,
+      userGender: `${user.gender}`,
+      userTelefone: `${user.telefone}`,
+      userAdress: `${user.adress}`,
+    });
     
   } catch (error) {
     console.error("Erro ao processar /api/user:", error);
     res.status(400).json({ msg: "Token inválido!" })
   }
-
-})
+});
 
 // Rota privada para validar acesso ao dashboard
 app.get("/user/:id/dashboard", async (req, res) => {
